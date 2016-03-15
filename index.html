@@ -22,10 +22,14 @@
 
 
 
-  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
 
 
-<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+<link rel="stylesheet" type="text/css" href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" />
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.2"/>
 
 
     <meta name="description" content="海月の虚空に秋凉し时鸟" />
@@ -38,13 +42,13 @@
 
 
 
-  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
 
 
 <meta name="description" content="海月の虚空に秋凉し时鸟">
 <meta property="og:type" content="website">
 <meta property="og:title" content="夏影">
-<meta property="og:url" content="http://dangger.github.io/index.html">
+<meta property="og:url" content="http://blog.dangge.moe/index.html">
 <meta property="og:site_name" content="夏影">
 <meta property="og:description" content="海月の虚空に秋凉し时鸟">
 <meta name="twitter:card" content="summary">
@@ -55,9 +59,11 @@
 <script type="text/javascript" id="hexo.configuration">
   var CONFIG = {
     scheme: '',
-    sidebar: 'post'
+    sidebar: 'hide'
   };
 </script>
+
+
 
   <title> 夏影 </title>
 </head>
@@ -77,22 +83,27 @@
 
 
 
+
+
+
   <div class="container one-column 
    page-home 
 ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><h1 class="site-meta">
-  <span class="logo-line-before"><i></i></span>
-  <a href="/" class="brand" rel="start">
-      <span class="logo">
-        <i class="icon-next-logo"></i>
-      </span>
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
       <span class="site-title">夏影</span>
-  </a>
-  <span class="logo-line-after"><i></i></span>
-</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
 
 <div class="site-nav-toggle">
   <button>
@@ -111,24 +122,60 @@
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            <i class="menu-item-icon icon-next-home"></i> <br />
-            首頁
+            
+              <i class="menu-item-icon fa fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th"></i> <br />
+            
+            Categorias
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user"></i> <br />
+            
+            Sobre
           </a>
         </li>
       
         
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
-            <i class="menu-item-icon icon-next-archives"></i> <br />
-            歸檔
+            
+              <i class="menu-item-icon fa fa-archive"></i> <br />
+            
+            Arquivos
           </a>
         </li>
       
         
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
-            <i class="menu-item-icon icon-next-tags"></i> <br />
-            標籤
+            
+              <i class="menu-item-icon fa fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat"></i> <br />
+            
+            公益404
           </a>
         </li>
       
@@ -151,38 +198,63 @@
     
       
 
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                <a class="post-title-link" href="/2015/10/30/ffmpeg之常用音频转换/" itemprop="url">
+                  ffmpeg之常用音频转换
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Postado em
+            <time itemprop="dateCreated" datetime="2015-10-30T13:05:00+08:00" content="2015-10-30">
+              2015-10-30
+            </time>
+          </span>
+
           
+            <span class="post-category" >
+              &nbsp; | &nbsp; Em
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/tech/" itemprop="url" rel="index">
+                    <span itemprop="name">tech</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
           
             
-              <a class="post-title-link" href="/2015/09/11/hello-world/" itemprop="url">
-                Hello World
-              </a>
-            
           
-        </h1>
-      
 
-      <div class="post-meta">
-        <span class="post-time">
-          發表於
-          <time itemprop="dateCreated" datetime="2015-09-11T19:27:39+08:00" content="2015-09-11">
-            2015-09-11
-          </time>
-        </span>
-
-        
-
-        
           
-        
-      </div>
-    </header>
+
+        </div>
+      </header>
+    
+
 
     <div class="post-body">
 
@@ -191,16 +263,867 @@
 
       
         
-          <span itemprop="articleBody"><p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-</span>
+          <p>今天需要把aac转mp3,刚好有人整合了一下，搬运过来。<br>转载自<a href="http://linuxconfig.org/ffmpeg-audio-format-conversions">ffmpeg audio format conversions</a></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/10/30/ffmpeg之常用音频转换/#more" rel="contents">
+              Ler mais &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                <a class="post-title-link" href="/2015/10/18/一切都是你自作自受/" itemprop="url">
+                  一切都是你自作自受
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Postado em
+            <time itemprop="dateCreated" datetime="2015-10-18T13:38:00+08:00" content="2015-10-18">
+              2015-10-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; Em
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ssn/" itemprop="url" rel="index">
+                    <span itemprop="name">ssn</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>似乎有点时间没有写生存报告了，不想写作业的我决定来记录一下日常。<br>首先就是，撑过了最忙(?)的一个月，忙了开学，社团招新，理事选拔等一堆破事<br>然后顺利完结了夏季番的制作，本来打算秋季好好休息一下（上季度经常凌晨两点开工干到四点真是太肝了），结果还是接了个落地的坑。<br>不过还好，这番十一点就播完了，基本做完就是一点不到，这个时间对我来说算早睡了。</p>
+<p>于是抛开字幕的事情，我也很顺利的撑过了计协那一堆破事。<br>招新完全没兴趣，反正就是一群傻逼交了20块钱，自以为能大展拳脚，殊不知自己完全是在浪费时间。<br>理事招新这个逃不过去，勉强撑了下来，招了几个好苗子，然后还把<a href="http://dangge.qiniudn.com/%E6%8F%90%E9%97%AE%E7%9A%84%E6%99%BA%E6%85%A7.html" target="_blank" rel="external">提问的智慧</a>安利给了学弟。<br>不过感觉没多少人去看，毕竟那么长，而且还是从头骂到尾。<br>另外稍微和新生聊了聊，感觉今年新生质量还是有提升的，果然学习好就是不一样。<br>上面那句话毫无讽刺意味。</p>
+<p>以前我也觉得“学习好有个屌用啊你看Bill·Gates啊什么什么什么国外大牛人家都不上学”<br>现在我觉得吧，用一句宅语说就是“<a href="http://zh.moegirl.org/%E4%BD%A0%E7%9C%8B%E7%9C%8B%E4%BD%A0" target="_blank" rel="external">UCCU</a>”<br>接触的人越多，我越觉得自己好鶸，然而看着身边这群人懒懒散散坐井观天，我都替他们着急。<br>然而时间久了我也麻木了，去你大爷的，老子哪有空关心你们是不是顺利成长</p>
+<p>“XXXX，帮我看看这是怎么回事？”<br>“XXXX,XX应该怎么做？”<br>我承认我这人不是什么好人，但是保姆我实在当烦了</p>
+<p>……<br>每年都有新闻痛心疾首的报道，大堆大堆的大学生就业难，找不到工作，天天啃老blabla<br>当时我还很天真的认为，竞争太激烈了，生活不易啊<br>现在进到象牙塔里爬了两年，大概也算见识了点人<br>真的是，一切都是你自作自受<br>有人实习期就有0.15M的年薪，有人毕业了连个端盘子的工作都不想做。<br>两个字，活该。</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                <a class="post-title-link" href="/2015/09/21/垃圾 zzuwlan 如何手动认证/" itemprop="url">
+                  垃圾 zzuwlan 如何手动认证
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Postado em
+            <time itemprop="dateCreated" datetime="2015-09-21T16:42:00+08:00" content="2015-09-21">
+              2015-09-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; Em
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/tech/" itemprop="url" rel="index">
+                    <span itemprop="name">tech</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>首先提一句，学校能开这个给我们用还是不错的，虽然效率低下而且速度不快，不过好歹省去了我开 WiFi 的力气。<br>那么问题来了，这个垃圾的 zzuwlan ，如果你第一次连接没有断开，之后貌似就会出神奇的 bug 。<br>一般的网页认证型 WiFi 都是在你未获取权限之前自动将你劫持到认证网页。<br>然而这个垃圾的 zzuwlan 也不知道搞了什么配置，这个功能一直抽风。<br>于是花了五分钟研究了下，顺便吐槽直接 GET 真是方便分析啊（姚明脸</p>
+<p>首先我们连上 zzuwlan 之后需要看一下 ip 地址和 Mac 地址，这个貌似也抽风了，明明是 DHCP ，每次返回的却都是同一 IP 。<br>我们假设当前设备的 ip 是 10.117.129.1，Mac地址为640280555924<br>然后我们构造这样一个链接:</p>
+<pre><code>http://202.196.64.132/?wlanuserip=(当前设备ip)&amp;wlanacname=&amp;ssid=&amp;nasip=10.241.255.254&amp;mac=(当前设备Mac地址)&amp;t=wireless-v2-plain&amp;url=http://blog.dangge.moe/
+</code></pre><p>访问，正常认证即可。<br>最后再说一句学校SB。</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                <a class="post-title-link" href="/2015/09/13/Chrome 45 使用 Mactype 部分字不能渲染的问题/" itemprop="url">
+                  Chrome 45 使用 Mactype 部分字不能渲染的问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Postado em
+            <time itemprop="dateCreated" datetime="2015-09-13T14:31:00+08:00" content="2015-09-13">
+              2015-09-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; Em
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/tech/" itemprop="url" rel="index">
+                    <span itemprop="name">tech</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>随便搜了一下，发现网上主要有这几个解决方案: </p>
+<ol>
+<li>chrome://flags/<br>光栅线程数设定为1</li>
+<li>chrome://flags/<br>关闭ignore-gpu-blacklist 和 enable-one-copy</li>
+</ol>
+<p>如果不行的话就对这三个选项开关试试。</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                <a class="post-title-link" href="/2015/09/12/搞了个hexo博客但是因为文章转换起来太麻烦所以懒得动了/" itemprop="url">
+                  搞了个hexo博客但是因为文章转换起来太麻烦所以懒得动了
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Postado em
+            <time itemprop="dateCreated" datetime="2015-09-12T15:58:00+08:00" content="2015-09-12">
+              2015-09-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; Em
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ssn/" itemprop="url" rel="index">
+                    <span itemprop="name">ssn</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p><a href="http://dangger.github.io" target="_blank" rel="external">http://dangger.github.io</a></p>
+<p>等我闲了慢慢研究怎么转换文章吧…</p>
+<p>2016年1月17日 update:</p>
+<p>过几天换hexo辣</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                <a class="post-title-link" href="/2015/08/27/Typcho默认gravatar头像被墙问题/" itemprop="url">
+                  Typcho默认gravatar头像被墙问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Postado em
+            <time itemprop="dateCreated" datetime="2015-08-27T16:35:00+08:00" content="2015-08-27">
+              2015-08-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; Em
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/tech/" itemprop="url" rel="index">
+                    <span itemprop="name">tech</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>解决方法也很简单，编辑\var\Typecho路径里的Common.php行，939行</p>
+<p>将默认的gravatar地址更换为<a href="https://secure.gravatar.com即可。" target="_blank" rel="external">https://secure.gravatar.com即可。</a></p>
+<p>也可以替换为V2EX或多说的反代地址，具体使用方法请自己探索。</p>
+<ul>
+<li>多说的源：<a href="http://gravatar.duoshuo.com" target="_blank" rel="external">http://gravatar.duoshuo.com</a> </li>
+<li>V2EX的源：<a href="http://cdn.v2ex.com/gravatar" target="_blank" rel="external">http://cdn.v2ex.com/gravatar</a> （支持SSL）</li>
+</ul>
+<p>个人感觉还是官方的gravatar比较稳定。</p>
+<p>2015年8月30日update:<br>于是在改了半天comment的CSS后我终于认识到了自己并没有前端审美能力，怒切disqus了。<br>历史评论已经导出成json了，于是disqus要的xml究竟是什么鬼啦摔<br>而且发现了disqus用的fastly家的CDN，很多地方都墙了这家CDN啊…<br>算了，反正来看blog的大概都有科学上网能力。</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                <a class="post-title-link" href="/2015/08/27/Windows下使用git的一些坑点/" itemprop="url">
+                  Windows下使用git的一些坑点
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Postado em
+            <time itemprop="dateCreated" datetime="2015-08-27T04:27:00+08:00" content="2015-08-27">
+              2015-08-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; Em
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/tech/" itemprop="url" rel="index">
+                    <span itemprop="name">tech</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>RT，众所周知Windows对git的支持简直没法和别的系统比，不过<del>又不是不能用</del><br>于是写点坑点好了。</p>
+<ul>
+<li>SSH问题<br>我使用了github的windows版本，然后打开是有一个git bash窗口的，我们可以看出这个东西其实是基于MINGW64的。<br>然后我们要在Github里添加公钥，就要在bash窗口里输入<code>ssh-keygen -t rsa -C “your@mail.com”</code><br>然后enter三次，就自动生成好了。<br>那么问题来了:我们要向github里添加公钥，可是这个生成的公钥在哪里？<br>通过everything，我们找到了它的路径:<code>C:\Users\（替换为当前系统用户名）\.ssh</code><br>打开会发现两个文件，一个是id_rsa.pub，这个是你的公钥。<br>还有一个id_rsa，就是本地留存的私钥了。<br>用任意文本编辑器打开id_rsa.pub,复制内容，粘贴进github的SSH添加处，就添加好了。<br>然后我们的git Bash窗口就能连接上github了。</li>
+<li>clone默认路径问题<br>在clone远程仓库的时候，windows下的git默认是clone到当前路径。<br>如果你不做修改，每次就要手动cd到工作文件夹去，很烦。<br>要修改默认路径也很简单，打开高级系统设置，环境变量，在上方的用户变量里新建一个值home，属性就是你要改的默认路径。<br>如图所示。<img src="http://7u2sev.com1.z0.glb.clouddn.com/upload/d23dec2b34010c7ab6cbcc77d22a839a.jpg" alt="用户变量设置"><br>保存后再次打开Git Bash，ls一下，就会发现默认目录已经发生了改变。<br>–未完待续</li>
+</ul>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                <a class="post-title-link" href="/2015/07/31/Python学习笔记/" itemprop="url">
+                  Python学习笔记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Postado em
+            <time itemprop="dateCreated" datetime="2015-07-31T17:11:00+08:00" content="2015-07-31">
+              2015-07-31
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; Em
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/tech/" itemprop="url" rel="index">
+                    <span itemprop="name">tech</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>给自己看的。<br>1.编码大坑<br>在Python里，我们需要指定一下编码，否则输出中文的时候会乱码<del>所以说还是全英文好</del><br>根据情况，我们选择在代码头部添加</p>
+<pre><code># coding=编码名
+</code></pre><p>exp:</p>
+<pre><code># coding=utf-8 
+</code></pre><p>这个对中文无效</p>
+<pre><code># coding=gbk
+</code></pre><p>这个中文可用</p>
+<p>未完待续</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                <a class="post-title-link" href="/2015/07/26/Aegisub常用特效/" itemprop="url">
+                  Aegisub常用特效
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Postado em
+            <time itemprop="dateCreated" datetime="2015-07-26T13:50:00+08:00" content="2015-07-26">
+              2015-07-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; Em
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/tech/" itemprop="url" rel="index">
+                    <span itemprop="name">tech</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>如题，我就写点常用的，就当备忘录了。</p>
+<p>\n 空格，宽度超出范围后自动换行<br>\N 硬回车<br>\h 硬空格<br>\b<0/1> 粗体<br>0关闭，1开启<br>\i<0/1> 斜体<br>\u<0/1> 下划线<br>\s<0/1> 删除线<br>\bord<width> 边框宽度<br>\be<0/1> 柔化 0关闭 1开启<br>\shad<depth> 阴影距离<br>\fn<font name> 改变字型<br>\fs<font size> 改变字号<br>\fsc<x/y><percent> 字符缩放——正常大小为100%<br>\fsp<pixels> 调整字间距<br>\fr[<x/y/z>]<degrees> 旋转<br>\fr = \frz，和[v4+ Styles]中的Angle效果相同—–旋转所围绕的中心由\a或\an决定<br>\c&amp;H<66CCFF>&amp; 改变颜色———十六进制00-ff，蓝绿红</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/07/26/Aegisub常用特效/#more" rel="contents">
+              Ler mais &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                <a class="post-title-link" href="/2015/07/07/本站域名要更换为dangge.moe了(已经更换)/" itemprop="url">
+                  本站域名要更换为dangge.moe了(已经更换)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Postado em
+            <time itemprop="dateCreated" datetime="2015-07-07T13:58:00+08:00" content="2015-07-07">
+              2015-07-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; Em
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ssn/" itemprop="url" rel="index">
+                    <span itemprop="name">ssn</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>如题，现在这个破域名再过几天就到期了。<br>之前hostker活动，拿到了一个免费的.moe域名，到期后就换这个了…<br>顺便友情推荐<a href="https://i.zhujike.com/flag/1746" target="_blank" rel="external">Hostker家的服务</a>，在ACG这个圈子里还是挺有知名度的。</p>
+<p>已经更换了域名，欢迎修改书签~</p>
+
+            
+          </span>
         
       
     </div>
@@ -222,6 +1145,11 @@
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
  </div>
 
         
@@ -230,6 +1158,7 @@
       </div>
 
       
+        
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -244,7 +1173,9 @@
 
       
 
-      <section class="site-overview">
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" src="/images/default_avatar.jpg" alt="dangge" itemprop="image"/>
           <p class="site-author-name" itemprop="name">dangge</p>
@@ -253,22 +1184,22 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
-              <span class="site-state-item-name">文章</span>
+              <span class="site-state-item-count">44</span>
+              <span class="site-state-item-name">publicações</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
-            
-              <span class="site-state-item-count">0</span>
-              <span class="site-state-item-name">分類</span>
-              
+            <a href="/categories">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">categorias</span>
+              </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">0</span>
-              <span class="site-state-item-name">標籤</span>
+              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-name">tags</span>
               </a>
           </div>
 
@@ -295,25 +1226,26 @@
   </aside>
 
 
+      
     </main>
 
     <footer id="footer" class="footer">
       <div class="footer-inner"> <div class="copyright" >
   
-  &copy; &nbsp; 
-  <span itemprop="copyrightYear">2015</span>
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
-    <i class="icon-next-heart"></i>
+    <i class="icon-next-heart fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">dangge</span>
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  Desenvolvido com amor com <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主題 -
+  Tema -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT
   </a>
@@ -340,21 +1272,21 @@
   
   
   <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
 
 
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
   
 
   <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
   <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
 
-  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.2" id="motion.global"></script>
 
 
 
 
-  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.2"></script>
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
@@ -367,9 +1299,12 @@
       if (isMobile()) {
         FastClick.attach(document.body);
       }
+
+      motionIntegrator.bootstrap();
     });
   </script>
 
+  
   
 
   
