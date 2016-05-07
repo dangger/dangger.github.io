@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>dangge&#39;s blog</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://blog.dangge.moe/"/>
+  <updated>2016-05-06T18:08:55.118Z</updated>
+  <id>https://blog.dangge.moe/</id>
+  
+  <author>
+    <name>dangge</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>无题.</title>
+    <link href="https://blog.dangge.moe/2016/04/22/index.html"/>
+    <id>https://blog.dangge.moe/2016/04/22/index.html</id>
+    <published>2016-04-21T22:46:00.000Z</published>
+    <updated>2016-05-06T18:08:55.118Z</updated>
+    
+    <content type="html">&lt;p&gt;其实本来有很多东西想写一下&lt;br&gt;不过今天看到这张图&lt;br&gt;感觉不用写了&lt;br&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2016/04/21/571903b35ab64.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;看圣贤书去了.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;其实本来有很多东西想写一下&lt;br&gt;不过今天看到这张图&lt;br&gt;感觉不用写了&lt;br&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2016/04/21/571903b35ab64.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;看圣贤书去了.&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="default" scheme="https://blog.dangge.moe/categories/default/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>如何在限制22端口的网络中使用git服务</title>
+    <link href="https://blog.dangge.moe/2016/04/06/index.html"/>
+    <id>https://blog.dangge.moe/2016/04/06/index.html</id>
+    <published>2016-04-05T18:04:11.000Z</published>
+    <updated>2016-05-06T18:08:43.477Z</updated>
+    
+    <content type="html">&lt;p&gt;垃圾学校,封锁SSH,害我没法正常提交代码!&lt;br&gt;废话不多说贴个图,看懂的自然懂.&lt;br&gt;&lt;img src=&quot;https://dn-danggepic.qbox.me/git-config-2016%E5%B9%B44%E6%9C%886%E6%97%A5.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;垃圾学校,封锁SSH,害我没法正常提交代码!&lt;br&gt;废话不多说贴个图,看懂的自然懂.&lt;br&gt;&lt;img src=&quot;https://dn-danggepic.qbox.me/git-config-2016%E5%B9%B44%E6%9C%886%E6%97%A5.jpg&quot; al
+    
+    </summary>
+    
+      <category term="default" scheme="https://blog.dangge.moe/categories/default/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ffmpeg之常用音频转换</title>
+    <link href="https://blog.dangge.moe/2015/10/30/index.html"/>
+    <id>https://blog.dangge.moe/2015/10/30/index.html</id>
+    <published>2015-10-30T05:05:00.000Z</published>
+    <updated>2016-05-07T03:43:21.894Z</updated>
+    
+    <content type="html">&lt;p&gt;今天需要把aac转mp3,刚好有人整合了一下，搬运过来。&lt;br&gt;转载自&lt;a href=&quot;http://linuxconfig.org/ffmpeg-audio-format-conversions&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ffmpeg audio format conversions&lt;/a&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;1-Audio&quot;&gt;&lt;a href=&quot;#1-Audio&quot; class=&quot;headerlink&quot; title=&quot;1. Audio&quot;&gt;&lt;/a&gt;1. Audio&lt;/h2&gt;&lt;h3 id=&quot;1-1-WAV-Waveform-Audio-File-Format&quot;&gt;&lt;a href=&quot;#1-1-WAV-Waveform-Audio-File-Format&quot; class=&quot;headerlink&quot; title=&quot;1.1. WAV - Waveform Audio File Format&quot;&gt;&lt;/a&gt;1.1. WAV - Waveform Audio File Format&lt;/h3&gt;&lt;h4 id=&quot;1-1-1-wav-to-mp3&quot;&gt;&lt;a href=&quot;#1-1-1-wav-to-mp3&quot; class=&quot;headerlink&quot; title=&quot;1.1.1. wav to mp3&quot;&gt;&lt;/a&gt;1.1.1. wav to mp3&lt;/h4&gt;&lt;p&gt;Convert wav to mp3 with ffmpeg:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ffmpeg -i audio.wav -acodec libmp3lame audio.mp3
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;1-1-2-wav-to-ogg&quot;&gt;&lt;a href=&quot;#1-1-2-wav-to-ogg&quot; class=&quot;headerlink&quot; title=&quot;1.1.2. wav to ogg&quot;&gt;&lt;/a&gt;1.1.2. wav to ogg&lt;/h4&gt;&lt;p&gt;Convert wav to ogg with ffmpeg:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ffmpeg -i audio.wav  -acodec libvorbis audio.ogg
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;1-1-3-wav-to-aac&quot;&gt;&lt;a href=&quot;#1-1-3-wav-to-aac&quot; class=&quot;headerlink&quot; title=&quot;1.1.3. wav to aac&quot;&gt;&lt;/a&gt;1.1.3. wav to aac&lt;/h4&gt;&lt;p&gt;Convert wav to acc with ffmpeg:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ffmpeg -i audio.wav  -acodec libfaac audio.aac
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;1-1-4-wav-to-ac3&quot;&gt;&lt;a href=&quot;#1-1-4-wav-to-ac3&quot; class=&quot;headerlink&quot; title=&quot;1.1.4. wav to ac3&quot;&gt;&lt;/a&gt;1.1.4. wav to ac3&lt;/h4&gt;&lt;p&gt;Convert wav to ac3 with ffmpeg:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ffmpeg -i audio.wav -acodec ac3 audio.mp3
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;1-2-OGG-Free-open-standard-container&quot;&gt;&lt;a href=&quot;#1-2-OGG-Free-open-standard-container&quot; class=&quot;headerlink&quot; title=&quot;1.2. OGG - Free, open standard container&quot;&gt;&lt;/a&gt;1.2. OGG - Free, open standard container&lt;/h3&gt;&lt;h4 id=&quot;1-2-1-ogg-to-mp3&quot;&gt;&lt;a href=&quot;#1-2-1-ogg-to-mp3&quot; class=&quot;headerlink&quot; title=&quot;1.2.1. ogg to mp3&quot;&gt;&lt;/a&gt;1.2.1. ogg to mp3&lt;/h4&gt;&lt;p&gt;Convert ogg to mp3 with ffmpeg:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ffmpeg -i audio.ogg -acodec libmp3lame audio.mp3
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;####1.2.2. ogg to wav&lt;br&gt;Convert ogg to wav with ffmpeg:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ffmpeg -i audio.ogg audio.wav
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;1-2-3-ogg-to-aac&quot;&gt;&lt;a href=&quot;#1-2-3-ogg-to-aac&quot; class=&quot;headerlink&quot; title=&quot;1.2.3. ogg to aac&quot;&gt;&lt;/a&gt;1.2.3. ogg to aac&lt;/h4&gt;&lt;p&gt;Convert ogg to aac with ffmpeg:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ffmpeg -i audio.ogg  -acodec libfaac audio.aac
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;1-2-4-ogg-to-ac3&quot;&gt;&lt;a href=&quot;#1-2-4-ogg-to-ac3&quot; class=&quot;headerlink&quot; title=&quot;1.2.4. ogg to ac3&quot;&gt;&lt;/a&gt;1.2.4. ogg to ac3&lt;/h4&gt;&lt;p&gt;Convert ogg to ac3 with ffmpeg:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ffmpeg -i audio.ogg -acodec ac3 audio.ac3
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;1-3-AC3-Acoustic-Coder-3&quot;&gt;&lt;a href=&quot;#1-3-AC3-Acoustic-Coder-3&quot; class=&quot;headerlink&quot; title=&quot;1.3. AC3 - Acoustic Coder 3&quot;&gt;&lt;/a&gt;1.3. AC3 - Acoustic Coder 3&lt;/h3&gt;&lt;h4 id=&quot;1-3-1-ac3-to-mp3&quot;&gt;&lt;a href=&quot;#1-3-1-ac3-to-mp3&quot; class=&quot;headerlink&quot; title=&quot;1.3.1. ac3 to mp3&quot;&gt;&lt;/a&gt;1.3.1. ac3 to mp3&lt;/h4&gt;&lt;p&gt;Convert ac3 to mp3 with ffmpeg:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ffmpeg -i audio.ac3 -acodec libmp3lame audio.mp3
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;1-3-2-ac3-to-wav&quot;&gt;&lt;a href=&quot;#1-3-2-ac3-to-wav&quot; class=&quot;headerlink&quot; title=&quot;1.3.2. ac3 to wav&quot;&gt;&lt;/a&gt;1.3.2. ac3 to wav&lt;/h4&gt;&lt;p&gt;Convert ac3 to wav with ffmpeg:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ffmpeg -i audio.ac3 audio.wav
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;1-3-3-ac3-to-aac&quot;&gt;&lt;a href=&quot;#1-3-3-ac3-to-aac&quot; class=&quot;headerlink&quot; title=&quot;1.3.3. ac3 to aac&quot;&gt;&lt;/a&gt;1.3.3. ac3 to aac&lt;/h4&gt;&lt;p&gt;Convert ac3 to aac with ffmpeg:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ffmpeg -i audio.ac3  -acodec libfaac audio.aac
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;1-3-4-ac3-to-ogg&quot;&gt;&lt;a href=&quot;#1-3-4-ac3-to-ogg&quot; class=&quot;headerlink&quot; title=&quot;1.3.4. ac3 to ogg&quot;&gt;&lt;/a&gt;1.3.4. ac3 to ogg&lt;/h4&gt;&lt;p&gt;Convert ac3 to ogg with ffmpeg:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ffmpeg -i audio.ac3 -acodec libvorbis audio.ogg
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;1-4-AAC-Advanced-Audio-Coding&quot;&gt;&lt;a href=&quot;#1-4-AAC-Advanced-Audio-Coding&quot; class=&quot;headerlink&quot; title=&quot;1.4. AAC - Advanced Audio Coding&quot;&gt;&lt;/a&gt;1.4. AAC - Advanced Audio Coding&lt;/h3&gt;&lt;h4 id=&quot;1-4-1-aac-to-mp3&quot;&gt;&lt;a href=&quot;#1-4-1-aac-to-mp3&quot; class=&quot;headerlink&quot; title=&quot;1.4.1. aac to mp3&quot;&gt;&lt;/a&gt;1.4.1. aac to mp3&lt;/h4&gt;&lt;p&gt;Convert aac to mp3 with ffmpeg:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ffmpeg -i audio.aac -acodec libmp3lame audio.mp3
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;1-4-2-aac-to-wav&quot;&gt;&lt;a href=&quot;#1-4-2-aac-to-wav&quot; class=&quot;headerlink&quot; title=&quot;1.4.2. aac to wav&quot;&gt;&lt;/a&gt;1.4.2. aac to wav&lt;/h4&gt;&lt;p&gt;Convert aac to wav with ffmpeg:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ffmpeg -i audio.aac audio.wav
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;1-4-3-aac-to-ac3&quot;&gt;&lt;a href=&quot;#1-4-3-aac-to-ac3&quot; class=&quot;headerlink&quot; title=&quot;1.4.3. aac to ac3&quot;&gt;&lt;/a&gt;1.4.3. aac to ac3&lt;/h4&gt;&lt;p&gt;Convert aac to ac3 with ffmpeg:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ffmpeg -i audio.aac  -acodec ac3 audio.ac3
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;1-4-4-aac-to-ogg&quot;&gt;&lt;a href=&quot;#1-4-4-aac-to-ogg&quot; class=&quot;headerlink&quot; title=&quot;1.4.4. aac to ogg&quot;&gt;&lt;/a&gt;1.4.4. aac to ogg&lt;/h4&gt;&lt;p&gt;Convert aac to ogg with ffmpeg:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ffmpeg -i audio.aac -libvorbis audio.ogg
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天需要把aac转mp3,刚好有人整合了一下，搬运过来。&lt;br&gt;转载自&lt;a href=&quot;http://linuxconfig.org/ffmpeg-audio-format-conversions&quot;&gt;ffmpeg audio format conversions&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>一切都是你自作自受</title>
+    <link href="https://blog.dangge.moe/2015/10/18/index.html"/>
+    <id>https://blog.dangge.moe/2015/10/18/index.html</id>
+    <published>2015-10-18T05:38:00.000Z</published>
+    <updated>2016-05-07T03:45:15.857Z</updated>
+    
+    <content type="html">&lt;p&gt;似乎有点时间没有写生存报告了，不想写作业的我决定来记录一下日常。&lt;br&gt;首先就是，撑过了最忙(?)的一个月，忙了开学，社团招新，理事选拔等一堆破事&lt;br&gt;然后顺利完结了夏季番的制作，本来打算秋季好好休息一下（上季度经常凌晨两点开工干到四点真是太肝了），结果还是接了个落地的坑。&lt;br&gt;不过还好，这番十一点就播完了，基本做完就是一点不到，这个时间对我来说算早睡了。&lt;/p&gt;
+&lt;p&gt;于是抛开字幕的事情，我也很顺利的撑过了计协那一堆破事。&lt;br&gt;招新完全没兴趣，反正就是一群傻逼交了20块钱，自以为能大展拳脚，殊不知自己完全是在浪费时间。&lt;br&gt;理事招新这个逃不过去，勉强撑了下来，招了几个好苗子，然后还把&lt;a href=&quot;http://dangge.qiniudn.com/%E6%8F%90%E9%97%AE%E7%9A%84%E6%99%BA%E6%85%A7.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;提问的智慧&lt;/a&gt;安利给了学弟。&lt;br&gt;不过感觉没多少人去看，毕竟那么长，而且还是从头骂到尾。&lt;br&gt;另外稍微和新生聊了聊，感觉今年新生质量还是有提升的，果然学习好就是不一样。&lt;br&gt;上面那句话毫无讽刺意味。&lt;/p&gt;
+&lt;p&gt;以前我也觉得“学习好有个屌用啊你看Bill·Gates啊什么什么什么国外大牛人家都不上学”&lt;br&gt;现在我觉得吧，用一句宅语说就是“&lt;a href=&quot;http://zh.moegirl.org/%E4%BD%A0%E7%9C%8B%E7%9C%8B%E4%BD%A0&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;UCCU&lt;/a&gt;”&lt;br&gt;接触的人越多，我越觉得自己好鶸，然而看着身边这群人懒懒散散坐井观天，我都替他们着急。&lt;br&gt;然而时间久了我也麻木了，去你大爷的，老子哪有空关心你们是不是顺利成长&lt;/p&gt;
+&lt;p&gt;“XXXX，帮我看看这是怎么回事？”&lt;br&gt;“XXXX,XX应该怎么做？”&lt;br&gt;我承认我这人不是什么好人，但是保姆我实在当烦了&lt;/p&gt;
+&lt;p&gt;……&lt;br&gt;每年都有新闻痛心疾首的报道，大堆大堆的大学生就业难，找不到工作，天天啃老blabla&lt;br&gt;当时我还很天真的认为，竞争太激烈了，生活不易啊&lt;br&gt;现在进到象牙塔里爬了两年，大概也算见识了点人&lt;br&gt;真的是，一切都是你自作自受&lt;br&gt;有人实习期就有0.15M的年薪，有人毕业了连个端盘子的工作都不想做。&lt;br&gt;两个字，活该。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;似乎有点时间没有写生存报告了，不想写作业的我决定来记录一下日常。&lt;br&gt;首先就是，撑过了最忙(?)的一个月，忙了开学，社团招新，理事选拔等一堆破事&lt;br&gt;然后顺利完结了夏季番的制作，本来打算秋季好好休息一下（上季度经常凌晨两点开工干到四点真是太肝了），结果还是接了个落地的坑
+    
+    </summary>
+    
+      <category term="碎碎念" scheme="https://blog.dangge.moe/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>垃圾 zzuwlan 如何手动认证</title>
+    <link href="https://blog.dangge.moe/2015/09/21/index.html"/>
+    <id>https://blog.dangge.moe/2015/09/21/index.html</id>
+    <published>2015-09-21T08:42:00.000Z</published>
+    <updated>2016-05-07T03:44:36.607Z</updated>
+    
+    <content type="html">&lt;p&gt;首先提一句，学校能开这个给我们用还是不错的，虽然效率低下而且速度不快，不过好歹省去了我开 WiFi 的力气。&lt;br&gt;那么问题来了，这个垃圾的 zzuwlan ，如果你第一次连接没有断开，之后貌似就会出神奇的 bug 。&lt;br&gt;一般的网页认证型 WiFi 都是在你未获取权限之前自动将你劫持到认证网页。&lt;br&gt;然而这个垃圾的 zzuwlan 也不知道搞了什么配置，这个功能一直抽风。&lt;br&gt;于是花了五分钟研究了下，顺便吐槽直接 GET 真是方便分析啊（姚明脸&lt;/p&gt;
+&lt;p&gt;首先我们连上 zzuwlan 之后需要看一下 ip 地址和 Mac 地址，这个貌似也抽风了，明明是 DHCP ，每次返回的却都是同一 IP 。&lt;br&gt;我们假设当前设备的 ip 是 10.117.129.1，Mac地址为640280555924&lt;br&gt;然后我们构造这样一个链接:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://202.196.64.132/?wlanuserip=(当前设备ip)&amp;amp;wlanacname=&amp;amp;ssid=&amp;amp;nasip=10.241.255.254&amp;amp;mac=(当前设备Mac地址)&amp;amp;t=wireless-v2-plain&amp;amp;url=http://blog.dangge.moe/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;访问，正常认证即可。&lt;br&gt;最后再说一句学校SB。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;首先提一句，学校能开这个给我们用还是不错的，虽然效率低下而且速度不快，不过好歹省去了我开 WiFi 的力气。&lt;br&gt;那么问题来了，这个垃圾的 zzuwlan ，如果你第一次连接没有断开，之后貌似就会出神奇的 bug 。&lt;br&gt;一般的网页认证型 WiFi 都是在你未获取权限之
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Chrome 45 使用 Mactype 部分字不能渲染的问题</title>
+    <link href="https://blog.dangge.moe/2015/09/13/index.html"/>
+    <id>https://blog.dangge.moe/2015/09/13/index.html</id>
+    <published>2015-09-13T06:31:00.000Z</published>
+    <updated>2016-05-07T03:42:53.237Z</updated>
+    
+    <content type="html">&lt;p&gt;随便搜了一下，发现网上主要有这几个解决方案: &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;chrome://flags/&lt;br&gt;光栅线程数设定为1&lt;/li&gt;
+&lt;li&gt;chrome://flags/&lt;br&gt;关闭ignore-gpu-blacklist 和 enable-one-copy&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果不行的话就对这三个选项开关试试。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;随便搜了一下，发现网上主要有这几个解决方案: &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;chrome://flags/&lt;br&gt;光栅线程数设定为1&lt;/li&gt;
+&lt;li&gt;chrome://flags/&lt;br&gt;关闭ignore-gpu-blacklist 和 enable-one-copy&lt;/l
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>搞了个hexo博客但是因为文章转换起来太麻烦所以懒得动了</title>
+    <link href="https://blog.dangge.moe/2015/09/12/index.html"/>
+    <id>https://blog.dangge.moe/2015/09/12/index.html</id>
+    <published>2015-09-12T07:58:00.000Z</published>
+    <updated>2016-05-07T03:44:17.516Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://dangger.github.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://dangger.github.io&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;等我闲了慢慢研究怎么转换文章吧…&lt;/p&gt;
+&lt;p&gt;2016年1月17日 update:&lt;/p&gt;
+&lt;p&gt;过几天换hexo辣&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://dangger.github.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://dangger.github.io&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;等我闲了慢慢研究怎么转换文章吧…&lt;/p&gt;
+&lt;p&gt;2016年1月17日 
+    
+    </summary>
+    
+      <category term="碎碎念" scheme="https://blog.dangge.moe/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+    
+      <category term="dangge" scheme="https://blog.dangge.moe/tags/dangge/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Typcho默认gravatar头像被墙问题</title>
+    <link href="https://blog.dangge.moe/2015/08/27/index.html"/>
+    <id>https://blog.dangge.moe/2015/08/27/index.html</id>
+    <published>2015-08-27T08:35:00.000Z</published>
+    <updated>2016-05-07T03:43:44.221Z</updated>
+    
+    <content type="html">&lt;p&gt;解决方法也很简单，编辑\var\Typecho路径里的Common.php行，939行&lt;/p&gt;
+&lt;p&gt;将默认的gravatar地址更换为&lt;a href=&quot;https://secure.gravatar.com即可。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://secure.gravatar.com即可。&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;也可以替换为V2EX或多说的反代地址，具体使用方法请自己探索。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;多说的源：&lt;a href=&quot;http://gravatar.duoshuo.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://gravatar.duoshuo.com&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;V2EX的源：&lt;a href=&quot;http://cdn.v2ex.com/gravatar&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://cdn.v2ex.com/gravatar&lt;/a&gt; （支持SSL）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;个人感觉还是官方的gravatar比较稳定。&lt;/p&gt;
+&lt;p&gt;2015年8月30日update:&lt;br&gt;于是在改了半天comment的CSS后我终于认识到了自己并没有前端审美能力，怒切disqus了。&lt;br&gt;历史评论已经导出成json了，于是disqus要的xml究竟是什么鬼啦摔&lt;br&gt;而且发现了disqus用的fastly家的CDN，很多地方都墙了这家CDN啊…&lt;br&gt;算了，反正来看blog的大概都有科学上网能力。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;解决方法也很简单，编辑\var\Typecho路径里的Common.php行，939行&lt;/p&gt;
+&lt;p&gt;将默认的gravatar地址更换为&lt;a href=&quot;https://secure.gravatar.com即可。&quot; target=&quot;_blank&quot; rel=&quot;externa
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="dangge" scheme="https://blog.dangge.moe/tags/dangge/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows下使用git的一些坑点</title>
+    <link href="https://blog.dangge.moe/2015/08/27/index.html"/>
+    <id>https://blog.dangge.moe/2015/08/27/index.html</id>
+    <published>2015-08-26T20:27:00.000Z</published>
+    <updated>2016-05-07T03:42:10.577Z</updated>
+    
+    <content type="html">&lt;p&gt;RT，众所周知Windows对git的支持简直没法和别的系统比，不过&lt;del&gt;又不是不能用&lt;/del&gt;&lt;br&gt;于是写点坑点好了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH问题&lt;br&gt;我使用了github的windows版本，然后打开是有一个git bash窗口的，我们可以看出这个东西其实是基于MINGW64的。&lt;br&gt;然后我们要在Github里添加公钥，就要在bash窗口里输入&lt;code&gt;ssh-keygen -t rsa -C “your@mail.com”&lt;/code&gt;&lt;br&gt;然后enter三次，就自动生成好了。&lt;br&gt;那么问题来了:我们要向github里添加公钥，可是这个生成的公钥在哪里？&lt;br&gt;通过everything，我们找到了它的路径:&lt;code&gt;C:\Users\（替换为当前系统用户名）\.ssh&lt;/code&gt;&lt;br&gt;打开会发现两个文件，一个是id_rsa.pub，这个是你的公钥。&lt;br&gt;还有一个id_rsa，就是本地留存的私钥了。&lt;br&gt;用任意文本编辑器打开id_rsa.pub,复制内容，粘贴进github的SSH添加处，就添加好了。&lt;br&gt;然后我们的git Bash窗口就能连接上github了。&lt;/li&gt;
+&lt;li&gt;clone默认路径问题&lt;br&gt;在clone远程仓库的时候，windows下的git默认是clone到当前路径。&lt;br&gt;如果你不做修改，每次就要手动cd到工作文件夹去，很烦。&lt;br&gt;要修改默认路径也很简单，打开高级系统设置，环境变量，在上方的用户变量里新建一个值home，属性就是你要改的默认路径。&lt;br&gt;如图所示。&lt;img src=&quot;https://i.imgur.com/4jgGure.jpg&quot; alt=&quot;用户变量设置&quot;&gt;&lt;br&gt;保存后再次打开Git Bash，ls一下，就会发现默认目录已经发生了改变。&lt;br&gt;–未完待续&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;RT，众所周知Windows对git的支持简直没法和别的系统比，不过&lt;del&gt;又不是不能用&lt;/del&gt;&lt;br&gt;于是写点坑点好了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH问题&lt;br&gt;我使用了github的windows版本，然后打开是有一个git bash窗口的，我们可以看出这个东
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="dangge" scheme="https://blog.dangge.moe/tags/dangge/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python学习笔记</title>
+    <link href="https://blog.dangge.moe/2015/07/31/index.html"/>
+    <id>https://blog.dangge.moe/2015/07/31/index.html</id>
+    <published>2015-07-31T09:11:00.000Z</published>
+    <updated>2016-05-07T03:43:36.807Z</updated>
+    
+    <content type="html">&lt;p&gt;给自己看的。&lt;br&gt;1.编码大坑&lt;br&gt;在Python里，我们需要指定一下编码，否则输出中文的时候会乱码&lt;del&gt;所以说还是全英文好&lt;/del&gt;&lt;br&gt;根据情况，我们选择在代码头部添加&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# coding=编码名
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;exp:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# coding=utf-8 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这个对中文无效&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# coding=gbk
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这个中文可用&lt;/p&gt;
+&lt;p&gt;未完待续&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;给自己看的。&lt;br&gt;1.编码大坑&lt;br&gt;在Python里，我们需要指定一下编码，否则输出中文的时候会乱码&lt;del&gt;所以说还是全英文好&lt;/del&gt;&lt;br&gt;根据情况，我们选择在代码头部添加&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# coding=编码名
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="dangge" scheme="https://blog.dangge.moe/tags/dangge/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Aegisub常用特效</title>
+    <link href="https://blog.dangge.moe/2015/07/26/index.html"/>
+    <id>https://blog.dangge.moe/2015/07/26/index.html</id>
+    <published>2015-07-26T05:50:00.000Z</published>
+    <updated>2016-05-07T03:43:00.653Z</updated>
+    
+    <content type="html">&lt;p&gt;如题，我就写点常用的，就当备忘录了。&lt;/p&gt;
+&lt;p&gt;\n 空格，宽度超出范围后自动换行&lt;br&gt;\N 硬回车&lt;br&gt;\h 硬空格&lt;br&gt;\b&lt;0 1=&quot;&quot;&gt; 粗体&lt;br&gt;0关闭，1开启&lt;br&gt;\i&lt;0 1=&quot;&quot;&gt; 斜体&lt;br&gt;\u&lt;0 1=&quot;&quot;&gt; 下划线&lt;br&gt;\s&lt;0 1=&quot;&quot;&gt; 删除线&lt;br&gt;\bord&lt;width&gt; 边框宽度&lt;br&gt;\be&lt;0 1=&quot;&quot;&gt; 柔化 0关闭 1开启&lt;br&gt;\shad&lt;depth&gt; 阴影距离&lt;br&gt;\fn&lt;font name=&quot;&quot;&gt; 改变字型&lt;br&gt;\fs&lt;font size=&quot;&quot;&gt; 改变字号&lt;br&gt;\fsc&lt;x y=&quot;&quot;&gt;&lt;percent&gt; 字符缩放——正常大小为100%&lt;br&gt;\fsp&lt;pixels&gt; 调整字间距&lt;br&gt;\fr[&lt;x y=&quot;&quot; z=&quot;&quot;&gt;]&lt;degrees&gt; 旋转&lt;br&gt;\fr = \frz，和[v4+ Styles]中的Angle效果相同—–旋转所围绕的中心由\a或\an决定&lt;br&gt;\c&amp;amp;H&lt;66ccff&gt;&amp;amp; 改变颜色———十六进制00-ff，蓝绿红&lt;/66ccff&gt;&lt;/degrees&gt;&lt;/x&gt;&lt;/pixels&gt;&lt;/percent&gt;&lt;/x&gt;&lt;/font&gt;&lt;/font&gt;&lt;/depth&gt;&lt;/0&gt;&lt;/width&gt;&lt;/0&gt;&lt;/0&gt;&lt;/0&gt;&lt;/0&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;对齐方式:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;\an&amp;lt;alignment&amp;gt; 设置对齐方式
+和ASS相同
+   左 中 右
+上 7  8  9
+中 4  5  6
+下 1  2  3
+\a和\an对整个字幕有效，不论放在何处.调整对齐方式非常重要，它决定了字幕旋转，缩放，移动时的参照点.对齐方式是针对字幕的整体有效，字幕中的每个字符都是向下方对齐的，如果要使用不同大小的字符，应该将一段字幕分为多段时间轴相同的字幕。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;卡拉OK:&lt;br&gt;\k&lt;duration&gt; 卡拉OK&lt;br&gt;\k 无平滑效果&lt;br&gt;\K或\kf 有平滑效果&lt;br&gt;\ko 边框的卡拉OK效果——–时间单位是1/100秒&lt;br&gt;{\K50}aaaa表示用0.5秒来显示歌词aaaa———-后面没有字符表示停顿一段时间。&lt;/duration&gt;&lt;/p&gt;
+&lt;p&gt;动态效果:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;\t([&amp;lt;t1&amp;gt;, &amp;lt;t2&amp;gt;, ] [&amp;lt;accel&amp;gt;,] &amp;lt;style modifiers&amp;gt;) 动态效果
+t1,t2分别是动态效果开始和结束时间，省略后以时间轴的开始结束时间为准
+accel控制动态效果的运动速度 1 正常速度
+0&amp;lt;accel&amp;lt;1 速度从快到慢减速运动
+1&amp;lt;accel 速度从慢到快加速运动
+计算公式为 t时的动作完成量 = pow((t-t1)/(t2-t1), accel)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;移动:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;\move(&amp;lt;x1&amp;gt;, &amp;lt;y1&amp;gt;, &amp;lt;x2&amp;gt;, &amp;lt;y2&amp;gt;[, &amp;lt;t1&amp;gt;, &amp;lt;t2&amp;gt;])
+x1,y1为移动开始的位置
+x2,y2为移动结束的位置
+屏幕的确左上角是0,0，右下角由[Script Info]中的PlayResX:和PlayResY:决定
+t1,t2是移动开始和结束时间，省略后以时间轴的开始结束时间为准
+只能使用一次。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;坐标:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;\pos(&amp;lt;x&amp;gt;, &amp;lt;y&amp;gt;)
+改变位置
+只能使用一次
+使用\move或\pos后MarginL,MarginR,MarginV无效
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;淡入淡出:(重要)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;\fade(&amp;lt;a1&amp;gt;, &amp;lt;a2&amp;gt;, &amp;lt;a3&amp;gt;, &amp;lt;t1&amp;gt;, &amp;lt;t2&amp;gt;, &amp;lt;t3&amp;gt;, &amp;lt;t4&amp;gt; )
+淡出淡入效果
+a1是显示开始时的透明度，t1,t2表示显示的开始和结束时间
+a2是显示结束到消失开始时的透明度
+a3是消失结束时的透明度，t3,t4表示消失的开始和结束时间
+此处透明度必须使用十进制来表示，范围0-255
+
+\fad(&amp;lt;t1&amp;gt;, &amp;lt;t2&amp;gt; )
+淡出淡入效果
+t1表示显示使用的时间
+t2表示消失使用的时间
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;文字变形:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{\t(\fscy300)}字变高 
+{\t(80,500,\fscy300)}字变高 
+{\t(\fscy300)}字拉长 
+{\t(80,500,\fscx300)}字拉长 
+{\t(80,500,\fscx200\fscy400)}字体变形 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;字体缩放：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{\fs1}{\t(1,\fs15)}1号字体放大到15号字体 
+{\fs15}{\t(15,\fs5)}15号字体缩小到1号字体 
+{\fscx500%}{\fscy500%}{\t(1,\fscx100%,\fscy100%)}变形缩小 
+{\fs10}{\t(0,900,\fs50)}控制性放大 
+{\fs50}{\t(200,600,\fs10)}控制性缩小 
+{\fs50\t(0,600,\fs10\t(800,1400,\fs24))}控制性缩放 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;字体变色:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{\c&amp;amp;HFF8000&amp;amp;\t(0,500,\c&amp;amp;H80FF00&amp;amp;}从蓝色过度到绿色
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如题，我就写点常用的，就当备忘录了。&lt;/p&gt;
+&lt;p&gt;\n 空格，宽度超出范围后自动换行&lt;br&gt;\N 硬回车&lt;br&gt;\h 硬空格&lt;br&gt;\b&lt;0/1&gt; 粗体&lt;br&gt;0关闭，1开启&lt;br&gt;\i&lt;0/1&gt; 斜体&lt;br&gt;\u&lt;0/1&gt; 下划线&lt;br&gt;\s&lt;0/1&gt; 删除线&lt;br&gt;\bord&lt;width&gt; 边框宽度&lt;br&gt;\be&lt;0/1&gt; 柔化 0关闭 1开启&lt;br&gt;\shad&lt;depth&gt; 阴影距离&lt;br&gt;\fn&lt;font name&gt; 改变字型&lt;br&gt;\fs&lt;font size&gt; 改变字号&lt;br&gt;\fsc&lt;x/y&gt;&lt;percent&gt; 字符缩放——正常大小为100%&lt;br&gt;\fsp&lt;pixels&gt; 调整字间距&lt;br&gt;\fr[&lt;x/y/z&gt;]&lt;degrees&gt; 旋转&lt;br&gt;\fr = \frz，和[v4+ Styles]中的Angle效果相同—–旋转所围绕的中心由\a或\an决定&lt;br&gt;\c&amp;amp;H&lt;66CCFF&gt;&amp;amp; 改变颜色———十六进制00-ff，蓝绿红&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>本站域名要更换为dangge.moe了(已经更换)</title>
+    <link href="https://blog.dangge.moe/2015/07/07/index.html"/>
+    <id>https://blog.dangge.moe/2015/07/07/index.html</id>
+    <published>2015-07-07T05:58:00.000Z</published>
+    <updated>2016-05-07T03:43:54.941Z</updated>
+    
+    <content type="html">&lt;p&gt;如题，现在这个破域名再过几天就到期了。&lt;br&gt;之前hostker活动，拿到了一个免费的.moe域名，到期后就换这个了…&lt;br&gt;顺便友情推荐&lt;a href=&quot;https://i.zhujike.com/flag/1746&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hostker家的服务&lt;/a&gt;，在ACG这个圈子里还是挺有知名度的。&lt;/p&gt;
+&lt;p&gt;已经更换了域名，欢迎修改书签~&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如题，现在这个破域名再过几天就到期了。&lt;br&gt;之前hostker活动，拿到了一个免费的.moe域名，到期后就换这个了…&lt;br&gt;顺便友情推荐&lt;a href=&quot;https://i.zhujike.com/flag/1746&quot; target=&quot;_blank&quot; rel=&quot;exter
+    
+    </summary>
+    
+      <category term="碎碎念" scheme="https://blog.dangge.moe/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>终わりの世界から</title>
+    <link href="https://blog.dangge.moe/2015/06/25/index.html"/>
+    <id>https://blog.dangge.moe/2015/06/25/index.html</id>
+    <published>2015-06-24T22:46:00.000Z</published>
+    <updated>2016-01-20T03:26:05.191Z</updated>
+    
+    <content type="html">&lt;p&gt;在deadline前还在玩的我是不是搞错了什么&lt;br&gt;好吧写完这篇博我就去看书(&lt;br&gt;那么今天介绍&lt;del&gt;安利&lt;/del&gt;的歌是やなぎなぎ(nagi)的终わりの世界から&lt;br&gt;的PV（2333333&lt;br&gt;在这里看&lt;br&gt;&lt;a href=&quot;http://yuntv.letv.com/bcloud.html?uu=a04808d307&amp;amp;vu=82edfa8ddd&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;终わりの世界から·低清乐视版&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=zyJJlPSeEpo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;终わりの世界から·高清YouTube版&lt;/a&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;如果你稍微搜索一下，会发现这歌是麻枝准写的&lt;br&gt;麻枝准写的&lt;br&gt;好吧…我们先静静，根据此君一贯的尿性，不虐你一下是肯定不行的。&lt;br&gt;于是我们先忽略掉画风，这个六分钟的静止MAD其实讲了这么一个故事。&lt;br&gt;主角是个妹子，然后喜欢一个比自己大一点的少年（这个年龄设定很重要啊）&lt;br&gt;然后blabla，少年告诉妹子自己喜欢的是年上的大姐姐（啧&lt;br&gt;然后妹子悲痛欲绝，于是用自己穿越时空的能力（喂喂喂这就穿越了）回到了过去&lt;br&gt;这样少年还是正太，而自己已经是年上的大姐姐了&lt;br&gt;结果回去一看，少年正在寻找消失了的自己…然后妹子突然蛋疼（其实是我没看明白）要穿越回去&lt;br&gt;然后发现这能力是单向传送…(╯‵□′)╯︵┻━┻麻枝准你逗我玩呢&lt;br&gt;然后下面用歌词比较合适&lt;br&gt;远(とお)くからきたってことを伝(つ)えたい&lt;br&gt;(想告诉你是我从未来来的)&lt;br&gt;でもそれは駄目(だめ)だってどこかで気(き)づいてた&lt;br&gt;(不过我发觉这是不可以的)&lt;br&gt;年上(としうえ)のあたしを见(み)て讯(み)くの&lt;br&gt;(看著年长的我 你向我问道)&lt;br&gt;「あなたに似(に)た人(ひと)を探(さが)してます何(なに)かしりませんか」と&lt;br&gt;(「我正在找跟你相似的人，你知不知道什么?」)&lt;br&gt;啧，真是虐啊 不过这个调调才是麻枝准啊&lt;br&gt;然后妹子无奈的留了下来。&lt;br&gt;また春(はる)が来(き)て きみはここを発(た)つと决(き)めた&lt;br&gt;(春天再次来临 你决定离开这里)&lt;br&gt;「もしあなたがあの人(ひと)だったらよかったのに」と残(のこ)し&lt;br&gt;(留下「如果你是那个人便好了」这句话)&lt;br&gt;恋(こい)をする　赘沢(ぜいたく)な感情(かんじょう)&lt;br&gt;(恋爱 奢侈的感情)&lt;br&gt;それを思(おも)い出(だ)した&lt;br&gt;(我终於想起来了)&lt;br&gt;だから全力(ぜんりょく)でその手(て)を取(と)る&lt;br&gt;(所以用尽全力抓住那只手)&lt;br&gt;ぼろぼろになってきみにほんとを伝(つた)えた&lt;br&gt;(哭得不像话地把事实告诉给你)&lt;/p&gt;
+&lt;p&gt;然后妹子就…&lt;br&gt;ばらばらになった时空(じくう)に吸(す)い込(こ)まれていく&lt;br&gt;(散碎的被卷进时空之内)&lt;br&gt;そして目覚(めざ)めたらそこは一面(いちめん)灰色(はいいろ)の世界(せかい)&lt;br&gt;(醒来后在这里的是一片灰色的世界)&lt;br&gt;手(て)に持(も)ってたのは古(ふる)びた一枚(いちまい)の写真(しゃしん)&lt;br&gt;(手拿著的是一枚陈旧的照片)&lt;br&gt;こんな色(いろ)をしてた时代(じだい)もあったんだ&lt;br&gt;(有著这种颜色的时代呢)&lt;br&gt;そこで无邪気(むじゃき)に笑(わら)ってる&lt;br&gt;(在照片里天真地笑著)&lt;br&gt;きみに会(あ)いにここから旅(リープ)を始(はじ)めた&lt;br&gt;(为了遇见你从这里开始我的旅程(时空跳跃))&lt;br&gt;また笑(わら)えるかな　あたしこの世界(せかい)で&lt;br&gt;(能再次微笑吗 在这个世界中)&lt;br&gt;きみの写真(しゃしん)は置(お)いたままで歩(ある)き出(だ)す&lt;br&gt;(放下你的照片向前迈步)&lt;/p&gt;
+&lt;p&gt;总结：&lt;br&gt;看了三四遍发现也没什么特别的亮点啊…很普通的穿越故事&lt;br&gt;所以还是nagi的歌和MAD配合的好（雾&lt;br&gt;nagi赛高（被拖去看书&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在deadline前还在玩的我是不是搞错了什么&lt;br&gt;好吧写完这篇博我就去看书(&lt;br&gt;那么今天介绍&lt;del&gt;安利&lt;/del&gt;的歌是やなぎなぎ(nagi)的终わりの世界から&lt;br&gt;的PV（2333333&lt;br&gt;在这里看&lt;br&gt;&lt;a href=&quot;http://yuntv.letv.com/bcloud.html?uu=a04808d307&amp;amp;vu=82edfa8ddd&quot;&gt;终わりの世界から·低清乐视版&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=zyJJlPSeEpo&quot;&gt;终わりの世界から·高清YouTube版&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="default" scheme="https://blog.dangge.moe/categories/default/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>校园网下如何正确的使用IPV6.</title>
+    <link href="https://blog.dangge.moe/2015/06/08/index.html"/>
+    <id>https://blog.dangge.moe/2015/06/08/index.html</id>
+    <published>2015-06-08T08:15:00.000Z</published>
+    <updated>2016-05-07T03:45:08.542Z</updated>
+    
+    <content type="html">&lt;p&gt;众所周知，我院一向没有人权，不能享受到很多新区学生很方便就能享受到的东西。&lt;br&gt;比如很大的gym,比如窗明几净，四季如春的大图书馆。比如貌似已经成为大学标配的IPV6.&lt;br&gt;是的，在这个年代，居然还有学校没有改造好IPV6的DHCP，我只能说一句呵呵了。&lt;br&gt;废话不多说，下面开始教程。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;此教程的实验通过环境为：Windows 7 x64，有线方式连接网络。&lt;br&gt;1：点击徽标键，在搜索里输入’cmd’,然后找到命令提示符，右键，&lt;strong&gt;以管理员身份运行。（重要）&lt;/strong&gt;&lt;br&gt;2：此时弹出命令提示符，我们依次输入netsh,int,ipv6,isatap。&lt;br&gt;每输入一次都要回车执行一下，直到这样:&lt;br&gt;&lt;img src=&quot;http://7u2sev.com1.z0.glb.clouddn.com/upload/a6616523f624f3745400b9e23fee1544.png&quot; alt=&quot;img&quot;&gt;&lt;br&gt;3:然后我们继续输入：&lt;br&gt;set router 222.22.32.161&lt;br&gt;回车&lt;br&gt;set state enable&lt;br&gt;回车&lt;br&gt;这个时候，我们退出netsh，再输入ipconfig /all后就能看到ISATAP隧道了。&lt;br&gt;另外也可以登陆www.kame.net&lt;br&gt;如果你看到一只跳舞的小乌龟，那么证明你的ISATAP隧道成功建立，你已经可以访问IPV6网站了。&lt;br&gt;2015年6月9日19:54:04 update&lt;br&gt;经测试，如果到了这一步还是用不了ipv6，请禁用本地连接里的ipv6，并且检查是否有teredo隧道或者6to4隧道。&lt;/p&gt;
+&lt;p&gt;然而…当你兴高采烈地用了半天IPV6，然后关机去XXXXXX，再次开机，访问ipv6.baidu.com的时候，你会发现&lt;br&gt;卧槽？为啥IPV6失败了？&lt;br&gt;于是这个坑曾经坑了我们一众人大概有两三个月的时间…我们各种Google解决方案，然而网络上关于ISATAP的资料实在太少了。&lt;br&gt;于是经过本渣的测试，发现了问题所在。&lt;br&gt;首先我们需要来学习一下ISATAP隧道的原理：&lt;br&gt;&lt;img src=&quot;http://7u2sev.com1.z0.glb.clouddn.com/upload/1f1547b4a310b458690b594b9353b015.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;先别打我…&lt;br&gt;于是我们知道了，ISATAP隧道说白了就相当于一个中转服务器，你的一切网络活动都经过这个隧道，然后被它发送给IPV6服务器。&lt;br&gt;所以说我们的ISATAP隧道不能用的原因，一定就在于它本身的问题所在。&lt;br&gt;如果要开始谈ISATAP的原理的话，我估计得写到三点=-=然而我这么懒的一个人，就简言之好了，估计是不对的，希望真・大牛看到后能不吝指教ORZ&lt;br&gt;我们第一次使用set router 命令与ISATAP隧道建立了连接，然后我们就关机了。&lt;br&gt;我们想当然的以为ISATAP隧道会自动断掉，然而它 没 有！&lt;br&gt;也就是说，ISATAP服务器上还保留着你的在线信息，作为苦逼的固定ip用户，服务器上有一个同样的ip显示“在线”，作为服务器你要怎么做？&lt;br&gt;当然是无视掉那个一直连接的家伙啦！&lt;br&gt;我的内心几乎是崩溃的…&lt;br&gt;于是我们熟练地打开cmd，当然要用管理员权限运行，这个时候我们只需要打一行set state dis 关闭ISATAP隧道的连接即可。&lt;br&gt;网络相关内容我一窍不通，然而我猜测这个命令会发送下线信息给ISATAP服务器，这样服务器就删掉了你的在线信息=-=&lt;br&gt;然后我们紧跟着来一行set state ena 重新打开隧道即可…&lt;br&gt;打开浏览器，输入ipv6.baidu.com，熟悉的界面是不是又出现了？&lt;/p&gt;
+&lt;p&gt;FAQ:&lt;br&gt;如果你出现问题，不能使用，请根据下面的几项自查。&lt;br&gt;1:是否有多余的teredo 6to4隧道。&lt;br&gt;2:本地连接中，&lt;strong&gt;不能启用&lt;/strong&gt;Internet协议版本6。&lt;br&gt;3:确认222.22.32.161这个ip能ping通。&lt;/p&gt;
+&lt;p&gt;如果上面的都试过了还不行，那么我也暂时无能为力了…&lt;/p&gt;
+&lt;p&gt;附赠一个bat脚本 可以方便的启用ISATAP。&lt;/p&gt;
+&lt;p&gt;netsh int ipv6 isatap set state dis&lt;br&gt;netsh int ipv6 isatap set state ena&lt;br&gt;记得su权限&lt;br&gt;希望本文对你有帮助。&lt;br&gt;PS：SB学校搞个DHCP分配Ipv6会死？？？&lt;br&gt;其实我发现学校已经搞好了DHCP，但是DHCP的ip并不能连接v6服务器。&lt;br&gt;PPS：转载请标明出处。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;众所周知，我院一向没有人权，不能享受到很多新区学生很方便就能享受到的东西。&lt;br&gt;比如很大的gym,比如窗明几净，四季如春的大图书馆。比如貌似已经成为大学标配的IPV6.&lt;br&gt;是的，在这个年代，居然还有学校没有改造好IPV6的DHCP，我只能说一句呵呵了。&lt;br&gt;废话不多说，下面开始教程。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>五月生存报告。</title>
+    <link href="https://blog.dangge.moe/2015/06/07/index.html"/>
+    <id>https://blog.dangge.moe/2015/06/07/index.html</id>
+    <published>2015-06-07T08:22:00.000Z</published>
+    <updated>2016-05-07T03:45:05.342Z</updated>
+    
+    <content type="html">&lt;p&gt;于是这份生存报告还是来了。&lt;br&gt;其实没什么说的…毕竟是五月嘛&lt;br&gt;五月就应该是五月病着过去了嘛…&lt;br&gt;总之五月份做了啥？&lt;br&gt;我自己也没多大印象…很普通的就这样过去了。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;这个月发生的事情…首先是计协换届吧。&lt;br&gt;大一刚来的时候，我还是对计协充满憧憬的，想大展拳脚。&lt;br&gt;然而大一快上完了，我现在只想逃离这个地方。&lt;br&gt;所以把锅丢给了PC，虽然还是没完全丢掉，不过也能接受。&lt;br&gt;想表达的情绪很多，然而却词穷了。&lt;br&gt;虽然口口声声说着：“这个世界上98%的人都是垃圾”这种听起来中二但实际上很有道理的话，但是我自己也是垃圾啊。&lt;br&gt;我自认为不是一个特别要强的人，然而人总有争斗之心。&lt;br&gt;没有人愿意做一枚咸鱼，Noone。&lt;br&gt;然而我很明白自己和他们的差距，正如我很明白自己和他们的差距一样。&lt;br&gt;是啊，我为之奉献了十年青春，换来的一切，岂能是你们随便看了几个月就能赶得上的？&lt;br&gt;所以同理，那些浸淫时间比我更长的人，他们也是不可追赶的存在。&lt;br&gt;勤能补拙这句话是不正确的，正确的是天赋能帮助你提高学习的效率。&lt;br&gt;正如我虽然还是个渣，但是多年浸淫的知识都不是白学的。&lt;br&gt;所以说，最艰难的时期已经过去，接下来只要潜心修炼即可。&lt;br&gt;不指望能一鸣惊人，但求能鹤立鸡群。&lt;/p&gt;
+&lt;p&gt;另外通过某只菊苣的帮助，拿到了U2的邀请。&lt;br&gt;另外也写一下字幕的心得好了。&lt;br&gt;作为时轴，虽然做的活很简单，但是要求一点都不能放松。&lt;br&gt;感谢瓜菊。&lt;br&gt;漏句，错轴等，都应该看成严重的事故。&lt;br&gt;另外五月还尝试着压制了一个视频，感觉还不错XD&lt;br&gt;放上来好了。&lt;br&gt;2015年6月8日01:18:40update：&lt;br&gt;我真是无聊，又压了三个视频传乐视…&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://yuntv.letv.com/bcloud.html?uu=a04808d307&amp;amp;vu=7da13d1866&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;sppl OP&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://yuntv.letv.com/bcloud.html?uu=a04808d307&amp;amp;vu=7388475b90&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;eden OP&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://yuntv.letv.com/bcloud.html?uu=a04808d307&amp;amp;vu=0b781ec834&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ef-the first tale OP&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://yuntv.letv.com/bcloud.html?uu=a04808d307&amp;amp;vu=46c870b8ac&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ef-the later tale OP&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;于是这份生存报告还是来了。&lt;br&gt;其实没什么说的…毕竟是五月嘛&lt;br&gt;五月就应该是五月病着过去了嘛…&lt;br&gt;总之五月份做了啥？&lt;br&gt;我自己也没多大印象…很普通的就这样过去了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="碎碎念" scheme="https://blog.dangge.moe/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Microsoft SQL Server 2008安装备忘</title>
+    <link href="https://blog.dangge.moe/2015/04/22/index.html"/>
+    <id>https://blog.dangge.moe/2015/04/22/index.html</id>
+    <published>2015-04-22T07:10:00.000Z</published>
+    <updated>2016-05-07T03:43:29.943Z</updated>
+    
+    <content type="html">&lt;p&gt;0：安装.NET Framework 3.5和Windows Installer 4.5 Redistributable，还有个OPENAL不知道有没有必要去安装。&lt;br&gt;1：打开安装包，一路下一步。&lt;br&gt;2：可能遇到的问题有:服务器配置那里不知道填写什么账号密码。&lt;br&gt;有人说是系统管理员账号，亲测无效。&lt;br&gt;我的解决办法是:&lt;br&gt;首先要点击“对所有SQL Server 服务使用相同的账号”，然后点击下拉菜单，选择localsystem。&lt;br&gt;上面下面都要这么写。&lt;br&gt;然后就可以一路下一步，记得需要添加当前账户管理员的时候添加一下。&lt;br&gt;3:漫长安装后成功。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;0：安装.NET Framework 3.5和Windows Installer 4.5 Redistributable，还有个OPENAL不知道有没有必要去安装。&lt;br&gt;1：打开安装包，一路下一步。&lt;br&gt;2：可能遇到的问题有:服务器配置那里不知道填写什么账号密码。&lt;br
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>脑洞-快递状态更新通知。</title>
+    <link href="https://blog.dangge.moe/2015/04/16/index.html"/>
+    <id>https://blog.dangge.moe/2015/04/16/index.html</id>
+    <published>2015-04-16T07:48:00.000Z</published>
+    <updated>2016-05-07T03:44:48.377Z</updated>
+    
+    <content type="html">&lt;p&gt;如题，来自一次聊天…因为有人抱怨EMS妥投不给短信通知，于是想到了这个。&lt;br&gt;目前的逻辑是这样:&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;&lt;img src=&quot;http://7u2sev.com1.z0.glb.clouddn.com/upload/0d78a1cd868a46bb524756194a5368a7.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;总感觉一个月做出来不现实啊…&lt;/p&gt;
+&lt;p&gt;2015年5月26日update:&lt;br&gt;我去IFTTT看了一下，发现这玩意自由度没有那么高。&lt;br&gt;然而聪明如我（&lt;del&gt;去死&lt;/del&gt;），想到了新方法。&lt;br&gt;本来想让IFTTT一步搞定的东西，现在要先让服务器查询完快递信息，然后发一封更新邮件给某个特定的邮箱。&lt;br&gt;然后如果要增加多人服务的话貌似这么搞就不行了…IFTTT会如实地把Mail转发啊。&lt;br&gt;&lt;del&gt;所以说果然还是得自己实现一套发送系统么…好头疼啊啊啊啊啊坑挖大的感觉真糟糕&lt;/del&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如题，来自一次聊天…因为有人抱怨EMS妥投不给短信通知，于是想到了这个。&lt;br&gt;目前的逻辑是这样:&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="脑洞" scheme="https://blog.dangge.moe/categories/%E8%84%91%E6%B4%9E/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>就算是蒟蒻只要有爱就没问题</title>
+    <link href="https://blog.dangge.moe/2015/04/13/index.html"/>
+    <id>https://blog.dangge.moe/2015/04/13/index.html</id>
+    <published>2015-04-13T05:20:00.000Z</published>
+    <updated>2016-05-07T03:44:29.395Z</updated>
+    
+    <content type="html">&lt;p&gt;今天校园宽带终于给开了…于是现在终于有力气来更个文。&lt;br&gt;因为没什么技术干货可说的&lt;del&gt;我好弱&lt;/del&gt;，所以就简单写下最近的字幕组见闻吧。&lt;br&gt;首先群里都是菊苣…群里不让跪我在这里跪 &lt;img src=&quot;http://7u2sev.com1.z0.glb.clouddn.com/upload/97ab3149fc8162277058febdc0b3f4df.gif&quot; alt=&quot;1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;然后本蒟蒻平时基本上只能仰望一下菊苣们，平时看菊苣们聊天吹水什么的…&lt;br&gt;平时看起来一个比一个不正经的人，到了要干活的时候突然就严肃起来了，这里就写下伪恋第二季的首发吧。&lt;br&gt;为了抢首发，所以本次来了很多很多菊苣…&lt;br&gt;分工大概是&lt;img src=&quot;http://7u2sev.com1.z0.glb.clouddn.com/upload/870ec848399441c03052b12158a6ba6c.png&quot; alt=&quot;2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;作为蒟蒻+新手，上来就接首发而且负责开头还是很紧张的..=/= 好死不死那天网络还特别渣。&lt;br&gt;伪恋是北京时间22:30播出，基本上就快23:00的时候迷菊弄好了片源然后传到了百毒盘，这基本上就是我要面对的东西了。&lt;br&gt;然后在动画直播的时候迷菊就已经弄好了0-8分钟的翻译…再跪一下，流石早稻田迷子！&lt;img src=&quot;http://7u2sev.com1.z0.glb.clouddn.com/upload/97ab3149fc8162277058febdc0b3f4df.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;下载好之后，拿到了文本的我就开始工作了，这里要说一下标题，为什么说就算是蒟蒻也没问题呢，因为打轴这活真心没什么技术含量…需要的仅仅是一点点日语听力，和认真而已。&lt;br&gt;然后在参与了一段时间后，我发现很多字幕的时间轴其实都只能说一般般…甚至有的时轴会发生严重的声音和字幕不同步。&lt;br&gt;&lt;del&gt;没错我就是在喷端脑，中文配音你们的轴都能乱成那个样子，只能用不够用心来理解了&lt;/del&gt;&lt;br&gt;然后继续写流程…因为是第一集，所以OP/ED都需要自己来听，这里再次膜拜少将/迷菊&amp;amp;其他的菊苣。&lt;br&gt;拿到片源大概是11点20分，然后翻译完成大概也就是11点20分的样子。这时候OP/ED还没被攻克，因为歌比声音难听写的多了…&lt;br&gt;本蒟蒻轴完自己的部分是11点46分，然后因为缺少OP的翻译只能等待…(之所以最快的原因是因为有OP的1分半，所以实际要做的时间也就6分钟)&lt;br&gt;然后就是听瓜菊的指示把样式初步调了一下，最后就离手了。&lt;br&gt;在等待OP翻译的时候其实还是挺无聊的…&lt;br&gt;大概0点25分的时候OP听译完毕，咱就去打OP了。&lt;br&gt;真自己接手后发现OP 真 的 好 难 断 句 啊 ！ 再多的技巧都是无用，这里就是凭个人的日语听力来断句了。&lt;br&gt;OP大概轴了18分钟，0点43分搞定，明明是1分半的东西…bgm38&lt;br&gt;这个时候我的任务基本上就完成了，提交的时候发现0-8这段也已经经过一次校对了。&lt;br&gt;然后我就变成路人围观菊苣们校对…这个过程基本上就是争论一些字句的翻译什么的。&lt;br&gt;大概到了2点钟的时候，字幕经过几轮校对基本上就离手了，只差最后一步压制了。&lt;br&gt;迷菊2点30分发的种，本次字幕工作就这么结束了。&lt;br&gt;恩，当然是首发。&lt;/p&gt;
+&lt;p&gt;全过程是3小时30分钟，其实我觉得如果没有本蒟蒻的话会更快…orz&lt;br&gt;一点感想:&lt;br&gt;做字幕表面看起来高大上，但实际上还是一个吃力不讨好的活。打轴先不谈，日语中奇怪的语法太多了，而且OP/ED的歌词基本上都是各种难翻，翻译没有深厚的日语功底/责任心的话是做不来的。&lt;br&gt;而且熬夜到2点也并没有什么报酬，能得到的也许只有下载者的几句感谢？亦或是完成后的那种愉快？&lt;br&gt;总之，字幕组的工作，不是真正有爱的话是很难坚持下来的。&lt;br&gt;但是如果坚持下来了，会对自己的日语水平有很大的提升….就像标题所说，只要有爱就没问题。&lt;br&gt;于是啰里啰嗦的基本上也就写完了，感谢屏幕前的你的观看&amp;gt;_&amp;lt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天校园宽带终于给开了…于是现在终于有力气来更个文。&lt;br&gt;因为没什么技术干货可说的&lt;del&gt;我好弱&lt;/del&gt;，所以就简单写下最近的字幕组见闻吧。&lt;br&gt;首先群里都是菊苣…群里不让跪我在这里跪 &lt;img src=&quot;http://7u2sev.com1.z0.glb.clouddn.com/upload/97ab3149fc8162277058febdc0b3f4df.gif&quot; alt=&quot;1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;然后本蒟蒻平时基本上只能仰望一下菊苣们，平时看菊苣们聊天吹水什么的…&lt;br&gt;平时看起来一个比一个不正经的人，到了要干活的时候突然就严肃起来了，这里就写下伪恋第二季的首发吧。&lt;br&gt;为了抢首发，所以本次来了很多很多菊苣…&lt;br&gt;分工大概是&lt;img src=&quot;http://7u2sev.com1.z0.glb.clouddn.com/upload/870ec848399441c03052b12158a6ba6c.png&quot; alt=&quot;2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;作为蒟蒻+新手，上来就接首发而且负责开头还是很紧张的..=/= 好死不死那天网络还特别渣。&lt;br&gt;伪恋是北京时间22:30播出，基本上就快23:00的时候迷菊弄好了片源然后传到了百毒盘，这基本上就是我要面对的东西了。&lt;br&gt;然后在动画直播的时候迷菊就已经弄好了0-8分钟的翻译…再跪一下，流石早稻田迷子！&lt;img src=&quot;http://7u2sev.com1.z0.glb.clouddn.com/upload/97ab3149fc8162277058febdc0b3f4df.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="碎碎念" scheme="https://blog.dangge.moe/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>入了字幕坑&amp;amp;日语坑</title>
+    <link href="https://blog.dangge.moe/2015/03/24/index.html"/>
+    <id>https://blog.dangge.moe/2015/03/24/index.html</id>
+    <published>2015-03-23T16:52:00.000Z</published>
+    <updated>2016-05-07T03:44:52.160Z</updated>
+    
+    <content type="html">&lt;p&gt;于是趁着这会儿略闲来更个文……&lt;br&gt;这个月估计是因为上个月实在懈怠，一口气开了一堆坑。&lt;br&gt;首先就是入了字幕组的坑……其实一切都是偶然&lt;s&gt;命运石之门的选择&lt;/s&gt;,虽然因为喵服的原因认识了一大堆字幕组菊苣，但起因还是凤凰君随便开了一个玩笑让我去做繁化&lt;s&gt;我又不是正体中文使用者……&lt;/s&gt;，然后突然就萌发了进个字幕组打打杂的念头。&lt;br&gt;翻译校对和压制目前都干不来，于是就变成最没有技术含量的打轴了23333。一开始速度很慢，六分钟的视频轴了三个小时orz,但是上手后就速度快了不少，虽然还是比不上凤凰菊，miu菊和瓜菊的无解神速，好歹第二次的幸福吐呀用了两个小时搞定了…&lt;br&gt;然后就勉强混进了KNA字幕组23333，其实这也不是很难嘛(笑，你看一周前我连打轴是什么都不知道呢&lt;br&gt;然后就是日语坑了，说句实话，没头没脑的就硬蹭进字幕组也是为了学习日语～毕竟就目前来看天朝还不能让我快乐生活，所以说肉翻的念头一直都有，而作为死宅的我第一选择肯定是霓虹了啊。&lt;br&gt;日语的学习道路虽然相对简单了很多，但是也不是能轻松上手的东西呢，毕竟是一门语言。&lt;br&gt;所以说年轻时候挖过的坑我都会填上的……至于时间嘛……(望天&lt;br&gt;Ps:最近拿到了锐捷的一些资料，我并没有忘记那个狂妄的梦想。&lt;br&gt;于是三月份也就这样了…加油！&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;于是趁着这会儿略闲来更个文……&lt;br&gt;这个月估计是因为上个月实在懈怠，一口气开了一堆坑。&lt;br&gt;首先就是入了字幕组的坑……其实一切都是偶然&lt;s&gt;命运石之门的选择&lt;/s&gt;,虽然因为喵服的原因认识了一大堆字幕组菊苣，但起因还是凤凰君随便开了一个玩笑让我去做繁化&lt;s&gt;我又不是正体
+    
+    </summary>
+    
+      <category term="碎碎念" scheme="https://blog.dangge.moe/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>二月生存报告</title>
+    <link href="https://blog.dangge.moe/2015/03/10/index.html"/>
+    <id>https://blog.dangge.moe/2015/03/10/index.html</id>
+    <published>2015-03-10T05:33:00.000Z</published>
+    <updated>2016-05-07T03:44:13.636Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;del&gt;虽然写着二月却已经是三月的这种事情不要在意了好不好&lt;/del&gt;&lt;br&gt;于是拖延症发作的我来交生存报告了。这一个月什么也没干。&lt;br&gt;什么也没干。&lt;br&gt;也没干。&lt;br&gt;(╯‵□′)╯︵┻━┻&lt;br&gt;于是老天为了惩罚如此懒散的我，开学就给我一份大礼:一周18节课。&lt;br&gt;看着课表，突然有一种回到了高三的感觉(ry&lt;br&gt;这个月实在没有什么好写的。。。。唯一算得上是干了点活的东西也就是fix了一个图床程序。。。。作者九成九是弃坑了，新版本七牛不这么玩了好蛋疼。。。。另外限制图片大小2M真蛋疼啊！原图党表示2M怎么够看(&lt;del&gt;君不见一个抱枕图就20M了么&lt;/del&gt;)&lt;br&gt;所以说现在我把上传大小加到20M了，下一步打算加入mp3等后缀支持…..&lt;/p&gt;
+&lt;p&gt;&lt;mask&gt;打算把那个小程序修修改改变成网盘，另外这玩意我总觉得有注入…..&lt;/mask&gt;&lt;del&gt;算了一个破图床有啥值得注入的&lt;/del&gt;&lt;br&gt;于是就是这样。。。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;del&gt;虽然写着二月却已经是三月的这种事情不要在意了好不好&lt;/del&gt;&lt;br&gt;于是拖延症发作的我来交生存报告了。这一个月什么也没干。&lt;br&gt;什么也没干。&lt;br&gt;也没干。&lt;br&gt;(╯‵□′)╯︵┻━┻&lt;br&gt;于是老天为了惩罚如此懒散的我，开学就给我一份大礼:一周18节课。&lt;
+    
+    </summary>
+    
+      <category term="碎碎念" scheme="https://blog.dangge.moe/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+    
+  </entry>
+  
+</feed>
