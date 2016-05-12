@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.dangge.moe/"/>
-  <updated>2016-05-06T18:08:55.118Z</updated>
+  <updated>2016-05-12T18:12:07.596Z</updated>
   <id>https://blog.dangge.moe/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VPS 下载 Google Drive 片源</title>
+    <link href="https://blog.dangge.moe/2016/05/13/index.html"/>
+    <id>https://blog.dangge.moe/2016/05/13/index.html</id>
+    <published>2016-05-12T18:11:59.000Z</published>
+    <updated>2016-05-12T18:12:07.596Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;自用记录&quot;&gt;&lt;a href=&quot;#自用记录&quot; class=&quot;headerlink&quot; title=&quot;自用记录&quot;&gt;&lt;/a&gt;自用记录&lt;/h2&gt;&lt;p&gt;0.你得有个 Linux 服务器&lt;br&gt;0.1.去&lt;a href=&quot;https://github.com/prasmussen/gdrive&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github地址&lt;/a&gt;下载你对应系统的二进制包&lt;br&gt;0.2.装好它&lt;br&gt;0.3.第一次使用需要 Oauth2 授权，不多说&lt;br&gt;1.把别人发布的片源转存到自己的 Google Drive&lt;br&gt;2.获取分享链接,拿到文件 id&lt;br&gt;3.&lt;br&gt;    drive download -i &amp;lt;文件id&amp;gt;&lt;br&gt;4.python -m SimpleHTTPServer&lt;br&gt;5.下载，over&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;自用记录&quot;&gt;&lt;a href=&quot;#自用记录&quot; class=&quot;headerlink&quot; title=&quot;自用记录&quot;&gt;&lt;/a&gt;自用记录&lt;/h2&gt;&lt;p&gt;0.你得有个 Linux 服务器&lt;br&gt;0.1.去&lt;a href=&quot;https://github.com/prasmusse
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>无题.</title>
@@ -579,28 +600,6 @@ t2表示消失使用的时间
     <summary type="html">
     
       &lt;p&gt;于是趁着这会儿略闲来更个文……&lt;br&gt;这个月估计是因为上个月实在懈怠，一口气开了一堆坑。&lt;br&gt;首先就是入了字幕组的坑……其实一切都是偶然&lt;s&gt;命运石之门的选择&lt;/s&gt;,虽然因为喵服的原因认识了一大堆字幕组菊苣，但起因还是凤凰君随便开了一个玩笑让我去做繁化&lt;s&gt;我又不是正体
-    
-    </summary>
-    
-      <category term="碎碎念" scheme="https://blog.dangge.moe/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>二月生存报告</title>
-    <link href="https://blog.dangge.moe/2015/03/10/index.html"/>
-    <id>https://blog.dangge.moe/2015/03/10/index.html</id>
-    <published>2015-03-10T05:33:00.000Z</published>
-    <updated>2016-05-07T03:44:13.636Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;del&gt;虽然写着二月却已经是三月的这种事情不要在意了好不好&lt;/del&gt;&lt;br&gt;于是拖延症发作的我来交生存报告了。这一个月什么也没干。&lt;br&gt;什么也没干。&lt;br&gt;也没干。&lt;br&gt;(╯‵□′)╯︵┻━┻&lt;br&gt;于是老天为了惩罚如此懒散的我，开学就给我一份大礼:一周18节课。&lt;br&gt;看着课表，突然有一种回到了高三的感觉(ry&lt;br&gt;这个月实在没有什么好写的。。。。唯一算得上是干了点活的东西也就是fix了一个图床程序。。。。作者九成九是弃坑了，新版本七牛不这么玩了好蛋疼。。。。另外限制图片大小2M真蛋疼啊！原图党表示2M怎么够看(&lt;del&gt;君不见一个抱枕图就20M了么&lt;/del&gt;)&lt;br&gt;所以说现在我把上传大小加到20M了，下一步打算加入mp3等后缀支持…..&lt;/p&gt;
-&lt;p&gt;&lt;mask&gt;打算把那个小程序修修改改变成网盘，另外这玩意我总觉得有注入…..&lt;/mask&gt;&lt;del&gt;算了一个破图床有啥值得注入的&lt;/del&gt;&lt;br&gt;于是就是这样。。。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;del&gt;虽然写着二月却已经是三月的这种事情不要在意了好不好&lt;/del&gt;&lt;br&gt;于是拖延症发作的我来交生存报告了。这一个月什么也没干。&lt;br&gt;什么也没干。&lt;br&gt;也没干。&lt;br&gt;(╯‵□′)╯︵┻━┻&lt;br&gt;于是老天为了惩罚如此懒散的我，开学就给我一份大礼:一周18节课。&lt;
     
     </summary>
     

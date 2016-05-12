@@ -3,20 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Shadowsocks新加密方式：RC4-MD5 | dangge&#39;s blog</title>
+  <title>VPS 下载 Google Drive 片源 | dangge&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="好久没更新blog了 军训什么的不是很累。。。。= =不扯淡 说正题我自己的VPS环境是Centos 至于Debian之类的。。。。好像wiki写的很详细了因为我是渣渣 之前用了一键安装脚本。。。。所以就干脆直接重新安装了一遍">
+  <meta name="description" content="自用记录0.你得有个 Linux 服务器0.1.去github地址下载你对应系统的二进制包0.2.装好它0.3.第一次使用需要 Oauth2 授权，不多说1.把别人发布的片源转存到自己的 Google Drive2.获取分享链接,拿到文件 id3.    drive download -i &amp;lt;文件id&amp;gt;4.python -m SimpleHTTPServer5.下载，over">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Shadowsocks新加密方式：RC4-MD5">
-<meta property="og:url" content="https://blog.dangge.moe/2014/10/01/index.html">
+<meta property="og:title" content="VPS 下载 Google Drive 片源">
+<meta property="og:url" content="https://blog.dangge.moe/2016/05/13/index.html">
 <meta property="og:site_name" content="dangge's blog">
-<meta property="og:description" content="好久没更新blog了 军训什么的不是很累。。。。= =不扯淡 说正题我自己的VPS环境是Centos 至于Debian之类的。。。。好像wiki写的很详细了因为我是渣渣 之前用了一键安装脚本。。。。所以就干脆直接重新安装了一遍">
-<meta property="og:image" content="http://dangge.qiniudn.com/usr/uploads/HSgallery/3321871160.png">
-<meta property="og:updated_time" content="2016-05-07T03:43:40.644Z">
+<meta property="og:description" content="自用记录0.你得有个 Linux 服务器0.1.去github地址下载你对应系统的二进制包0.2.装好它0.3.第一次使用需要 Oauth2 授权，不多说1.把别人发布的片源转存到自己的 Google Drive2.获取分享链接,拿到文件 id3.    drive download -i &amp;lt;文件id&amp;gt;4.python -m SimpleHTTPServer5.下载，over">
+<meta property="og:updated_time" content="2016-05-12T18:12:07.596Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shadowsocks新加密方式：RC4-MD5">
-<meta name="twitter:description" content="好久没更新blog了 军训什么的不是很累。。。。= =不扯淡 说正题我自己的VPS环境是Centos 至于Debian之类的。。。。好像wiki写的很详细了因为我是渣渣 之前用了一键安装脚本。。。。所以就干脆直接重新安装了一遍">
-<meta name="twitter:image" content="http://dangge.qiniudn.com/usr/uploads/HSgallery/3321871160.png">
+<meta name="twitter:title" content="VPS 下载 Google Drive 片源">
+<meta name="twitter:description" content="自用记录0.你得有个 Linux 服务器0.1.去github地址下载你对应系统的二进制包0.2.装好它0.3.第一次使用需要 Oauth2 授权，不多说1.把别人发布的片源转存到自己的 Google Drive2.获取分享链接,拿到文件 id3.    drive download -i &amp;lt;文件id&amp;gt;4.python -m SimpleHTTPServer5.下载，over">
 <meta name="twitter:creator" content="@dangge2">
 <link rel="publisher" href="https://plus.google.com/u/0/+dangge/">
   
@@ -68,10 +66,10 @@
 
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Shadowsocks新加密方式：RC4-MD5" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-如何高速下载狗盘文件" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/10/01/index.html" class="article-date">
-  <time datetime="2014-09-30T23:44:00.000Z" itemprop="datePublished">2014-10-01</time>
+    <a href="/2016/05/13/index.html" class="article-date">
+  <time datetime="2016-05-12T18:11:59.000Z" itemprop="datePublished">2016-05-13</time>
 </a>
     
   <div class="article-category">
@@ -86,7 +84,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Shadowsocks新加密方式：RC4-MD5
+      VPS 下载 Google Drive 片源
     </h1>
   
 
@@ -94,18 +92,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>好久没更新blog了 军训什么的不是很累。。。。= =<br>不扯淡 说正题<br>我自己的VPS环境是Centos 至于Debian之类的。。。。好像wiki写的很详细了<br>因为我是渣渣 之前用了一键安装脚本。。。。所以就干脆直接重新安装了一遍</p>
-<a id="more"></a>
-<p>yum install m2crypto python-setuptools<br>easy_install pip<br>pip install shadowsocks<br>然后配置了/etc/shadowsocks.json文件 clowwindy大大默认还是用了AES-256-FB 所以我们要把这个改一下</p>
-<p>{<br>    “server”:”你的VPS的ip”,<br>    “server_port”:端口号,<br>    “local_address”: “127.0.0.1”,<br>    “local_port”:1080,<br>    “password”:”密码”,<br>    “timeout”:300,<br>    “method”:”aes-256-cfb”,<br>    “fast_open”: false,<br>    “workers”: 1<br>}</p>
-<p>把上方method里改为 RC4-MD5<br>好像小写是不可以的 因为我写小写不知道为啥不能用。。。一定是我太弱TAT<br>之后保存 一行ssserver -c /etc/shadowsocks.json后就可以啦~<br>速度还是挺好的 放个图 3.5刀的VPS 日常用足够了 求土豪不要嘲讽QAQ<br><img src="http://dangge.qiniudn.com/usr/uploads/HSgallery/3321871160.png" alt="QQ截图20140826172649.png"><br>如果想要让其后台运行 那么我们需要Supervisor<br>Centos下 安装很简单 yum install supervisor<br>然后我们要配置一下 这里有个小问题 wiki给的是/etc/supervisor/supervisord.conf 但是我的文件却位于/etc目录下<br>打开这个文件后我们看到一堆英文 直接在末尾添加<br>[program:shadowsocks]<br>command=ssserver -c /etc/shadowsocks.json<br>autorestart=true<br>user=nobody<br>如果端口 &lt; 1024，把上面的 user=nobody 改成 user=root。<br>保存后 我们需要手动启动一下Supervisor<br>Centos下<br>service supervisord start<br>然后不出意外的话 你现在就可以享受RC4-MD5带来的快感了 速度比起AES-256-FB来讲快了一点点。。。。VPS好渣QAQ<br>最后还是感谢clowwindy为我们带来了Shadowsocks这样的利器 向他致敬</p>
+        <h2 id="自用记录"><a href="#自用记录" class="headerlink" title="自用记录"></a>自用记录</h2><p>0.你得有个 Linux 服务器<br>0.1.去<a href="https://github.com/prasmussen/gdrive" target="_blank" rel="external">github地址</a>下载你对应系统的二进制包<br>0.2.装好它<br>0.3.第一次使用需要 Oauth2 授权，不多说<br>1.把别人发布的片源转存到自己的 Google Drive<br>2.获取分享链接,拿到文件 id<br>3.<br>    drive download -i &lt;文件id&gt;<br>4.python -m SimpleHTTPServer<br>5.下载，over</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.dangge.moe/2014/10/01/index.html" data-id="cinwmjm0a000jgwnndcvr869b" class="article-share-link">Share</a>
+      <a data-url="https://blog.dangge.moe/2016/05/13/index.html" data-id="cio4m058t0000fonn632zvk0z" class="article-share-link">Share</a>
       
-        <a href="https://blog.dangge.moe/2014/10/01/index.html#disqus_thread" class="article-comment-link">留言</a>
+        <a href="https://blog.dangge.moe/2016/05/13/index.html#disqus_thread" class="article-comment-link">留言</a>
       
       
     </footer>
@@ -114,19 +108,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/10/05/index.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          2014年10月5日
-        
-      </div>
-    </a>
   
-  
-    <a href="/2014/08/22/index.html" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/04/22/index.html" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">本博客已从Hostker迁移到eeehost（三易主机）</div>
+      <div class="article-nav-title">无题.</div>
     </a>
   
 </nav>
