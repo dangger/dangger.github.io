@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.dangge.moe/"/>
-  <updated>2017-02-19T10:08:39.000Z</updated>
+  <updated>2017-02-19T10:10:31.000Z</updated>
   <id>https://blog.dangge.moe/</id>
   
   <author>
@@ -20,17 +20,17 @@
     <link href="https://blog.dangge.moe/2017/02/19/index.html"/>
     <id>https://blog.dangge.moe/2017/02/19/index.html</id>
     <published>2017-02-19T09:58:00.000Z</published>
-    <updated>2017-02-19T10:08:39.000Z</updated>
+    <updated>2017-02-19T10:10:31.000Z</updated>
     
-    <content type="html"><![CDATA[<h5 id="为什么要有这个东西"><a href="#为什么要有这个东西" class="headerlink" title="为什么要有这个东西"></a>为什么要有这个东西</h5><p>hostker是一家非常好的。。。额云计算服务商（他们自己说的），但是一直以来有个有点蛋疼的问题。。。<br>他们家的应用虽然基于git，但是不支持ssh。。。<br>然后每次commit都要敲一遍账号密码。。。虽然不是很费事但是总归不是个办法<br>然后今天xjb搞的时候发现了个东西。。。叫<a href="https://www.ibm.com/support/knowledgecenter/ssw_aix_71/com.ibm.aix.files/netrc.htm" target="_blank" rel="external">.netrc</a><br>大概看了看，可以解决每次都输入账号密码来认证的蛋疼局面- -<br><del>我一定不是最后一个知道的！</del>  </p>
-<h5 id="怎么用"><a href="#怎么用" class="headerlink" title="怎么用"></a>怎么用</h5><p><pre><br>vim ~/.netrc<br></pre></p>
+    <content type="html"><![CDATA[<h3 id="为什么要有这个东西"><a href="#为什么要有这个东西" class="headerlink" title="为什么要有这个东西"></a>为什么要有这个东西</h3><p>hostker是一家非常好的。。。额云计算服务商（他们自己说的），但是一直以来有个有点蛋疼的问题。。。<br>他们家的应用虽然基于git，但是不支持ssh。。。<br>然后每次commit都要敲一遍账号密码。。。虽然不是很费事但是总归不是个办法<br>然后今天xjb搞的时候发现了个东西。。。叫<a href="https://www.ibm.com/support/knowledgecenter/ssw_aix_71/com.ibm.aix.files/netrc.htm" target="_blank" rel="external">.netrc</a><br>大概看了看，可以解决每次都输入账号密码来认证的蛋疼局面- -<br><del>我一定不是最后一个知道的！</del>  </p>
+<h3 id="怎么用"><a href="#怎么用" class="headerlink" title="怎么用"></a>怎么用</h3><p><pre><br>vim ~/.netrc<br></pre></p>
 <p><pre><br>machine git-ct.smartgslb.com（这里可以替换成别的git地址）<br>    login example@example.com（你的邮箱） password pwd(你的密码)<br></pre><br>ok大功告成。。。是不是非常简单无脑<del>然而我敲了两年岂可修</del></p>
-<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>多上网长见识。。。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>多上网长见识。。。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h5 id=&quot;为什么要有这个东西&quot;&gt;&lt;a href=&quot;#为什么要有这个东西&quot; class=&quot;headerlink&quot; title=&quot;为什么要有这个东西&quot;&gt;&lt;/a&gt;为什么要有这个东西&lt;/h5&gt;&lt;p&gt;hostker是一家非常好的。。。额云计算服务商（他们自己说的），但是一直以来有个有
+      &lt;h3 id=&quot;为什么要有这个东西&quot;&gt;&lt;a href=&quot;#为什么要有这个东西&quot; class=&quot;headerlink&quot; title=&quot;为什么要有这个东西&quot;&gt;&lt;/a&gt;为什么要有这个东西&lt;/h3&gt;&lt;p&gt;hostker是一家非常好的。。。额云计算服务商（他们自己说的），但是一直以来有个有
     
     </summary>
     
