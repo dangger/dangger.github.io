@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>dangge&#39;s blog</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://blog.dangge.moe/"/>
+  <updated>2017-01-10T17:07:05.000Z</updated>
+  <id>https://blog.dangge.moe/</id>
+  
+  <author>
+    <name>dangge</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一次镜像站配置问题的解决</title>
+    <link href="https://blog.dangge.moe/2017/01/11/index.html"/>
+    <id>https://blog.dangge.moe/2017/01/11/index.html</id>
+    <published>2017-01-10T16:43:09.000Z</published>
+    <updated>2017-01-10T17:07:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>在使用debian7更新的时候,发现自己负责的<a href="https://mirrors.zzu.edu.cn" target="_blank" rel="external">校园镜像站</a>在强制 https 之后居然不能用了,提示是这样的:</p>
+<blockquote>
+<p>gnutls_handshake() warning: The server name sent was not recognized</p>
+</blockquote>
+<p>WTF???明明 <a href="https://mirrors.ustc.edu.cn" target="_blank" rel="external">USTC</a>就毫无问题,为啥换到我校的就不行了?  </p>
+<h3 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h3><p>一开始我以为是服务端问题,然后各种谷歌也没结果,最后找到了<a href="https://49.gs/" target="_blank" rel="external">神秀师傅</a>一番请教之后,排除了服务端的问题…(顺便一提我随手配的SSL在ssllab评分居然都是A,科科)<br>那问题看来是服务端的了,然后神秀一番操作之后告诉我好像这个域名的SNI有点问题耶<br>然后丢给我一个<a href="https://jervis.ws/qualys-labs-ssl-test-incorrect-sni-alerts/" target="_blank" rel="external">链接</a>  </p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>所以就是在apache的 ssl.conf 里加一行  </p>
+<blockquote>
+<p>ServerName www.你的域名.com    </p>
+</blockquote>
+<p>即可.<br>妈的好智障的问题啊…而且并不是所有系统都会触发,神秀用的ubuntu16.04就可以强行无视这个错误更新…</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;p&gt;在使用debian7更新的时候,发现自己负责的&lt;a href=&quot;https://mirrors.zzu.edu.cn&quot; target=&quot;_b
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="镜像站" scheme="https://blog.dangge.moe/tags/%E9%95%9C%E5%83%8F%E7%AB%99/"/>
+    
+      <category term="apache" scheme="https://blog.dangge.moe/tags/apache/"/>
+    
+      <category term="ssl" scheme="https://blog.dangge.moe/tags/ssl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>君の名は。</title>
+    <link href="https://blog.dangge.moe/2016/12/09/index.html"/>
+    <id>https://blog.dangge.moe/2016/12/09/index.html</id>
+    <published>2016-12-09T13:37:04.000Z</published>
+    <updated>2016-12-09T13:45:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在经历了盗版流出,某组及时做了翻译但是被喷成狗然后大家撕逼大战这么一堆心累的破事之后,这个片子终于是被光线影业确认引进了.<br>然后我自然就去看了…归功于你B的福,我还拿了一张第二天的票可以二刷一下.<br>感谢二刷,我看到了很多第一遍看不到的细节.<br>然后懒癌发作,这文也鸽了一星期,然后我去三刷了…上映一周之后,人明显少了很多,观影气氛还是挺不错的.<del>除了有个傻逼男一直在BB剧情</del></p>
+<p>首先还是谈一谈我对这片子本身的看法吧.<br>首先,作画无敌.一刷的时候看到开头那个OP我差一点以为是60帧.然后二刷的时候留意了一下,只有OP里三叶在地上坐着那处是一拍一(我能看出来的),别的应该都是正常的一拍三.然而,即使不是<del>60帧</del>(确认是24帧),即使不是4K(<del>存疑</del>)确认2K,安藤雅司的这个作画也是神级.毕竟说起新海诚,大家的印象应该都是一致的,暖色调,光影,细腻到浪费经费的背景,这些都是安藤这个天才作监的功劳.可以这么说,你名的作画应该代表了2016年底之前,日本手绘动画的巅峰.  </p>
+<p>然后说说人设吧.实际上人设也有安藤这个天才的参与,但是主要还是田中将贺这老怪物搞的.他的人设其实并不算特别的令人印象深刻,但是这种富有三次元特征的二次元人设还是挺合大众胃口的,毕竟对这个片子来说,重要的是受众广,而不是像Q娃一样粉丝向.  </p>
+<p>然后剧情.其实看了三遍之后,这个剧情已经很清晰了,没有别的作品那么烧脑.作为一部和时间有关的作品,本片的时间线毫无疑问是很乱的,但是如果你是一个注重细节的人,那么本片除了中后期的时间线稍微乱了一点不容易立刻反应过来,其他时间还是非常好认的.  </p>
+<h3 id="严重剧透注意"><a href="#严重剧透注意" class="headerlink" title="严重剧透注意"></a>严重剧透注意</h3><p><del>本来这里写了一堆剧情简介,但是我发现这玩意毫无意义,删了</del></p>
+<p>8年后的泷已经成为准社畜,三叶比他大三岁自然早就是社畜(应该吧),然后这两个人在电车上错过了一次.<br>没错,电车,男女主,错过.<br>这才是新海诚片子的一般尿性,第一遍看到这里我已经准备好刀片了.<br>然后镜头一切就冬天了,男主走过一座桥,和撑伞的女主擦肩而过.<br>看到这里,我觉得好多人已经要忍不住了…<br>还好新海诚这次想明白了,卖座和理想只能选一个,于是男主女主在一个楼梯前相遇了.<br>这片子我个人最泪点的地方,不是女主孤身一人,花掉了自己一年零花钱跑去东京见男主;也不是女主在跑去说服她父亲的路上跌倒,然后看到手心里男主写的”すきだ”;而是最后,男主和女主在两列电车上互相抬头,然后都跑下车去找对方,最后在那个神社前,两人擦肩而过那一瞬.<br>男主回头了,女主也回头了.<br>这就足够让看过秒五的人飙泪了.<br>即使忘却了名字,但是能再次相遇,真是太好了呢.  </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在经历了盗版流出,某组及时做了翻译但是被喷成狗然后大家撕逼大战这么一堆心累的破事之后,这个片子终于是被光线影业确认引进了.&lt;br&gt;然后我自然就去看了…归功于你B的福,我还拿了一张第二天的票可以二刷一下.&lt;br&gt;感谢二刷,我看到了很多第一遍看不到的细节.&lt;br&gt;然后懒癌发作,
+    
+    </summary>
+    
+      <category term="XJB写" scheme="https://blog.dangge.moe/categories/XJB%E5%86%99/"/>
+    
+    
+      <category term="你的名字" scheme="https://blog.dangge.moe/tags/%E4%BD%A0%E7%9A%84%E5%90%8D%E5%AD%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一个神秘IP列表</title>
+    <link href="https://blog.dangge.moe/2016/10/15/index.html"/>
+    <id>https://blog.dangge.moe/2016/10/15/index.html</id>
+    <published>2016-10-15T15:42:56.000Z</published>
+    <updated>2016-10-15T16:11:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>有啥用呢?  自己琢磨吧<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">101.96.10.19</div><div class="line">101.96.10.20</div><div class="line">101.96.10.21</div><div class="line">101.96.10.22</div><div class="line">101.96.10.23</div><div class="line">101.96.10.24</div><div class="line">101.96.10.25</div><div class="line">101.96.10.26</div><div class="line">101.96.10.27</div><div class="line">101.96.10.28</div><div class="line">101.96.10.29</div><div class="line">101.96.10.30</div><div class="line">101.96.10.31</div><div class="line">101.96.10.32</div><div class="line">101.96.10.33</div><div class="line">101.96.10.34</div><div class="line">101.96.10.35</div><div class="line">101.96.10.37</div><div class="line">101.96.10.38</div><div class="line">101.96.10.39</div><div class="line">101.96.10.40</div><div class="line">101.96.10.41</div><div class="line">101.96.10.42</div><div class="line">101.96.10.43</div><div class="line">101.96.10.44</div><div class="line">101.96.10.45</div><div class="line">101.96.10.46</div><div class="line">101.96.10.47</div><div class="line">101.96.10.50</div><div class="line">101.96.10.51</div><div class="line">101.96.10.52</div><div class="line">101.96.10.53</div><div class="line">101.96.10.54</div><div class="line">101.96.10.55</div><div class="line">101.96.10.56</div><div class="line">101.96.10.57</div><div class="line">101.96.10.58</div><div class="line">101.96.10.59</div><div class="line">101.96.10.60</div><div class="line">101.96.10.61</div><div class="line">101.96.10.62</div><div class="line">101.96.10.63</div><div class="line">101.96.10.64</div><div class="line">101.96.10.65</div><div class="line">101.96.10.66</div><div class="line">101.96.10.67</div><div class="line">101.96.10.68</div><div class="line">101.96.10.69</div><div class="line">101.96.10.70</div><div class="line">101.96.10.71</div><div class="line">101.96.10.72</div><div class="line">101.96.10.73</div><div class="line">101.96.10.74</div><div class="line">101.96.10.75</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有啥用呢?  自己琢磨吧&lt;br&gt;
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>针对 hostker 的 HSTS 设置 v2</title>
+    <link href="https://blog.dangge.moe/2016/10/01/index.html"/>
+    <id>https://blog.dangge.moe/2016/10/01/index.html</id>
+    <published>2016-10-01T13:03:34.000Z</published>
+    <updated>2016-10-01T13:03:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本来不想写太多的,但是我被坑了之后感觉还是要改一下的<br>首先,我们要明确一件事: HSTS 是什么<br><a href="https://zh.wikipedia.org/wiki/HTTP%E4%B8%A5%E6%A0%BC%E4%BC%A0%E8%BE%93%E5%AE%89%E5%85%A8" target="_blank" rel="external">Wikipedia</a> 是这么写的:  </p>
+<blockquote>
+<p>HSTS的作用是强制客户端（如浏览器）使用HTTPS与服务器创建连接。服务器开启HSTS的方法是，当客户端通过HTTPS发出请求时，在服务器返回的超文本传输协议响应头中包含Strict-Transport-Security字段。非加密传输时设置的HSTS字段无效。</p>
+</blockquote>
+<p>所以我们现在就知道了,要实现 HSTS ,你必须有一个 header 去告诉浏览器.<br>我的 .htaccess 文件是这样写的:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">#针对 hostker 的 HSTS 设置</div><div class="line">RewriteEngine On</div><div class="line">RewriteCond %&#123;HTTP:KERSSL&#125; !on</div><div class="line">&lt;If &quot;%&#123;HTTP:KERSSL&#125; == &apos;on&apos;&quot;&gt;</div><div class="line">    # Header Set</div><div class="line">    Header always set Strict-Transport-Security &quot;max-age=86400&quot;</div><div class="line">&lt;/If&gt;</div><div class="line">RewriteRule (.*) https://blog.dangge.moe%&#123;REQUEST_URI&#125; [R=301,L]</div><div class="line">#貌似是 hexo 要求的</div><div class="line">RewriteBase /</div><div class="line">RewriteCond %&#123;REQUEST_FILENAME&#125; !-f</div><div class="line">RewriteCond %&#123;REQUEST_FILENAME&#125; !-d</div><div class="line">RewriteRule ^(.*)$ /index.php/$1 [L]</div></pre></td></tr></table></figure></p>
+<p>max-age 的值我设置的比较小,主要是怕设置太长,万一网站迁移的时候浏览器崩了…  –<a href="http://weibo.com/1787076481/EaqcxhWIf" target="_blank" rel="external">出处</a><br>貌似是有点水。。。然而懒的写字<br>希望能帮助到谁。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本来不想写太多的,但是我被坑了之后感觉还是要改一下的&lt;br&gt;首先,我们要明确一件事: HSTS 是什么&lt;br&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/HTTP%E4%B8%A5%E6%A0%BC%E4%BC%A0%E8%BE%93%E5
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>一份 nginx.conf 备份</title>
+    <link href="https://blog.dangge.moe/2016/07/31/index.html"/>
+    <id>https://blog.dangge.moe/2016/07/31/index.html</id>
+    <published>2016-07-31T13:34:15.000Z</published>
+    <updated>2016-07-31T13:40:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">    # Port that the web server will listen on.</div><div class="line">    listen          80;</div><div class="line"></div><div class="line">    # Host that will serve this project.</div><div class="line">    server_name     一般填域名;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">    # The location of our projects public directory.</div><div class="line">    root            /home/www/这里一般填域名;</div><div class="line"></div><div class="line">    # Point index to the Laravel front controller.</div><div class="line">    index           index.php;</div><div class="line"></div><div class="line">    location / &#123;</div><div class="line"></div><div class="line">        # URLs to attempt, including pretty ones.</div><div class="line">        try_files   $uri $uri/ /index.php?$query_string;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    # Remove trailing slash to please routing system.</div><div class="line">    if (!-d $request_filename) &#123;</div><div class="line">        rewrite     ^/(.+)/$ /$1 permanent;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    # PHP FPM configuration.</div><div class="line">    location ~* \.php$ &#123;</div><div class="line">            fastcgi_pass                    unix:/var/run/php5-fpm.sock;</div><div class="line">            fastcgi_index                   index.php;</div><div class="line">            fastcgi_split_path_info         ^(.+\.php)(.*)$;</div><div class="line">            include                         /etc/nginx/fastcgi_params;</div><div class="line">            fastcgi_param                   SCRIPT_FILENAME $document_root$fastcgi_script_name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    # We don&apos;t need .ht files with nginx.</div><div class="line">    location ~ /\.ht &#123;</div><div class="line">            deny all;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    # Set header expirations on per-project basis</div><div class="line">    location ~* \.(?:ico|css|js|jpe?g|JPG|png|svg|woff)$ &#123;</div><div class="line">            expires 365d;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/di
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="nginx" scheme="https://blog.dangge.moe/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VPS 下载 Google Drive 片源</title>
+    <link href="https://blog.dangge.moe/2016/05/13/index.html"/>
+    <id>https://blog.dangge.moe/2016/05/13/index.html</id>
+    <published>2016-05-12T18:11:59.000Z</published>
+    <updated>2016-05-20T15:54:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="自用记录"><a href="#自用记录" class="headerlink" title="自用记录"></a>自用记录</h2><p>0.你得有个 Linux 服务器<br>0.1.去<a href="https://github.com/prasmussen/gdrive" target="_blank" rel="external">github地址</a>下载你对应系统的二进制包<br>0.2.装好它<br>0.3.第一次使用需要 Oauth2 授权，不多说<br>1.<del>把别人发布的片源转存到自己的 Google Drive</del>直接用文件 id 就行，我蠢<br>2.获取<del>分享</del>链接,拿到文件 id<br>3.drive download -i &lt;文件id&gt;<br>4.python -m SimpleHTTPServer<br>5.下载，over</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;自用记录&quot;&gt;&lt;a href=&quot;#自用记录&quot; class=&quot;headerlink&quot; title=&quot;自用记录&quot;&gt;&lt;/a&gt;自用记录&lt;/h2&gt;&lt;p&gt;0.你得有个 Linux 服务器&lt;br&gt;0.1.去&lt;a href=&quot;https://github.com/prasmusse
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>无题.</title>
+    <link href="https://blog.dangge.moe/2016/04/22/index.html"/>
+    <id>https://blog.dangge.moe/2016/04/22/index.html</id>
+    <published>2016-04-21T22:46:00.000Z</published>
+    <updated>2016-05-06T18:08:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>其实本来有很多东西想写一下<br>不过今天看到这张图<br>感觉不用写了<br><img src="https://ooo.0o0.ooo/2016/04/21/571903b35ab64.jpg" alt=""><br>看圣贤书去了.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;其实本来有很多东西想写一下&lt;br&gt;不过今天看到这张图&lt;br&gt;感觉不用写了&lt;br&gt;&lt;img src=&quot;https://ooo.0o0.ooo/2016/04/21/571903b35ab64.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;看圣贤书去了.&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="default" scheme="https://blog.dangge.moe/categories/default/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>如何在限制22端口的网络中使用git服务</title>
+    <link href="https://blog.dangge.moe/2016/04/06/index.html"/>
+    <id>https://blog.dangge.moe/2016/04/06/index.html</id>
+    <published>2016-04-05T18:04:11.000Z</published>
+    <updated>2016-05-06T18:08:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>垃圾学校,封锁SSH,害我没法正常提交代码!<br>废话不多说贴个图,看懂的自然懂.<br><img src="https://dn-danggepic.qbox.me/git-config-2016%E5%B9%B44%E6%9C%886%E6%97%A5.jpg" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;垃圾学校,封锁SSH,害我没法正常提交代码!&lt;br&gt;废话不多说贴个图,看懂的自然懂.&lt;br&gt;&lt;img src=&quot;https://dn-danggepic.qbox.me/git-config-2016%E5%B9%B44%E6%9C%886%E6%97%A5.jpg&quot; al
+    
+    </summary>
+    
+      <category term="default" scheme="https://blog.dangge.moe/categories/default/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ffmpeg之常用音频转换</title>
+    <link href="https://blog.dangge.moe/2015/10/30/index.html"/>
+    <id>https://blog.dangge.moe/2015/10/30/index.html</id>
+    <published>2015-10-30T05:05:00.000Z</published>
+    <updated>2016-05-07T03:43:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天需要把aac转mp3,刚好有人整合了一下，搬运过来。<br>转载自<a href="http://linuxconfig.org/ffmpeg-audio-format-conversions" target="_blank" rel="external">ffmpeg audio format conversions</a></p>
+<a id="more"></a>
+<h2 id="1-Audio"><a href="#1-Audio" class="headerlink" title="1. Audio"></a>1. Audio</h2><h3 id="1-1-WAV-Waveform-Audio-File-Format"><a href="#1-1-WAV-Waveform-Audio-File-Format" class="headerlink" title="1.1. WAV - Waveform Audio File Format"></a>1.1. WAV - Waveform Audio File Format</h3><h4 id="1-1-1-wav-to-mp3"><a href="#1-1-1-wav-to-mp3" class="headerlink" title="1.1.1. wav to mp3"></a>1.1.1. wav to mp3</h4><p>Convert wav to mp3 with ffmpeg:</p>
+<pre><code>ffmpeg -i audio.wav -acodec libmp3lame audio.mp3
+</code></pre><h4 id="1-1-2-wav-to-ogg"><a href="#1-1-2-wav-to-ogg" class="headerlink" title="1.1.2. wav to ogg"></a>1.1.2. wav to ogg</h4><p>Convert wav to ogg with ffmpeg:</p>
+<pre><code>ffmpeg -i audio.wav  -acodec libvorbis audio.ogg
+</code></pre><h4 id="1-1-3-wav-to-aac"><a href="#1-1-3-wav-to-aac" class="headerlink" title="1.1.3. wav to aac"></a>1.1.3. wav to aac</h4><p>Convert wav to acc with ffmpeg:</p>
+<pre><code>ffmpeg -i audio.wav  -acodec libfaac audio.aac
+</code></pre><h4 id="1-1-4-wav-to-ac3"><a href="#1-1-4-wav-to-ac3" class="headerlink" title="1.1.4. wav to ac3"></a>1.1.4. wav to ac3</h4><p>Convert wav to ac3 with ffmpeg:</p>
+<pre><code>ffmpeg -i audio.wav -acodec ac3 audio.mp3
+</code></pre><h3 id="1-2-OGG-Free-open-standard-container"><a href="#1-2-OGG-Free-open-standard-container" class="headerlink" title="1.2. OGG - Free, open standard container"></a>1.2. OGG - Free, open standard container</h3><h4 id="1-2-1-ogg-to-mp3"><a href="#1-2-1-ogg-to-mp3" class="headerlink" title="1.2.1. ogg to mp3"></a>1.2.1. ogg to mp3</h4><p>Convert ogg to mp3 with ffmpeg:</p>
+<pre><code>ffmpeg -i audio.ogg -acodec libmp3lame audio.mp3
+</code></pre><p>####1.2.2. ogg to wav<br>Convert ogg to wav with ffmpeg:</p>
+<pre><code>ffmpeg -i audio.ogg audio.wav
+</code></pre><h4 id="1-2-3-ogg-to-aac"><a href="#1-2-3-ogg-to-aac" class="headerlink" title="1.2.3. ogg to aac"></a>1.2.3. ogg to aac</h4><p>Convert ogg to aac with ffmpeg:</p>
+<pre><code>ffmpeg -i audio.ogg  -acodec libfaac audio.aac
+</code></pre><h4 id="1-2-4-ogg-to-ac3"><a href="#1-2-4-ogg-to-ac3" class="headerlink" title="1.2.4. ogg to ac3"></a>1.2.4. ogg to ac3</h4><p>Convert ogg to ac3 with ffmpeg:</p>
+<pre><code>ffmpeg -i audio.ogg -acodec ac3 audio.ac3
+</code></pre><h3 id="1-3-AC3-Acoustic-Coder-3"><a href="#1-3-AC3-Acoustic-Coder-3" class="headerlink" title="1.3. AC3 - Acoustic Coder 3"></a>1.3. AC3 - Acoustic Coder 3</h3><h4 id="1-3-1-ac3-to-mp3"><a href="#1-3-1-ac3-to-mp3" class="headerlink" title="1.3.1. ac3 to mp3"></a>1.3.1. ac3 to mp3</h4><p>Convert ac3 to mp3 with ffmpeg:</p>
+<pre><code>ffmpeg -i audio.ac3 -acodec libmp3lame audio.mp3
+</code></pre><h4 id="1-3-2-ac3-to-wav"><a href="#1-3-2-ac3-to-wav" class="headerlink" title="1.3.2. ac3 to wav"></a>1.3.2. ac3 to wav</h4><p>Convert ac3 to wav with ffmpeg:</p>
+<pre><code>ffmpeg -i audio.ac3 audio.wav
+</code></pre><h4 id="1-3-3-ac3-to-aac"><a href="#1-3-3-ac3-to-aac" class="headerlink" title="1.3.3. ac3 to aac"></a>1.3.3. ac3 to aac</h4><p>Convert ac3 to aac with ffmpeg:</p>
+<pre><code>ffmpeg -i audio.ac3  -acodec libfaac audio.aac
+</code></pre><h4 id="1-3-4-ac3-to-ogg"><a href="#1-3-4-ac3-to-ogg" class="headerlink" title="1.3.4. ac3 to ogg"></a>1.3.4. ac3 to ogg</h4><p>Convert ac3 to ogg with ffmpeg:</p>
+<pre><code>ffmpeg -i audio.ac3 -acodec libvorbis audio.ogg
+</code></pre><h3 id="1-4-AAC-Advanced-Audio-Coding"><a href="#1-4-AAC-Advanced-Audio-Coding" class="headerlink" title="1.4. AAC - Advanced Audio Coding"></a>1.4. AAC - Advanced Audio Coding</h3><h4 id="1-4-1-aac-to-mp3"><a href="#1-4-1-aac-to-mp3" class="headerlink" title="1.4.1. aac to mp3"></a>1.4.1. aac to mp3</h4><p>Convert aac to mp3 with ffmpeg:</p>
+<pre><code>ffmpeg -i audio.aac -acodec libmp3lame audio.mp3
+</code></pre><h4 id="1-4-2-aac-to-wav"><a href="#1-4-2-aac-to-wav" class="headerlink" title="1.4.2. aac to wav"></a>1.4.2. aac to wav</h4><p>Convert aac to wav with ffmpeg:</p>
+<pre><code>ffmpeg -i audio.aac audio.wav
+</code></pre><h4 id="1-4-3-aac-to-ac3"><a href="#1-4-3-aac-to-ac3" class="headerlink" title="1.4.3. aac to ac3"></a>1.4.3. aac to ac3</h4><p>Convert aac to ac3 with ffmpeg:</p>
+<pre><code>ffmpeg -i audio.aac  -acodec ac3 audio.ac3
+</code></pre><h4 id="1-4-4-aac-to-ogg"><a href="#1-4-4-aac-to-ogg" class="headerlink" title="1.4.4. aac to ogg"></a>1.4.4. aac to ogg</h4><p>Convert aac to ogg with ffmpeg:</p>
+<pre><code>ffmpeg -i audio.aac -libvorbis audio.ogg
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天需要把aac转mp3,刚好有人整合了一下，搬运过来。&lt;br&gt;转载自&lt;a href=&quot;http://linuxconfig.org/ffmpeg-audio-format-conversions&quot;&gt;ffmpeg audio format conversions&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>一切都是你自作自受</title>
+    <link href="https://blog.dangge.moe/2015/10/18/index.html"/>
+    <id>https://blog.dangge.moe/2015/10/18/index.html</id>
+    <published>2015-10-18T05:38:00.000Z</published>
+    <updated>2016-05-07T03:45:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>似乎有点时间没有写生存报告了，不想写作业的我决定来记录一下日常。<br>首先就是，撑过了最忙(?)的一个月，忙了开学，社团招新，理事选拔等一堆破事<br>然后顺利完结了夏季番的制作，本来打算秋季好好休息一下（上季度经常凌晨两点开工干到四点真是太肝了），结果还是接了个落地的坑。<br>不过还好，这番十一点就播完了，基本做完就是一点不到，这个时间对我来说算早睡了。</p>
+<p>于是抛开字幕的事情，我也很顺利的撑过了计协那一堆破事。<br>招新完全没兴趣，反正就是一群傻逼交了20块钱，自以为能大展拳脚，殊不知自己完全是在浪费时间。<br>理事招新这个逃不过去，勉强撑了下来，招了几个好苗子，然后还把<a href="http://dangge.qiniudn.com/%E6%8F%90%E9%97%AE%E7%9A%84%E6%99%BA%E6%85%A7.html" target="_blank" rel="external">提问的智慧</a>安利给了学弟。<br>不过感觉没多少人去看，毕竟那么长，而且还是从头骂到尾。<br>另外稍微和新生聊了聊，感觉今年新生质量还是有提升的，果然学习好就是不一样。<br>上面那句话毫无讽刺意味。</p>
+<p>以前我也觉得“学习好有个屌用啊你看Bill·Gates啊什么什么什么国外大牛人家都不上学”<br>现在我觉得吧，用一句宅语说就是“<a href="http://zh.moegirl.org/%E4%BD%A0%E7%9C%8B%E7%9C%8B%E4%BD%A0" target="_blank" rel="external">UCCU</a>”<br>接触的人越多，我越觉得自己好鶸，然而看着身边这群人懒懒散散坐井观天，我都替他们着急。<br>然而时间久了我也麻木了，去你大爷的，老子哪有空关心你们是不是顺利成长</p>
+<p>“XXXX，帮我看看这是怎么回事？”<br>“XXXX,XX应该怎么做？”<br>我承认我这人不是什么好人，但是保姆我实在当烦了</p>
+<p>……<br>每年都有新闻痛心疾首的报道，大堆大堆的大学生就业难，找不到工作，天天啃老blabla<br>当时我还很天真的认为，竞争太激烈了，生活不易啊<br>现在进到象牙塔里爬了两年，大概也算见识了点人<br>真的是，一切都是你自作自受<br>有人实习期就有0.15M的年薪，有人毕业了连个端盘子的工作都不想做。<br>两个字，活该。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;似乎有点时间没有写生存报告了，不想写作业的我决定来记录一下日常。&lt;br&gt;首先就是，撑过了最忙(?)的一个月，忙了开学，社团招新，理事选拔等一堆破事&lt;br&gt;然后顺利完结了夏季番的制作，本来打算秋季好好休息一下（上季度经常凌晨两点开工干到四点真是太肝了），结果还是接了个落地的坑
+    
+    </summary>
+    
+      <category term="碎碎念" scheme="https://blog.dangge.moe/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>垃圾 zzuwlan 如何手动认证</title>
+    <link href="https://blog.dangge.moe/2015/09/21/index.html"/>
+    <id>https://blog.dangge.moe/2015/09/21/index.html</id>
+    <published>2015-09-21T08:42:00.000Z</published>
+    <updated>2016-05-07T03:44:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先提一句，学校能开这个给我们用还是不错的，虽然效率低下而且速度不快，不过好歹省去了我开 WiFi 的力气。<br>那么问题来了，这个垃圾的 zzuwlan ，如果你第一次连接没有断开，之后貌似就会出神奇的 bug 。<br>一般的网页认证型 WiFi 都是在你未获取权限之前自动将你劫持到认证网页。<br>然而这个垃圾的 zzuwlan 也不知道搞了什么配置，这个功能一直抽风。<br>于是花了五分钟研究了下，顺便吐槽直接 GET 真是方便分析啊（姚明脸</p>
+<p>首先我们连上 zzuwlan 之后需要看一下 ip 地址和 Mac 地址，这个貌似也抽风了，明明是 DHCP ，每次返回的却都是同一 IP 。<br>我们假设当前设备的 ip 是 10.117.129.1，Mac地址为640280555924<br>然后我们构造这样一个链接:</p>
+<pre><code>http://202.196.64.132/?wlanuserip=(当前设备ip)&amp;wlanacname=&amp;ssid=&amp;nasip=10.241.255.254&amp;mac=(当前设备Mac地址)&amp;t=wireless-v2-plain&amp;url=http://blog.dangge.moe/
+</code></pre><p>访问，正常认证即可。<br>最后再说一句学校SB。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;首先提一句，学校能开这个给我们用还是不错的，虽然效率低下而且速度不快，不过好歹省去了我开 WiFi 的力气。&lt;br&gt;那么问题来了，这个垃圾的 zzuwlan ，如果你第一次连接没有断开，之后貌似就会出神奇的 bug 。&lt;br&gt;一般的网页认证型 WiFi 都是在你未获取权限之
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Chrome 45 使用 Mactype 部分字不能渲染的问题</title>
+    <link href="https://blog.dangge.moe/2015/09/13/index.html"/>
+    <id>https://blog.dangge.moe/2015/09/13/index.html</id>
+    <published>2015-09-13T06:31:00.000Z</published>
+    <updated>2016-05-07T03:42:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>随便搜了一下，发现网上主要有这几个解决方案: </p>
+<ol>
+<li>chrome://flags/<br>光栅线程数设定为1</li>
+<li>chrome://flags/<br>关闭ignore-gpu-blacklist 和 enable-one-copy</li>
+</ol>
+<p>如果不行的话就对这三个选项开关试试。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;随便搜了一下，发现网上主要有这几个解决方案: &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;chrome://flags/&lt;br&gt;光栅线程数设定为1&lt;/li&gt;
+&lt;li&gt;chrome://flags/&lt;br&gt;关闭ignore-gpu-blacklist 和 enable-one-copy&lt;/l
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>搞了个hexo博客但是因为文章转换起来太麻烦所以懒得动了</title>
+    <link href="https://blog.dangge.moe/2015/09/12/index.html"/>
+    <id>https://blog.dangge.moe/2015/09/12/index.html</id>
+    <published>2015-09-12T07:58:00.000Z</published>
+    <updated>2016-05-07T03:44:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://dangger.github.io" target="_blank" rel="external">http://dangger.github.io</a></p>
+<p>等我闲了慢慢研究怎么转换文章吧…</p>
+<p>2016年1月17日 update:</p>
+<p>过几天换hexo辣</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://dangger.github.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://dangger.github.io&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;等我闲了慢慢研究怎么转换文章吧…&lt;/p&gt;
+&lt;p&gt;2016年1月17日 
+    
+    </summary>
+    
+      <category term="碎碎念" scheme="https://blog.dangge.moe/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+    
+      <category term="dangge" scheme="https://blog.dangge.moe/tags/dangge/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Typcho默认gravatar头像被墙问题</title>
+    <link href="https://blog.dangge.moe/2015/08/27/index.html"/>
+    <id>https://blog.dangge.moe/2015/08/27/index.html</id>
+    <published>2015-08-27T08:35:00.000Z</published>
+    <updated>2016-05-07T03:43:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>解决方法也很简单，编辑\var\Typecho路径里的Common.php行，939行</p>
+<p>将默认的gravatar地址更换为<a href="https://secure.gravatar.com即可。" target="_blank" rel="external">https://secure.gravatar.com即可。</a></p>
+<p>也可以替换为V2EX或多说的反代地址，具体使用方法请自己探索。</p>
+<ul>
+<li>多说的源：<a href="http://gravatar.duoshuo.com" target="_blank" rel="external">http://gravatar.duoshuo.com</a> </li>
+<li>V2EX的源：<a href="http://cdn.v2ex.com/gravatar" target="_blank" rel="external">http://cdn.v2ex.com/gravatar</a> （支持SSL）</li>
+</ul>
+<p>个人感觉还是官方的gravatar比较稳定。</p>
+<p>2015年8月30日update:<br>于是在改了半天comment的CSS后我终于认识到了自己并没有前端审美能力，怒切disqus了。<br>历史评论已经导出成json了，于是disqus要的xml究竟是什么鬼啦摔<br>而且发现了disqus用的fastly家的CDN，很多地方都墙了这家CDN啊…<br>算了，反正来看blog的大概都有科学上网能力。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;解决方法也很简单，编辑\var\Typecho路径里的Common.php行，939行&lt;/p&gt;
+&lt;p&gt;将默认的gravatar地址更换为&lt;a href=&quot;https://secure.gravatar.com即可。&quot; target=&quot;_blank&quot; rel=&quot;externa
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="dangge" scheme="https://blog.dangge.moe/tags/dangge/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows下使用git的一些坑点</title>
+    <link href="https://blog.dangge.moe/2015/08/27/index.html"/>
+    <id>https://blog.dangge.moe/2015/08/27/index.html</id>
+    <published>2015-08-26T20:27:00.000Z</published>
+    <updated>2016-05-07T03:42:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>RT，众所周知Windows对git的支持简直没法和别的系统比，不过<del>又不是不能用</del><br>于是写点坑点好了。</p>
+<ul>
+<li>SSH问题<br>我使用了github的windows版本，然后打开是有一个git bash窗口的，我们可以看出这个东西其实是基于MINGW64的。<br>然后我们要在Github里添加公钥，就要在bash窗口里输入<code>ssh-keygen -t rsa -C “your@mail.com”</code><br>然后enter三次，就自动生成好了。<br>那么问题来了:我们要向github里添加公钥，可是这个生成的公钥在哪里？<br>通过everything，我们找到了它的路径:<code>C:\Users\（替换为当前系统用户名）\.ssh</code><br>打开会发现两个文件，一个是id_rsa.pub，这个是你的公钥。<br>还有一个id_rsa，就是本地留存的私钥了。<br>用任意文本编辑器打开id_rsa.pub,复制内容，粘贴进github的SSH添加处，就添加好了。<br>然后我们的git Bash窗口就能连接上github了。</li>
+<li>clone默认路径问题<br>在clone远程仓库的时候，windows下的git默认是clone到当前路径。<br>如果你不做修改，每次就要手动cd到工作文件夹去，很烦。<br>要修改默认路径也很简单，打开高级系统设置，环境变量，在上方的用户变量里新建一个值home，属性就是你要改的默认路径。<br>如图所示。<img src="https://i.imgur.com/4jgGure.jpg" alt="用户变量设置"><br>保存后再次打开Git Bash，ls一下，就会发现默认目录已经发生了改变。<br>–未完待续</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;RT，众所周知Windows对git的支持简直没法和别的系统比，不过&lt;del&gt;又不是不能用&lt;/del&gt;&lt;br&gt;于是写点坑点好了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH问题&lt;br&gt;我使用了github的windows版本，然后打开是有一个git bash窗口的，我们可以看出这个东
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="dangge" scheme="https://blog.dangge.moe/tags/dangge/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python学习笔记</title>
+    <link href="https://blog.dangge.moe/2015/07/31/index.html"/>
+    <id>https://blog.dangge.moe/2015/07/31/index.html</id>
+    <published>2015-07-31T09:11:00.000Z</published>
+    <updated>2016-05-07T03:43:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>给自己看的。<br>1.编码大坑<br>在Python里，我们需要指定一下编码，否则输出中文的时候会乱码<del>所以说还是全英文好</del><br>根据情况，我们选择在代码头部添加</p>
+<pre><code># coding=编码名
+</code></pre><p>exp:</p>
+<pre><code># coding=utf-8 
+</code></pre><p>这个对中文无效</p>
+<pre><code># coding=gbk
+</code></pre><p>这个中文可用</p>
+<p>未完待续</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;给自己看的。&lt;br&gt;1.编码大坑&lt;br&gt;在Python里，我们需要指定一下编码，否则输出中文的时候会乱码&lt;del&gt;所以说还是全英文好&lt;/del&gt;&lt;br&gt;根据情况，我们选择在代码头部添加&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# coding=编码名
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="dangge" scheme="https://blog.dangge.moe/tags/dangge/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Aegisub常用特效</title>
+    <link href="https://blog.dangge.moe/2015/07/26/index.html"/>
+    <id>https://blog.dangge.moe/2015/07/26/index.html</id>
+    <published>2015-07-26T05:50:00.000Z</published>
+    <updated>2016-05-07T03:43:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>如题，我就写点常用的，就当备忘录了。</p>
+<p>\n 空格，宽度超出范围后自动换行<br>\N 硬回车<br>\h 硬空格<br>\b<0 1=""> 粗体<br>0关闭，1开启<br>\i<0 1=""> 斜体<br>\u<0 1=""> 下划线<br>\s<0 1=""> 删除线<br>\bord<width> 边框宽度<br>\be<0 1=""> 柔化 0关闭 1开启<br>\shad<depth> 阴影距离<br>\fn<font name=""> 改变字型<br>\fs<font size=""> 改变字号<br>\fsc<x y=""><percent> 字符缩放——正常大小为100%<br>\fsp<pixels> 调整字间距<br>\fr[<x y="" z="">]<degrees> 旋转<br>\fr = \frz，和[v4+ Styles]中的Angle效果相同—–旋转所围绕的中心由\a或\an决定<br>\c&amp;H<66ccff>&amp; 改变颜色———十六进制00-ff，蓝绿红</66ccff></degrees></x></pixels></percent></x></font></font></depth></0></width></0></0></0></0></p>
+<a id="more"></a>
+<p>对齐方式:</p>
+<pre><code>\an&lt;alignment&gt; 设置对齐方式
+和ASS相同
+   左 中 右
+上 7  8  9
+中 4  5  6
+下 1  2  3
+\a和\an对整个字幕有效，不论放在何处.调整对齐方式非常重要，它决定了字幕旋转，缩放，移动时的参照点.对齐方式是针对字幕的整体有效，字幕中的每个字符都是向下方对齐的，如果要使用不同大小的字符，应该将一段字幕分为多段时间轴相同的字幕。
+</code></pre><p>卡拉OK:<br>\k<duration> 卡拉OK<br>\k 无平滑效果<br>\K或\kf 有平滑效果<br>\ko 边框的卡拉OK效果——–时间单位是1/100秒<br>{\K50}aaaa表示用0.5秒来显示歌词aaaa———-后面没有字符表示停顿一段时间。</duration></p>
+<p>动态效果:</p>
+<pre><code>\t([&lt;t1&gt;, &lt;t2&gt;, ] [&lt;accel&gt;,] &lt;style modifiers&gt;) 动态效果
+t1,t2分别是动态效果开始和结束时间，省略后以时间轴的开始结束时间为准
+accel控制动态效果的运动速度 1 正常速度
+0&lt;accel&lt;1 速度从快到慢减速运动
+1&lt;accel 速度从慢到快加速运动
+计算公式为 t时的动作完成量 = pow((t-t1)/(t2-t1), accel)
+</code></pre><p>移动:</p>
+<pre><code>\move(&lt;x1&gt;, &lt;y1&gt;, &lt;x2&gt;, &lt;y2&gt;[, &lt;t1&gt;, &lt;t2&gt;])
+x1,y1为移动开始的位置
+x2,y2为移动结束的位置
+屏幕的确左上角是0,0，右下角由[Script Info]中的PlayResX:和PlayResY:决定
+t1,t2是移动开始和结束时间，省略后以时间轴的开始结束时间为准
+只能使用一次。
+</code></pre><p>坐标:</p>
+<pre><code>\pos(&lt;x&gt;, &lt;y&gt;)
+改变位置
+只能使用一次
+使用\move或\pos后MarginL,MarginR,MarginV无效
+</code></pre><p>淡入淡出:(重要)</p>
+<pre><code>\fade(&lt;a1&gt;, &lt;a2&gt;, &lt;a3&gt;, &lt;t1&gt;, &lt;t2&gt;, &lt;t3&gt;, &lt;t4&gt; )
+淡出淡入效果
+a1是显示开始时的透明度，t1,t2表示显示的开始和结束时间
+a2是显示结束到消失开始时的透明度
+a3是消失结束时的透明度，t3,t4表示消失的开始和结束时间
+此处透明度必须使用十进制来表示，范围0-255
+
+\fad(&lt;t1&gt;, &lt;t2&gt; )
+淡出淡入效果
+t1表示显示使用的时间
+t2表示消失使用的时间
+</code></pre><p>文字变形:</p>
+<pre><code>{\t(\fscy300)}字变高 
+{\t(80,500,\fscy300)}字变高 
+{\t(\fscy300)}字拉长 
+{\t(80,500,\fscx300)}字拉长 
+{\t(80,500,\fscx200\fscy400)}字体变形 
+</code></pre><p>字体缩放：</p>
+<pre><code>{\fs1}{\t(1,\fs15)}1号字体放大到15号字体 
+{\fs15}{\t(15,\fs5)}15号字体缩小到1号字体 
+{\fscx500%}{\fscy500%}{\t(1,\fscx100%,\fscy100%)}变形缩小 
+{\fs10}{\t(0,900,\fs50)}控制性放大 
+{\fs50}{\t(200,600,\fs10)}控制性缩小 
+{\fs50\t(0,600,\fs10\t(800,1400,\fs24))}控制性缩放 
+</code></pre><p>字体变色:</p>
+<pre><code>{\c&amp;HFF8000&amp;\t(0,500,\c&amp;H80FF00&amp;}从蓝色过度到绿色
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如题，我就写点常用的，就当备忘录了。&lt;/p&gt;
+&lt;p&gt;\n 空格，宽度超出范围后自动换行&lt;br&gt;\N 硬回车&lt;br&gt;\h 硬空格&lt;br&gt;\b&lt;0/1&gt; 粗体&lt;br&gt;0关闭，1开启&lt;br&gt;\i&lt;0/1&gt; 斜体&lt;br&gt;\u&lt;0/1&gt; 下划线&lt;br&gt;\s&lt;0/1&gt; 删除线&lt;br&gt;\bord&lt;width&gt; 边框宽度&lt;br&gt;\be&lt;0/1&gt; 柔化 0关闭 1开启&lt;br&gt;\shad&lt;depth&gt; 阴影距离&lt;br&gt;\fn&lt;font name&gt; 改变字型&lt;br&gt;\fs&lt;font size&gt; 改变字号&lt;br&gt;\fsc&lt;x/y&gt;&lt;percent&gt; 字符缩放——正常大小为100%&lt;br&gt;\fsp&lt;pixels&gt; 调整字间距&lt;br&gt;\fr[&lt;x/y/z&gt;]&lt;degrees&gt; 旋转&lt;br&gt;\fr = \frz，和[v4+ Styles]中的Angle效果相同—–旋转所围绕的中心由\a或\an决定&lt;br&gt;\c&amp;amp;H&lt;66CCFF&gt;&amp;amp; 改变颜色———十六进制00-ff，蓝绿红&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>本站域名要更换为dangge.moe了(已经更换)</title>
+    <link href="https://blog.dangge.moe/2015/07/07/index.html"/>
+    <id>https://blog.dangge.moe/2015/07/07/index.html</id>
+    <published>2015-07-07T05:58:00.000Z</published>
+    <updated>2016-05-07T03:43:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>如题，现在这个破域名再过几天就到期了。<br>之前hostker活动，拿到了一个免费的.moe域名，到期后就换这个了…<br>顺便友情推荐<a href="https://i.zhujike.com/flag/1746" target="_blank" rel="external">Hostker家的服务</a>，在ACG这个圈子里还是挺有知名度的。</p>
+<p>已经更换了域名，欢迎修改书签~</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如题，现在这个破域名再过几天就到期了。&lt;br&gt;之前hostker活动，拿到了一个免费的.moe域名，到期后就换这个了…&lt;br&gt;顺便友情推荐&lt;a href=&quot;https://i.zhujike.com/flag/1746&quot; target=&quot;_blank&quot; rel=&quot;exter
+    
+    </summary>
+    
+      <category term="碎碎念" scheme="https://blog.dangge.moe/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>终わりの世界から</title>
+    <link href="https://blog.dangge.moe/2015/06/25/index.html"/>
+    <id>https://blog.dangge.moe/2015/06/25/index.html</id>
+    <published>2015-06-24T22:46:00.000Z</published>
+    <updated>2016-01-20T03:26:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在deadline前还在玩的我是不是搞错了什么<br>好吧写完这篇博我就去看书(<br>那么今天介绍<del>安利</del>的歌是やなぎなぎ(nagi)的终わりの世界から<br>的PV（2333333<br>在这里看<br><a href="http://yuntv.letv.com/bcloud.html?uu=a04808d307&amp;vu=82edfa8ddd" target="_blank" rel="external">终わりの世界から·低清乐视版</a><br><a href="https://www.youtube.com/watch?v=zyJJlPSeEpo" target="_blank" rel="external">终わりの世界から·高清YouTube版</a></p>
+<a id="more"></a>
+<p>如果你稍微搜索一下，会发现这歌是麻枝准写的<br>麻枝准写的<br>好吧…我们先静静，根据此君一贯的尿性，不虐你一下是肯定不行的。<br>于是我们先忽略掉画风，这个六分钟的静止MAD其实讲了这么一个故事。<br>主角是个妹子，然后喜欢一个比自己大一点的少年（这个年龄设定很重要啊）<br>然后blabla，少年告诉妹子自己喜欢的是年上的大姐姐（啧<br>然后妹子悲痛欲绝，于是用自己穿越时空的能力（喂喂喂这就穿越了）回到了过去<br>这样少年还是正太，而自己已经是年上的大姐姐了<br>结果回去一看，少年正在寻找消失了的自己…然后妹子突然蛋疼（其实是我没看明白）要穿越回去<br>然后发现这能力是单向传送…(╯‵□′)╯︵┻━┻麻枝准你逗我玩呢<br>然后下面用歌词比较合适<br>远(とお)くからきたってことを伝(つ)えたい<br>(想告诉你是我从未来来的)<br>でもそれは駄目(だめ)だってどこかで気(き)づいてた<br>(不过我发觉这是不可以的)<br>年上(としうえ)のあたしを见(み)て讯(み)くの<br>(看著年长的我 你向我问道)<br>「あなたに似(に)た人(ひと)を探(さが)してます何(なに)かしりませんか」と<br>(「我正在找跟你相似的人，你知不知道什么?」)<br>啧，真是虐啊 不过这个调调才是麻枝准啊<br>然后妹子无奈的留了下来。<br>また春(はる)が来(き)て きみはここを発(た)つと决(き)めた<br>(春天再次来临 你决定离开这里)<br>「もしあなたがあの人(ひと)だったらよかったのに」と残(のこ)し<br>(留下「如果你是那个人便好了」这句话)<br>恋(こい)をする　赘沢(ぜいたく)な感情(かんじょう)<br>(恋爱 奢侈的感情)<br>それを思(おも)い出(だ)した<br>(我终於想起来了)<br>だから全力(ぜんりょく)でその手(て)を取(と)る<br>(所以用尽全力抓住那只手)<br>ぼろぼろになってきみにほんとを伝(つた)えた<br>(哭得不像话地把事实告诉给你)</p>
+<p>然后妹子就…<br>ばらばらになった时空(じくう)に吸(す)い込(こ)まれていく<br>(散碎的被卷进时空之内)<br>そして目覚(めざ)めたらそこは一面(いちめん)灰色(はいいろ)の世界(せかい)<br>(醒来后在这里的是一片灰色的世界)<br>手(て)に持(も)ってたのは古(ふる)びた一枚(いちまい)の写真(しゃしん)<br>(手拿著的是一枚陈旧的照片)<br>こんな色(いろ)をしてた时代(じだい)もあったんだ<br>(有著这种颜色的时代呢)<br>そこで无邪気(むじゃき)に笑(わら)ってる<br>(在照片里天真地笑著)<br>きみに会(あ)いにここから旅(リープ)を始(はじ)めた<br>(为了遇见你从这里开始我的旅程(时空跳跃))<br>また笑(わら)えるかな　あたしこの世界(せかい)で<br>(能再次微笑吗 在这个世界中)<br>きみの写真(しゃしん)は置(お)いたままで歩(ある)き出(だ)す<br>(放下你的照片向前迈步)</p>
+<p>总结：<br>看了三四遍发现也没什么特别的亮点啊…很普通的穿越故事<br>所以还是nagi的歌和MAD配合的好（雾<br>nagi赛高（被拖去看书</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在deadline前还在玩的我是不是搞错了什么&lt;br&gt;好吧写完这篇博我就去看书(&lt;br&gt;那么今天介绍&lt;del&gt;安利&lt;/del&gt;的歌是やなぎなぎ(nagi)的终わりの世界から&lt;br&gt;的PV（2333333&lt;br&gt;在这里看&lt;br&gt;&lt;a href=&quot;http://yuntv.letv.com/bcloud.html?uu=a04808d307&amp;amp;vu=82edfa8ddd&quot;&gt;终わりの世界から·低清乐视版&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=zyJJlPSeEpo&quot;&gt;终わりの世界から·高清YouTube版&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="default" scheme="https://blog.dangge.moe/categories/default/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>校园网下如何正确的使用IPV6.</title>
+    <link href="https://blog.dangge.moe/2015/06/08/index.html"/>
+    <id>https://blog.dangge.moe/2015/06/08/index.html</id>
+    <published>2015-06-08T08:15:00.000Z</published>
+    <updated>2016-05-07T03:45:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>众所周知，我院一向没有人权，不能享受到很多新区学生很方便就能享受到的东西。<br>比如很大的gym,比如窗明几净，四季如春的大图书馆。比如貌似已经成为大学标配的IPV6.<br>是的，在这个年代，居然还有学校没有改造好IPV6的DHCP，我只能说一句呵呵了。<br>废话不多说，下面开始教程。</p>
+<a id="more"></a>
+<p>此教程的实验通过环境为：Windows 7 x64，有线方式连接网络。<br>1：点击徽标键，在搜索里输入’cmd’,然后找到命令提示符，右键，<strong>以管理员身份运行。（重要）</strong><br>2：此时弹出命令提示符，我们依次输入netsh,int,ipv6,isatap。<br>每输入一次都要回车执行一下，直到这样:<br><img src="http://7u2sev.com1.z0.glb.clouddn.com/upload/a6616523f624f3745400b9e23fee1544.png" alt="img"><br>3:然后我们继续输入：<br>set router 222.22.32.161<br>回车<br>set state enable<br>回车<br>这个时候，我们退出netsh，再输入ipconfig /all后就能看到ISATAP隧道了。<br>另外也可以登陆www.kame.net<br>如果你看到一只跳舞的小乌龟，那么证明你的ISATAP隧道成功建立，你已经可以访问IPV6网站了。<br>2015年6月9日19:54:04 update<br>经测试，如果到了这一步还是用不了ipv6，请禁用本地连接里的ipv6，并且检查是否有teredo隧道或者6to4隧道。</p>
+<p>然而…当你兴高采烈地用了半天IPV6，然后关机去XXXXXX，再次开机，访问ipv6.baidu.com的时候，你会发现<br>卧槽？为啥IPV6失败了？<br>于是这个坑曾经坑了我们一众人大概有两三个月的时间…我们各种Google解决方案，然而网络上关于ISATAP的资料实在太少了。<br>于是经过本渣的测试，发现了问题所在。<br>首先我们需要来学习一下ISATAP隧道的原理：<br><img src="http://7u2sev.com1.z0.glb.clouddn.com/upload/1f1547b4a310b458690b594b9353b015.jpg" alt=""><br>先别打我…<br>于是我们知道了，ISATAP隧道说白了就相当于一个中转服务器，你的一切网络活动都经过这个隧道，然后被它发送给IPV6服务器。<br>所以说我们的ISATAP隧道不能用的原因，一定就在于它本身的问题所在。<br>如果要开始谈ISATAP的原理的话，我估计得写到三点=-=然而我这么懒的一个人，就简言之好了，估计是不对的，希望真・大牛看到后能不吝指教ORZ<br>我们第一次使用set router 命令与ISATAP隧道建立了连接，然后我们就关机了。<br>我们想当然的以为ISATAP隧道会自动断掉，然而它 没 有！<br>也就是说，ISATAP服务器上还保留着你的在线信息，作为苦逼的固定ip用户，服务器上有一个同样的ip显示“在线”，作为服务器你要怎么做？<br>当然是无视掉那个一直连接的家伙啦！<br>我的内心几乎是崩溃的…<br>于是我们熟练地打开cmd，当然要用管理员权限运行，这个时候我们只需要打一行set state dis 关闭ISATAP隧道的连接即可。<br>网络相关内容我一窍不通，然而我猜测这个命令会发送下线信息给ISATAP服务器，这样服务器就删掉了你的在线信息=-=<br>然后我们紧跟着来一行set state ena 重新打开隧道即可…<br>打开浏览器，输入ipv6.baidu.com，熟悉的界面是不是又出现了？</p>
+<p>FAQ:<br>如果你出现问题，不能使用，请根据下面的几项自查。<br>1:是否有多余的teredo 6to4隧道。<br>2:本地连接中，<strong>不能启用</strong>Internet协议版本6。<br>3:确认222.22.32.161这个ip能ping通。</p>
+<p>如果上面的都试过了还不行，那么我也暂时无能为力了…</p>
+<p>附赠一个bat脚本 可以方便的启用ISATAP。</p>
+<p>netsh int ipv6 isatap set state dis<br>netsh int ipv6 isatap set state ena<br>记得su权限<br>希望本文对你有帮助。<br>PS：SB学校搞个DHCP分配Ipv6会死？？？<br>其实我发现学校已经搞好了DHCP，但是DHCP的ip并不能连接v6服务器。<br>PPS：转载请标明出处。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;众所周知，我院一向没有人权，不能享受到很多新区学生很方便就能享受到的东西。&lt;br&gt;比如很大的gym,比如窗明几净，四季如春的大图书馆。比如貌似已经成为大学标配的IPV6.&lt;br&gt;是的，在这个年代，居然还有学校没有改造好IPV6的DHCP，我只能说一句呵呵了。&lt;br&gt;废话不多说，下面开始教程。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+</feed>
