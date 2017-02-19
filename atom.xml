@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.dangge.moe/"/>
-  <updated>2017-01-10T17:07:05.000Z</updated>
+  <updated>2017-02-19T10:08:39.000Z</updated>
   <id>https://blog.dangge.moe/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac下配置基于http认证的git环境</title>
+    <link href="https://blog.dangge.moe/2017/02/19/index.html"/>
+    <id>https://blog.dangge.moe/2017/02/19/index.html</id>
+    <published>2017-02-19T09:58:00.000Z</published>
+    <updated>2017-02-19T10:08:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="为什么要有这个东西"><a href="#为什么要有这个东西" class="headerlink" title="为什么要有这个东西"></a>为什么要有这个东西</h5><p>hostker是一家非常好的。。。额云计算服务商（他们自己说的），但是一直以来有个有点蛋疼的问题。。。<br>他们家的应用虽然基于git，但是不支持ssh。。。<br>然后每次commit都要敲一遍账号密码。。。虽然不是很费事但是总归不是个办法<br>然后今天xjb搞的时候发现了个东西。。。叫<a href="https://www.ibm.com/support/knowledgecenter/ssw_aix_71/com.ibm.aix.files/netrc.htm" target="_blank" rel="external">.netrc</a><br>大概看了看，可以解决每次都输入账号密码来认证的蛋疼局面- -<br><del>我一定不是最后一个知道的！</del>  </p>
+<h5 id="怎么用"><a href="#怎么用" class="headerlink" title="怎么用"></a>怎么用</h5><p><pre><br>vim ~/.netrc<br></pre></p>
+<p><pre><br>machine git-ct.smartgslb.com（这里可以替换成别的git地址）<br>    login example@example.com（你的邮箱） password pwd(你的密码)<br></pre><br>ok大功告成。。。是不是非常简单无脑<del>然而我敲了两年岂可修</del></p>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>多上网长见识。。。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h5 id=&quot;为什么要有这个东西&quot;&gt;&lt;a href=&quot;#为什么要有这个东西&quot; class=&quot;headerlink&quot; title=&quot;为什么要有这个东西&quot;&gt;&lt;/a&gt;为什么要有这个东西&lt;/h5&gt;&lt;p&gt;hostker是一家非常好的。。。额云计算服务商（他们自己说的），但是一直以来有个有
+    
+    </summary>
+    
+    
+      <category term="git" scheme="https://blog.dangge.moe/tags/git/"/>
+    
+      <category term="hostker" scheme="https://blog.dangge.moe/tags/hostker/"/>
+    
+  </entry>
   
   <entry>
     <title>一次镜像站配置问题的解决</title>
@@ -588,34 +614,6 @@ t2表示消失使用的时间
     </summary>
     
       <category term="default" scheme="https://blog.dangge.moe/categories/default/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>校园网下如何正确的使用IPV6.</title>
-    <link href="https://blog.dangge.moe/2015/06/08/index.html"/>
-    <id>https://blog.dangge.moe/2015/06/08/index.html</id>
-    <published>2015-06-08T08:15:00.000Z</published>
-    <updated>2016-05-07T03:45:08.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>众所周知，我院一向没有人权，不能享受到很多新区学生很方便就能享受到的东西。<br>比如很大的gym,比如窗明几净，四季如春的大图书馆。比如貌似已经成为大学标配的IPV6.<br>是的，在这个年代，居然还有学校没有改造好IPV6的DHCP，我只能说一句呵呵了。<br>废话不多说，下面开始教程。</p>
-<a id="more"></a>
-<p>此教程的实验通过环境为：Windows 7 x64，有线方式连接网络。<br>1：点击徽标键，在搜索里输入’cmd’,然后找到命令提示符，右键，<strong>以管理员身份运行。（重要）</strong><br>2：此时弹出命令提示符，我们依次输入netsh,int,ipv6,isatap。<br>每输入一次都要回车执行一下，直到这样:<br><img src="http://7u2sev.com1.z0.glb.clouddn.com/upload/a6616523f624f3745400b9e23fee1544.png" alt="img"><br>3:然后我们继续输入：<br>set router 222.22.32.161<br>回车<br>set state enable<br>回车<br>这个时候，我们退出netsh，再输入ipconfig /all后就能看到ISATAP隧道了。<br>另外也可以登陆www.kame.net<br>如果你看到一只跳舞的小乌龟，那么证明你的ISATAP隧道成功建立，你已经可以访问IPV6网站了。<br>2015年6月9日19:54:04 update<br>经测试，如果到了这一步还是用不了ipv6，请禁用本地连接里的ipv6，并且检查是否有teredo隧道或者6to4隧道。</p>
-<p>然而…当你兴高采烈地用了半天IPV6，然后关机去XXXXXX，再次开机，访问ipv6.baidu.com的时候，你会发现<br>卧槽？为啥IPV6失败了？<br>于是这个坑曾经坑了我们一众人大概有两三个月的时间…我们各种Google解决方案，然而网络上关于ISATAP的资料实在太少了。<br>于是经过本渣的测试，发现了问题所在。<br>首先我们需要来学习一下ISATAP隧道的原理：<br><img src="http://7u2sev.com1.z0.glb.clouddn.com/upload/1f1547b4a310b458690b594b9353b015.jpg" alt=""><br>先别打我…<br>于是我们知道了，ISATAP隧道说白了就相当于一个中转服务器，你的一切网络活动都经过这个隧道，然后被它发送给IPV6服务器。<br>所以说我们的ISATAP隧道不能用的原因，一定就在于它本身的问题所在。<br>如果要开始谈ISATAP的原理的话，我估计得写到三点=-=然而我这么懒的一个人，就简言之好了，估计是不对的，希望真・大牛看到后能不吝指教ORZ<br>我们第一次使用set router 命令与ISATAP隧道建立了连接，然后我们就关机了。<br>我们想当然的以为ISATAP隧道会自动断掉，然而它 没 有！<br>也就是说，ISATAP服务器上还保留着你的在线信息，作为苦逼的固定ip用户，服务器上有一个同样的ip显示“在线”，作为服务器你要怎么做？<br>当然是无视掉那个一直连接的家伙啦！<br>我的内心几乎是崩溃的…<br>于是我们熟练地打开cmd，当然要用管理员权限运行，这个时候我们只需要打一行set state dis 关闭ISATAP隧道的连接即可。<br>网络相关内容我一窍不通，然而我猜测这个命令会发送下线信息给ISATAP服务器，这样服务器就删掉了你的在线信息=-=<br>然后我们紧跟着来一行set state ena 重新打开隧道即可…<br>打开浏览器，输入ipv6.baidu.com，熟悉的界面是不是又出现了？</p>
-<p>FAQ:<br>如果你出现问题，不能使用，请根据下面的几项自查。<br>1:是否有多余的teredo 6to4隧道。<br>2:本地连接中，<strong>不能启用</strong>Internet协议版本6。<br>3:确认222.22.32.161这个ip能ping通。</p>
-<p>如果上面的都试过了还不行，那么我也暂时无能为力了…</p>
-<p>附赠一个bat脚本 可以方便的启用ISATAP。</p>
-<p>netsh int ipv6 isatap set state dis<br>netsh int ipv6 isatap set state ena<br>记得su权限<br>希望本文对你有帮助。<br>PS：SB学校搞个DHCP分配Ipv6会死？？？<br>其实我发现学校已经搞好了DHCP，但是DHCP的ip并不能连接v6服务器。<br>PPS：转载请标明出处。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;众所周知，我院一向没有人权，不能享受到很多新区学生很方便就能享受到的东西。&lt;br&gt;比如很大的gym,比如窗明几净，四季如春的大图书馆。比如貌似已经成为大学标配的IPV6.&lt;br&gt;是的，在这个年代，居然还有学校没有改造好IPV6的DHCP，我只能说一句呵呵了。&lt;br&gt;废话不多说，下面开始教程。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
