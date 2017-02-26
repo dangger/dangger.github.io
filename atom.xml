@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.dangge.moe/"/>
-  <updated>2017-02-19T10:10:31.000Z</updated>
+  <updated>2017-02-26T14:13:07.000Z</updated>
   <id>https://blog.dangge.moe/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac下如何通过isatap隧道使用郑大IPV6</title>
+    <link href="https://blog.dangge.moe/2017/02/26/index.html"/>
+    <id>https://blog.dangge.moe/2017/02/26/index.html</id>
+    <published>2017-02-26T13:17:00.000Z</published>
+    <updated>2017-02-26T14:13:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>嗯。。。如果你是Windows想使用isatap隧道，请参考<a href="https://blog.dangge.moe/2015/06/08/index.html">这篇文章</a>  </p>
+<h4 id="为什么要有这个东西"><a href="#为什么要有这个东西" class="headerlink" title="为什么要有这个东西"></a>为什么要有这个东西</h4><p>傻*我校并没有DHCP的ipv6能用(起码2017年02月26日21:19:15之前不通)，不过还好我校提供了isatap隧道接入。。。<br>然而你百度出来的教程99%都是Windows下的用法，mac下的用法目前来看除了tuna的大佬们写了个之外，别的并搜不到什么。。。<br>嘛毕竟这玩意在国内也就那么几个学校有。。。可以理解</p>
+<h4 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h4><p>笔者目前使用的是Mac OS 10.11.6，不过我觉得这玩意应该在10.12也可以用。。。<br>脚本如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="comment">#清除IPV6路由表</span></div><div class="line">route delete -inet6 default</div><div class="line">ifconfig gif0 destroy</div><div class="line"><span class="comment">#取本地的ip地址，网卡名不一样的自己看着改</span></div><div class="line">IP=`ifconfig en1 | grep <span class="string">"inet "</span>| awk <span class="string">'&#123;print $2&#125;'</span>`</div><div class="line"><span class="comment">#下面的isatap隧道地址写死了，如果你是别的学校的可以自己改那个222.22.32.161...(应该都看得懂</span></div><div class="line"><span class="comment">#再啰嗦一句 ipv6头可以在Windows下获取一次然后得出。。。前面是固定的，后面是你的内网IP地址- -</span></div><div class="line">sudo ifconfig gif0 create</div><div class="line">sudo ifconfig gif0 tunnel <span class="variable">$IP</span> 222.22.32.161</div><div class="line">sudo ipconfig <span class="built_in">set</span> gif0 MANUAL-V6 2001:da8:5000:40f:0:5efe:<span class="variable">$IP</span> 64</div><div class="line">sudo route add -inet6 ::/0 -interface gif0</div></pre></td></tr></table></figure></p>
+<p>注意事项:<br>此脚本需要执行权限，sudo chmod +x isatap.sh（应该都看得懂</p>
+<h4 id="资料参考"><a href="#资料参考" class="headerlink" title="资料参考"></a>资料参考</h4><p><a href="https://github.com/tuna/ipv6.tsinghua.edu.cn/blob/master/isatap.md" target="_blank" rel="external">清华大学 IPv6 ISATAP 配置说明</a><br>PS：其实Windows下面那个脚本也可以更新了。。。不过懒癌发作凑合用吧。。。<br>Linux的脚本直接参考TUNA给的。。。改改就能用<br>PPS：大清的脚本是有坑的。。。改了好久</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;嗯。。。如果你是Windows想使用isatap隧道，请参考&lt;a href=&quot;https://blog.dangge.moe/2015/06/08/index.html&quot;&gt;这篇文章&lt;/a&gt;  &lt;/p&gt;
+&lt;h4 id=&quot;为什么要有这个东西&quot;&gt;&lt;a href=&quot;#为什么要有这个
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="IPV6" scheme="https://blog.dangge.moe/tags/IPV6/"/>
+    
+      <category term="isatap" scheme="https://blog.dangge.moe/tags/isatap/"/>
+    
+  </entry>
   
   <entry>
     <title>Mac下配置基于http认证的git环境</title>
@@ -589,31 +619,6 @@ t2表示消失使用的时间
     </summary>
     
       <category term="碎碎念" scheme="https://blog.dangge.moe/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>终わりの世界から</title>
-    <link href="https://blog.dangge.moe/2015/06/25/index.html"/>
-    <id>https://blog.dangge.moe/2015/06/25/index.html</id>
-    <published>2015-06-24T22:46:00.000Z</published>
-    <updated>2016-01-20T03:26:05.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>在deadline前还在玩的我是不是搞错了什么<br>好吧写完这篇博我就去看书(<br>那么今天介绍<del>安利</del>的歌是やなぎなぎ(nagi)的终わりの世界から<br>的PV（2333333<br>在这里看<br><a href="http://yuntv.letv.com/bcloud.html?uu=a04808d307&amp;vu=82edfa8ddd" target="_blank" rel="external">终わりの世界から·低清乐视版</a><br><a href="https://www.youtube.com/watch?v=zyJJlPSeEpo" target="_blank" rel="external">终わりの世界から·高清YouTube版</a></p>
-<a id="more"></a>
-<p>如果你稍微搜索一下，会发现这歌是麻枝准写的<br>麻枝准写的<br>好吧…我们先静静，根据此君一贯的尿性，不虐你一下是肯定不行的。<br>于是我们先忽略掉画风，这个六分钟的静止MAD其实讲了这么一个故事。<br>主角是个妹子，然后喜欢一个比自己大一点的少年（这个年龄设定很重要啊）<br>然后blabla，少年告诉妹子自己喜欢的是年上的大姐姐（啧<br>然后妹子悲痛欲绝，于是用自己穿越时空的能力（喂喂喂这就穿越了）回到了过去<br>这样少年还是正太，而自己已经是年上的大姐姐了<br>结果回去一看，少年正在寻找消失了的自己…然后妹子突然蛋疼（其实是我没看明白）要穿越回去<br>然后发现这能力是单向传送…(╯‵□′)╯︵┻━┻麻枝准你逗我玩呢<br>然后下面用歌词比较合适<br>远(とお)くからきたってことを伝(つ)えたい<br>(想告诉你是我从未来来的)<br>でもそれは駄目(だめ)だってどこかで気(き)づいてた<br>(不过我发觉这是不可以的)<br>年上(としうえ)のあたしを见(み)て讯(み)くの<br>(看著年长的我 你向我问道)<br>「あなたに似(に)た人(ひと)を探(さが)してます何(なに)かしりませんか」と<br>(「我正在找跟你相似的人，你知不知道什么?」)<br>啧，真是虐啊 不过这个调调才是麻枝准啊<br>然后妹子无奈的留了下来。<br>また春(はる)が来(き)て きみはここを発(た)つと决(き)めた<br>(春天再次来临 你决定离开这里)<br>「もしあなたがあの人(ひと)だったらよかったのに」と残(のこ)し<br>(留下「如果你是那个人便好了」这句话)<br>恋(こい)をする　赘沢(ぜいたく)な感情(かんじょう)<br>(恋爱 奢侈的感情)<br>それを思(おも)い出(だ)した<br>(我终於想起来了)<br>だから全力(ぜんりょく)でその手(て)を取(と)る<br>(所以用尽全力抓住那只手)<br>ぼろぼろになってきみにほんとを伝(つた)えた<br>(哭得不像话地把事实告诉给你)</p>
-<p>然后妹子就…<br>ばらばらになった时空(じくう)に吸(す)い込(こ)まれていく<br>(散碎的被卷进时空之内)<br>そして目覚(めざ)めたらそこは一面(いちめん)灰色(はいいろ)の世界(せかい)<br>(醒来后在这里的是一片灰色的世界)<br>手(て)に持(も)ってたのは古(ふる)びた一枚(いちまい)の写真(しゃしん)<br>(手拿著的是一枚陈旧的照片)<br>こんな色(いろ)をしてた时代(じだい)もあったんだ<br>(有著这种颜色的时代呢)<br>そこで无邪気(むじゃき)に笑(わら)ってる<br>(在照片里天真地笑著)<br>きみに会(あ)いにここから旅(リープ)を始(はじ)めた<br>(为了遇见你从这里开始我的旅程(时空跳跃))<br>また笑(わら)えるかな　あたしこの世界(せかい)で<br>(能再次微笑吗 在这个世界中)<br>きみの写真(しゃしん)は置(お)いたままで歩(ある)き出(だ)す<br>(放下你的照片向前迈步)</p>
-<p>总结：<br>看了三四遍发现也没什么特别的亮点啊…很普通的穿越故事<br>所以还是nagi的歌和MAD配合的好（雾<br>nagi赛高（被拖去看书</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在deadline前还在玩的我是不是搞错了什么&lt;br&gt;好吧写完这篇博我就去看书(&lt;br&gt;那么今天介绍&lt;del&gt;安利&lt;/del&gt;的歌是やなぎなぎ(nagi)的终わりの世界から&lt;br&gt;的PV（2333333&lt;br&gt;在这里看&lt;br&gt;&lt;a href=&quot;http://yuntv.letv.com/bcloud.html?uu=a04808d307&amp;amp;vu=82edfa8ddd&quot;&gt;终わりの世界から·低清乐视版&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=zyJJlPSeEpo&quot;&gt;终わりの世界から·高清YouTube版&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="default" scheme="https://blog.dangge.moe/categories/default/"/>
     
     
   </entry>

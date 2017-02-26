@@ -92,6 +92,37 @@
 
   
   <h2 class="title">
+    <a href="/2015/08/27/index.html">
+      Windows下使用git的一些坑点
+    </a>
+  </h2>
+  
+  <time>
+    8月 27, 2015
+  </time>
+  <section class="content">
+	  <p>RT，众所周知Windows对git的支持简直没法和别的系统比，不过<del>又不是不能用</del><br>于是写点坑点好了。</p>
+<ul>
+<li>SSH问题<br>我使用了github的windows版本，然后打开是有一个git bash窗口的，我们可以看出这个东西其实是基于MINGW64的。<br>然后我们要在Github里添加公钥，就要在bash窗口里输入<code>ssh-keygen -t rsa -C “your@mail.com”</code><br>然后enter三次，就自动生成好了。<br>那么问题来了:我们要向github里添加公钥，可是这个生成的公钥在哪里？<br>通过everything，我们找到了它的路径:<code>C:\Users\（替换为当前系统用户名）\.ssh</code><br>打开会发现两个文件，一个是id_rsa.pub，这个是你的公钥。<br>还有一个id_rsa，就是本地留存的私钥了。<br>用任意文本编辑器打开id_rsa.pub,复制内容，粘贴进github的SSH添加处，就添加好了。<br>然后我们的git Bash窗口就能连接上github了。</li>
+<li>clone默认路径问题<br>在clone远程仓库的时候，windows下的git默认是clone到当前路径。<br>如果你不做修改，每次就要手动cd到工作文件夹去，很烦。<br>要修改默认路径也很简单，打开高级系统设置，环境变量，在上方的用户变量里新建一个值home，属性就是你要改的默认路径。<br>如图所示。<img src="https://i.imgur.com/4jgGure.jpg" alt="用户变量设置"><br>保存后再次打开Git Bash，ls一下，就会发现默认目录已经发生了改变。<br>–未完待续</li>
+</ul>
+
+
+    
+    
+    
+	  <div class="tags">
+      <a class="tag-link" href="/tags/dangge/">dangge</a>
+	  </div>
+    
+
+  </section>
+</article>
+  
+    <article class="post ">
+
+  
+  <h2 class="title">
     <a href="/2015/07/31/index.html">
       Python学习笔记
     </a>
@@ -321,32 +352,6 @@
   </section>
 </article>
   
-    <article class="post ">
-
-  
-  <h2 class="title">
-    <a href="/2014/07/24/index.html">
-      利用Proxifier把shadowsocks转为全局代理
-    </a>
-  </h2>
-  
-  <time>
-    7月 24, 2014
-  </time>
-  <section class="content">
-	  <p>前一段混迹RE论坛 啧啧 不愧是土豪的论坛 福利多多<br>于是获得两枚SS帐号 一个新加坡一年的 另一个则是高富帅Linode东京机房半年的 简直愉悦<br>但是 shadowsocks它是个socks5代理 只能局部代理<br>于是每次用这货我都得开笨重的Chrome 破本子伤不起啊<br>然后就寻思把shadowsocks转换为全局代理。。。<br>于是就谷歌一下 出来了这货 Proxifier</p>
-
-    
-	  <div class="readmore">
-      <a href="/2014/07/24/index.html">Read More</a>
-    </div>
-    
-    
-    
-
-  </section>
-</article>
-  
 </section>
 
 
@@ -357,6 +362,11 @@
       <span class="text">Previous</span>
     </a>
     
+    
+    <a class="next" rel="next" href="/categories/渣技术/page/3/">
+      <span class="text">Next</span>
+      <span class="icon icon-chevron-right"></span>
+    </a>
     
   </nav>
   

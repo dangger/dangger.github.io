@@ -4,18 +4,25 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Archives: 2017 | dangge&#39;s blog</title>
+  <title>Mac下如何通过isatap隧道使用郑大IPV6 | dangge&#39;s blog</title>
   <meta name="description" content="dangge blog." />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="dangge's blog">
-<meta property="og:url" content="https://blog.dangge.moe/archives/2017/index.html">
+  <meta name="description" content="嗯。。。如果你是Windows想使用isatap隧道，请参考这篇文章  
+为什么要有这个东西傻*我校并没有DHCP的ipv6能用(起码2017年02月26日21:19:15之前不通)，不过还好我校提供了isatap隧道接入。。。然而你百度出来的教程99%都是Windows下的用法，mac下的用法目前来看除了tuna的大佬们写了个之外，别的并搜不到什么。。。嘛毕竟这玩意在国内也就那么几个学校有。。。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac下如何通过isatap隧道使用郑大IPV6">
+<meta property="og:url" content="https://blog.dangge.moe/2017/02/26/index.html">
 <meta property="og:site_name" content="dangge's blog">
+<meta property="og:description" content="嗯。。。如果你是Windows想使用isatap隧道，请参考这篇文章  
+为什么要有这个东西傻*我校并没有DHCP的ipv6能用(起码2017年02月26日21:19:15之前不通)，不过还好我校提供了isatap隧道接入。。。然而你百度出来的教程99%都是Windows下的用法，mac下的用法目前来看除了tuna的大佬们写了个之外，别的并搜不到什么。。。嘛毕竟这玩意在国内也就那么几个学校有。。。">
+<meta property="og:updated_time" content="2017-02-26T14:13:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="dangge's blog">
+<meta name="twitter:title" content="Mac下如何通过isatap隧道使用郑大IPV6">
+<meta name="twitter:description" content="嗯。。。如果你是Windows想使用isatap隧道，请参考这篇文章  
+为什么要有这个东西傻*我校并没有DHCP的ipv6能用(起码2017年02月26日21:19:15之前不通)，不过还好我校提供了isatap隧道接入。。。然而你百度出来的教程99%都是Windows下的用法，mac下的用法目前来看除了tuna的大佬们写了个之外，别的并搜不到什么。。。嘛毕竟这玩意在国内也就那么几个学校有。。。">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -76,117 +83,38 @@
     <script>setLoadingBarProgress(40);</script>
     
     <main id="main" role="main">
-      
-	
-
-
-	<section class="page-header archive">
-    <h1>- <span>2017</span> -</h1>
-  </section>
-
-
-
-
-<section class="post-list">
-	
-    <article class="post ">
-
-  
-  <h2 class="title">
-    <a href="/2017/02/26/index.html">
-      Mac下如何通过isatap隧道使用郑大IPV6
+      <article id="post-Mac下如何通过isatap隧道连接郑大IPV6"
+  class="post article white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<h2 class="title">
+  	<a href="/2017/02/26/index.html">
+    	Mac下如何通过isatap隧道使用郑大IPV6
     </a>
   </h2>
-  
-  <time>
-    2月 26, 2017
-  </time>
-  <section class="content">
-	  <p>嗯。。。如果你是Windows想使用isatap隧道，请参考<a href="https://blog.dangge.moe/2015/06/08/index.html">这篇文章</a>  </p>
+	<time>
+	  2月 26, 2017
+	</time>
+	<section class="content">
+  	<div class="article-entry" itemprop="articleBody">
+    	<p>嗯。。。如果你是Windows想使用isatap隧道，请参考<a href="https://blog.dangge.moe/2015/06/08/index.html">这篇文章</a>  </p>
 <h4 id="为什么要有这个东西"><a href="#为什么要有这个东西" class="headerlink" title="为什么要有这个东西"></a>为什么要有这个东西</h4><p>傻*我校并没有DHCP的ipv6能用(起码2017年02月26日21:19:15之前不通)，不过还好我校提供了isatap隧道接入。。。<br>然而你百度出来的教程99%都是Windows下的用法，mac下的用法目前来看除了tuna的大佬们写了个之外，别的并搜不到什么。。。<br>嘛毕竟这玩意在国内也就那么几个学校有。。。可以理解</p>
 <h4 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h4><p>笔者目前使用的是Mac OS 10.11.6，不过我觉得这玩意应该在10.12也可以用。。。<br>脚本如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="comment">#清除IPV6路由表</span></div><div class="line">route delete -inet6 default</div><div class="line">ifconfig gif0 destroy</div><div class="line"><span class="comment">#取本地的ip地址，网卡名不一样的自己看着改</span></div><div class="line">IP=`ifconfig en1 | grep <span class="string">"inet "</span>| awk <span class="string">'&#123;print $2&#125;'</span>`</div><div class="line"><span class="comment">#下面的isatap隧道地址写死了，如果你是别的学校的可以自己改那个222.22.32.161...(应该都看得懂</span></div><div class="line"><span class="comment">#再啰嗦一句 ipv6头可以在Windows下获取一次然后得出。。。前面是固定的，后面是你的内网IP地址- -</span></div><div class="line">sudo ifconfig gif0 create</div><div class="line">sudo ifconfig gif0 tunnel <span class="variable">$IP</span> 222.22.32.161</div><div class="line">sudo ipconfig <span class="built_in">set</span> gif0 MANUAL-V6 2001:da8:5000:40f:0:5efe:<span class="variable">$IP</span> 64</div><div class="line">sudo route add -inet6 ::/0 -interface gif0</div></pre></td></tr></table></figure></p>
 <p>注意事项:<br>此脚本需要执行权限，sudo chmod +x isatap.sh（应该都看得懂</p>
 <h4 id="资料参考"><a href="#资料参考" class="headerlink" title="资料参考"></a>资料参考</h4><p><a href="https://github.com/tuna/ipv6.tsinghua.edu.cn/blob/master/isatap.md" target="_blank" rel="external">清华大学 IPv6 ISATAP 配置说明</a><br>PS：其实Windows下面那个脚本也可以更新了。。。不过懒癌发作凑合用吧。。。<br>Linux的脚本直接参考TUNA给的。。。改改就能用<br>PPS：大清的脚本是有坑的。。。改了好久</p>
 
+  	</div>
 
-    
-    
-    
-	  <div class="tags">
-      <a class="tag-link" href="/tags/IPV6/">IPV6</a><a class="tag-link" href="/tags/isatap/">isatap</a>
+	  <div class="article-tags tags">
+		  
+        <a class="tag-link" href="/tags/IPV6/">IPV6</a><a class="tag-link" href="/tags/isatap/">isatap</a>
+      
 	  </div>
-    
-
-  </section>
+	</section>
 </article>
-  
-    <article class="post ">
-
-  
-  <h2 class="title">
-    <a href="/2017/02/19/index.html">
-      Mac下配置基于http认证的git环境
-    </a>
-  </h2>
-  
-  <time>
-    2月 19, 2017
-  </time>
-  <section class="content">
-	  <h3 id="为什么要有这个东西"><a href="#为什么要有这个东西" class="headerlink" title="为什么要有这个东西"></a>为什么要有这个东西</h3><p>hostker是一家非常好的。。。额云计算服务商（他们自己说的），但是一直以来有个有点蛋疼的问题。。。<br>他们家的应用虽然基于git，但是不支持ssh。。。<br>然后每次commit都要敲一遍账号密码。。。虽然不是很费事但是总归不是个办法<br>然后今天xjb搞的时候发现了个东西。。。叫<a href="https://www.ibm.com/support/knowledgecenter/ssw_aix_71/com.ibm.aix.files/netrc.htm" target="_blank" rel="external">.netrc</a><br>大概看了看，可以解决每次都输入账号密码来认证的蛋疼局面- -<br><del>我一定不是最后一个知道的！</del>  </p>
-<h3 id="怎么用"><a href="#怎么用" class="headerlink" title="怎么用"></a>怎么用</h3><p><pre><br>vim ~/.netrc<br></pre></p>
-<p><pre><br>machine git-ct.smartgslb.com（这里可以替换成别的git地址）<br>    login example@example.com（你的邮箱） password pwd(你的密码)<br></pre><br>ok大功告成。。。是不是非常简单无脑<del>然而我敲了两年岂可修</del></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>多上网长见识。。。</p>
 
 
-    
-    
-    
-	  <div class="tags">
-      <a class="tag-link" href="/tags/git/">git</a><a class="tag-link" href="/tags/hostker/">hostker</a>
-	  </div>
-    
-
-  </section>
-</article>
-  
-    <article class="post ">
-
-  
-  <h2 class="title">
-    <a href="/2017/01/11/index.html">
-      一次镜像站配置问题的解决
-    </a>
-  </h2>
-  
-  <time>
-    1月 11, 2017
-  </time>
-  <section class="content">
-	  <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>在使用debian7更新的时候,发现自己负责的<a href="https://mirrors.zzu.edu.cn" target="_blank" rel="external">校园镜像站</a>在强制 https 之后居然不能用了,提示是这样的:</p>
-<blockquote>
-<p>gnutls_handshake() warning: The server name sent was not recognized</p>
-</blockquote>
-<p>WTF???明明 <a href="https://mirrors.ustc.edu.cn" target="_blank" rel="external">USTC</a>就毫无问题,为啥换到我校的就不行了?  </p>
-<h3 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h3><p>一开始我以为是服务端问题,然后各种谷歌也没结果,最后找到了<a href="https://49.gs/" target="_blank" rel="external">神秀师傅</a>一番请教之后,排除了服务端的问题…(顺便一提我随手配的SSL在ssllab评分居然都是A,科科)<br>那问题看来是服务端的了,然后神秀一番操作之后告诉我好像这个域名的SNI有点问题耶<br>然后丢给我一个<a href="https://jervis.ws/qualys-labs-ssl-test-incorrect-sni-alerts/" target="_blank" rel="external">链接</a>  </p>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>所以就是在apache的 ssl.conf 里加一行  </p>
-<blockquote>
-<p>ServerName www.你的域名.com    </p>
-</blockquote>
-<p>即可.<br>妈的好智障的问题啊…而且并不是所有系统都会触发,神秀用的ubuntu16.04就可以强行无视这个错误更新…</p>
-
-
-    
-    
-    
-	  <div class="tags">
-      <a class="tag-link" href="/tags/apache/">apache</a><a class="tag-link" href="/tags/ssl/">ssl</a><a class="tag-link" href="/tags/镜像站/">镜像站</a>
-	  </div>
-    
-
-  </section>
-</article>
-  
+<section id="comments">
+	<div id="disqus_thread"></div>
 </section>
 
 
@@ -257,11 +185,13 @@
 <script>
   var disqus_shortname = 'dangge';
   
+  var disqus_url = 'https://blog.dangge.moe/2017/02/26/index.html';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
