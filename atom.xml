@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.dangge.moe/"/>
-  <updated>2017-02-26T14:13:07.000Z</updated>
+  <updated>2017-03-06T04:31:52.000Z</updated>
   <id>https://blog.dangge.moe/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>0基础开发 zzuwlan 自动认证脚本的总结</title>
+    <link href="https://blog.dangge.moe/2017/03/05/index.html"/>
+    <id>https://blog.dangge.moe/2017/03/05/index.html</id>
+    <published>2017-03-05T15:46:00.000Z</published>
+    <updated>2017-03-06T04:31:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="应该是巨坑，超长且啰嗦"><a href="#应该是巨坑，超长且啰嗦" class="headerlink" title="应该是巨坑，超长且啰嗦"></a>应该是巨坑，超长且啰嗦</h1><h3 id="为什么要有这个东西"><a href="#为什么要有这个东西" class="headerlink" title="为什么要有这个东西"></a>为什么要有这个东西</h3><p>先来看看认证界面是什么样的:<br><img src="https://o5zfda3bu.qnssl.com/blog/zzuwlan1.png" alt="认证界面"><br>看起来多么简单粗暴，完美秉承了 simple is the best 的原则（口胡不下去了<br>反正就是每次都要打个验证码还要点点点真 TM 烦，作为一个程序员怎么能每天干这么机械的活！<br>说搞就搞，先去买本犀牛书看….(卒</p>
+<h3 id="开发思路"><a href="#开发思路" class="headerlink" title="开发思路"></a>开发思路</h3><p>首先通过 chrome 的网络分析工具，我们得知首先你请求任意一个地址，zzuwlan 都会将你劫持到认证的页面去，代码大概是长这样的:<br><img src="https://o5zfda3bu.qnssl.com/blog/zzuwlan2.png" alt="认证劫持"><br>然后就是上图那样的认证界面，输入用户名密码和验证码点击认证就 OK 了，看起来是不是非常简单？<br>确实也不难，但是为了防止你用脚本完成这个过程(我猜的)，他们设置了一些坑。<br>首先确定脚本的思路，我们需要使用<a href="https://tampermonkey.net/" target="_blank" rel="external">tampermonkey</a>来运行自定义脚本，这个东西是干嘛的我就不啰嗦了。<br>脚本一开始的思路是：随便 get 一个 http 的网址(因为 https 的网址会卡在证书验证上)，然后拿到认证地址，访问，填充用户名和密码，验证码我们选择直接手撸 ocr 验证，然后后面提交就是了。<br>当然，既然是一开始。。。就证明我踩坑了。<br><a id="more"></a></p>
+<h3 id="开发中踩的那些坑"><a href="#开发中踩的那些坑" class="headerlink" title="开发中踩的那些坑"></a>开发中踩的那些坑</h3><p>首先，我们来看这个认证页面:<br><img src="https://o5zfda3bu.qnssl.com/blog/zzuwlan3.png" alt="zzuwlan 第一页"><br>嗯，原来是内嵌了个 iframe 啊，也就是说认证的主体其实是 <a href="http://202.196.64.132:8080/login0.htm" target="_blank" rel="external">http://202.196.64.132:8080/login0.htm</a><br>然后看看当前页的网址栏，有没有发现什么不同？<br>没错，这个坑爹学校居然玩跨域。。。于是纯浏览器端的 js 瞬间被打死（跨域限制），不过我想出了一个非常 trick 的方法。。。  </p>
+<pre>
+window.location.href="http://202.196.64.132:8080/";
+</pre>  
+
+<p>山不过来，我便过去。<br>解决了这个问题，我们终于来到了认证页面，这时候我们非常随意的用 document.querySelector 来给账号和密码赋值，然后是验证码。<br>我校总算是没有上传说中的文字验证码（笑），这个验证码虽然看起来不难，而且现在网上遍地都是免费的 OCR 接口，但是我是在写 WiFi 的自动认证啊！哪有网络可用啊摔<br>没有网络也代表了一件事：你不能用任何第三方的 js 库，除非你愿意把那一坨塞进一个几 KB 大的脚本里。<br>不过这么简单的东西也不是特别需要第三方的库，作为新手还是多写点原生比较好（<br>首先我们来分析一下这个验证码：<br><img src="https://o5zfda3bu.qnssl.com/blog/zzuwlan4.png" alt="zzuwlan 验证码"><br>长宽不变，字符间距也不变，有随机的噪点，但是字符没有扭曲和变形，且没有长条色带干扰。<br>那么我们的处理思路就是，首先灰度二值，然后我们看到此时的图片基本是黑白两色了。由于字符间距不变，我们可以直接切割图片来分析明暗值。<br>将明暗值转换为01存进字符串，我们就手动实现了一个验证码识别库（雾）<br>然而在调用 OCR 函数的时候遇到了一个问题，这个图片它本身也是跨域的。。。  所以我们不能在一般认证的首页来直接拿到它，于是最后还是用了 js 跳转来处理跨域。<br>处理好验证码后我们的表单就填充完了，本来是想写一个 ajax 来提交的，然后一看源码，又是跨域。<br><img src="https://o5zfda3bu.qnssl.com/blog/zzuwlan5.png" alt="zzuwlan post"><br>其实油猴本身提供了一个 GM_xmlhttpRequest 方法来让你跨域提交，但是这个东西在第一次使用的时候会弹窗要求你允许此次跨域请求。。。考虑到普通用户的体验，没有用这种办法而是用传统的模拟点击了。（其实我很好奇为什么直接点击就能跨域 post？）<br>认证提交后返回了一个页面，里面有个函数 zzjwlan() ,里面的方法就是跳转到一个加了时间戳和 seed 的页面去。这样认证流程就结束了。<br>回头看这第一版的脚本，简单粗暴的 IIFE ,毫无设计模式，各种硬编码，作为一个有点理想的程序员怎么能忍这个。<br>开始重构。  </p>
+<h3 id="重构不是长久之计"><a href="#重构不是长久之计" class="headerlink" title="重构不是长久之计"></a>重构不是长久之计</h3><p>由于第一版的设计里直接硬编码了账号和密码，在这一版本我决定使用 cookies 来存储。<br>第一次访问的时候脚本检测 cookies，如果没有的话就弹窗输入并保存起来，之后就可以多次使用。<br>还有第一版并没有考虑弱网条件下的各种问题，比如验证码可能还没加载好，于是在一番摸索和请教后使用监听器完成了验证码的加载。<br>说到这个验证码的加载，学校的设计挺有意思，页面渲染的时候首先用一张”正在载入”的图片占位，然后他写了一个函数动态替换了那个图片，所以我一开始直接选择元素只能取到”正在载入”那张图片。之后在 <a href="https://github.com/lincanbin" target="_blank" rel="external">饼少</a><br>的帮助和教导下使用监听器完成了这个功能。<br>由于测试的时候多次重现了各种各样的错误，于是这个版本也加入了错误的处理，代码写的很直接，还是选择 dom 元素然后 substring 来分析是什么错误。我觉得这样写大概是不太科学的，但是并没有别的思路，如果你有更好的方法还请不吝赐教。<br>重构的第二版本大概就做了这些事，还有一点就是把一些函数给独立出来，放在 IIFE 里顺序执行了，这个是 java 里的写法，果然没基础硬写总会感觉坑坑的。。。还是要多看看别人的优秀代码啊。  </p>
+<h3 id="反思与总结"><a href="#反思与总结" class="headerlink" title="反思与总结"></a>反思与总结</h3><p>三天时间写了这么个小玩具，其实个人还是不太满意的。因为即使重构过一遍，代码还是很乱，而且自己对 js 和网页的执行顺序等基础知识掌握还十分不牢固，果然纸上得来终觉浅，还是应该多学习。<br>另外有个插曲，在开发的时候因为是面向谷歌编程(雾)，有几次因为某墙干扰太严重用了百度，然后就踩了一个坑。。。<br>在处理验证码的输入的时候，百度出来的结果基本都是让你来用 onchange 啊 oninput 这样的方法，我就照着填了上去。。。然后测试就被坑了一个小时，最后跑去看了 MDN 和 爆栈 的讲解后总结了这么几点:<br>1.onchange事件在内容改变（两次内容有可能还是相等的）且失去焦点时触发.<br>2.onpropertychange事件是实时触发,js 操作的改变也可以触发，但是这个事件是 IE only。。。<br>3.oninput事件在value改变时实时触发，但是不响应 js 改变和浏览器下拉框中保存的选项 。。。<br>于是这个地方我还是用 settimeout 来处理了，非常不优雅，如果你有什么解决方法还请不吝赐教。<br>总结：百度谁用谁傻逼    </p>
+<p>最后用一句乔布斯的话来结束吧。</p>
+<pre><code>Stay hungry, stay foolish.
+</code></pre><p><del><a href="https://github.com/dangger/zzuwlan-auto-auth" target="_blank" rel="external">项目地址</a>求 star</del> 及各种代码 review</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;应该是巨坑，超长且啰嗦&quot;&gt;&lt;a href=&quot;#应该是巨坑，超长且啰嗦&quot; class=&quot;headerlink&quot; title=&quot;应该是巨坑，超长且啰嗦&quot;&gt;&lt;/a&gt;应该是巨坑，超长且啰嗦&lt;/h1&gt;&lt;h3 id=&quot;为什么要有这个东西&quot;&gt;&lt;a href=&quot;#为什么要有这个东西&quot; class=&quot;headerlink&quot; title=&quot;为什么要有这个东西&quot;&gt;&lt;/a&gt;为什么要有这个东西&lt;/h3&gt;&lt;p&gt;先来看看认证界面是什么样的:&lt;br&gt;&lt;img src=&quot;https://o5zfda3bu.qnssl.com/blog/zzuwlan1.png&quot; alt=&quot;认证界面&quot;&gt;&lt;br&gt;看起来多么简单粗暴，完美秉承了 simple is the best 的原则（口胡不下去了&lt;br&gt;反正就是每次都要打个验证码还要点点点真 TM 烦，作为一个程序员怎么能每天干这么机械的活！&lt;br&gt;说搞就搞，先去买本犀牛书看….(卒&lt;/p&gt;
+&lt;h3 id=&quot;开发思路&quot;&gt;&lt;a href=&quot;#开发思路&quot; class=&quot;headerlink&quot; title=&quot;开发思路&quot;&gt;&lt;/a&gt;开发思路&lt;/h3&gt;&lt;p&gt;首先通过 chrome 的网络分析工具，我们得知首先你请求任意一个地址，zzuwlan 都会将你劫持到认证的页面去，代码大概是长这样的:&lt;br&gt;&lt;img src=&quot;https://o5zfda3bu.qnssl.com/blog/zzuwlan2.png&quot; alt=&quot;认证劫持&quot;&gt;&lt;br&gt;然后就是上图那样的认证界面，输入用户名密码和验证码点击认证就 OK 了，看起来是不是非常简单？&lt;br&gt;确实也不难，但是为了防止你用脚本完成这个过程(我猜的)，他们设置了一些坑。&lt;br&gt;首先确定脚本的思路，我们需要使用&lt;a href=&quot;https://tampermonkey.net/&quot;&gt;tampermonkey&lt;/a&gt;来运行自定义脚本，这个东西是干嘛的我就不啰嗦了。&lt;br&gt;脚本一开始的思路是：随便 get 一个 http 的网址(因为 https 的网址会卡在证书验证上)，然后拿到认证地址，访问，填充用户名和密码，验证码我们选择直接手撸 ocr 验证，然后后面提交就是了。&lt;br&gt;当然，既然是一开始。。。就证明我踩坑了。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="zzuwlan" scheme="https://blog.dangge.moe/tags/zzuwlan/"/>
+    
+      <category term="油猴" scheme="https://blog.dangge.moe/tags/%E6%B2%B9%E7%8C%B4/"/>
+    
+      <category term="JavaScript" scheme="https://blog.dangge.moe/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>Mac下如何通过isatap隧道使用郑大IPV6</title>
@@ -597,28 +637,6 @@ t2表示消失使用的时间
     </summary>
     
       <category term="渣技术" scheme="https://blog.dangge.moe/categories/%E6%B8%A3%E6%8A%80%E6%9C%AF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>本站域名要更换为dangge.moe了(已经更换)</title>
-    <link href="https://blog.dangge.moe/2015/07/07/index.html"/>
-    <id>https://blog.dangge.moe/2015/07/07/index.html</id>
-    <published>2015-07-07T05:58:00.000Z</published>
-    <updated>2016-05-07T03:43:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>如题，现在这个破域名再过几天就到期了。<br>之前hostker活动，拿到了一个免费的.moe域名，到期后就换这个了…<br>顺便友情推荐<a href="https://i.zhujike.com/flag/1746" target="_blank" rel="external">Hostker家的服务</a>，在ACG这个圈子里还是挺有知名度的。</p>
-<p>已经更换了域名，欢迎修改书签~</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;如题，现在这个破域名再过几天就到期了。&lt;br&gt;之前hostker活动，拿到了一个免费的.moe域名，到期后就换这个了…&lt;br&gt;顺便友情推荐&lt;a href=&quot;https://i.zhujike.com/flag/1746&quot; target=&quot;_blank&quot; rel=&quot;exter
-    
-    </summary>
-    
-      <category term="碎碎念" scheme="https://blog.dangge.moe/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
     
   </entry>

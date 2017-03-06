@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>0基础开发 zzuwlan 自动认证脚本的总结 | dangge&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="应该是巨坑，超长且啰嗦为什么要有这个东西先来看看认证界面是什么样的:看起来多么简单粗暴，完美秉承了 simple is the best 的原则（口胡不下去了反正就是每次都要打个验证码还要点点点真 TM 烦，作为一个程序员怎么能每天干这么机械的活！说搞就搞，先去买本犀牛书看….(卒
+开发思路首先通过 chrome 的网络分析工具，我们得知首先你请求任意一个地址，zzuwlan 都会将你劫持到认证的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="0基础开发 zzuwlan 自动认证脚本的总结">
+<meta property="og:url" content="https://blog.dangge.moe/2017/03/05/index.html">
+<meta property="og:site_name" content="dangge's blog">
+<meta property="og:description" content="应该是巨坑，超长且啰嗦为什么要有这个东西先来看看认证界面是什么样的:看起来多么简单粗暴，完美秉承了 simple is the best 的原则（口胡不下去了反正就是每次都要打个验证码还要点点点真 TM 烦，作为一个程序员怎么能每天干这么机械的活！说搞就搞，先去买本犀牛书看….(卒
+开发思路首先通过 chrome 的网络分析工具，我们得知首先你请求任意一个地址，zzuwlan 都会将你劫持到认证的">
+<meta property="og:image" content="https://o5zfda3bu.qnssl.com/blog/zzuwlan1.png">
+<meta property="og:image" content="https://o5zfda3bu.qnssl.com/blog/zzuwlan2.png">
+<meta property="og:image" content="https://o5zfda3bu.qnssl.com/blog/zzuwlan3.png">
+<meta property="og:image" content="https://o5zfda3bu.qnssl.com/blog/zzuwlan4.png">
+<meta property="og:image" content="https://o5zfda3bu.qnssl.com/blog/zzuwlan5.png">
+<meta property="og:updated_time" content="2017-03-06T04:31:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="0基础开发 zzuwlan 自动认证脚本的总结">
+<meta name="twitter:description" content="应该是巨坑，超长且啰嗦为什么要有这个东西先来看看认证界面是什么样的:看起来多么简单粗暴，完美秉承了 simple is the best 的原则（口胡不下去了反正就是每次都要打个验证码还要点点点真 TM 烦，作为一个程序员怎么能每天干这么机械的活！说搞就搞，先去买本犀牛书看….(卒
+开发思路首先通过 chrome 的网络分析工具，我们得知首先你请求任意一个地址，zzuwlan 都会将你劫持到认证的">
+<meta name="twitter:image" content="https://o5zfda3bu.qnssl.com/blog/zzuwlan1.png">
+<meta name="twitter:creator" content="@dangge2">
+<link rel="publisher" href="dangge">
+  
+    <link rel="alternative" href="/atom.xml" title="dangge&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">dangge&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="blog.dangge.moe">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="outer">
+      <section id="main"><article id="post-zzuwlan自动认证脚本的一点总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/05/index.html" class="article-date">
+  <time datetime="2017-03-05T15:46:00.000Z" itemprop="datePublished">2017-03-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/渣技术/">渣技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      0基础开发 zzuwlan 自动认证脚本的总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="应该是巨坑，超长且啰嗦"><a href="#应该是巨坑，超长且啰嗦" class="headerlink" title="应该是巨坑，超长且啰嗦"></a>应该是巨坑，超长且啰嗦</h1><h3 id="为什么要有这个东西"><a href="#为什么要有这个东西" class="headerlink" title="为什么要有这个东西"></a>为什么要有这个东西</h3><p>先来看看认证界面是什么样的:<br><img src="https://o5zfda3bu.qnssl.com/blog/zzuwlan1.png" alt="认证界面"><br>看起来多么简单粗暴，完美秉承了 simple is the best 的原则（口胡不下去了<br>反正就是每次都要打个验证码还要点点点真 TM 烦，作为一个程序员怎么能每天干这么机械的活！<br>说搞就搞，先去买本犀牛书看….(卒</p>
+<h3 id="开发思路"><a href="#开发思路" class="headerlink" title="开发思路"></a>开发思路</h3><p>首先通过 chrome 的网络分析工具，我们得知首先你请求任意一个地址，zzuwlan 都会将你劫持到认证的页面去，代码大概是长这样的:<br><img src="https://o5zfda3bu.qnssl.com/blog/zzuwlan2.png" alt="认证劫持"><br>然后就是上图那样的认证界面，输入用户名密码和验证码点击认证就 OK 了，看起来是不是非常简单？<br>确实也不难，但是为了防止你用脚本完成这个过程(我猜的)，他们设置了一些坑。<br>首先确定脚本的思路，我们需要使用<a href="https://tampermonkey.net/" target="_blank" rel="external">tampermonkey</a>来运行自定义脚本，这个东西是干嘛的我就不啰嗦了。<br>脚本一开始的思路是：随便 get 一个 http 的网址(因为 https 的网址会卡在证书验证上)，然后拿到认证地址，访问，填充用户名和密码，验证码我们选择直接手撸 ocr 验证，然后后面提交就是了。<br>当然，既然是一开始。。。就证明我踩坑了。<br><a id="more"></a></p>
+<h3 id="开发中踩的那些坑"><a href="#开发中踩的那些坑" class="headerlink" title="开发中踩的那些坑"></a>开发中踩的那些坑</h3><p>首先，我们来看这个认证页面:<br><img src="https://o5zfda3bu.qnssl.com/blog/zzuwlan3.png" alt="zzuwlan 第一页"><br>嗯，原来是内嵌了个 iframe 啊，也就是说认证的主体其实是 <a href="http://202.196.64.132:8080/login0.htm" target="_blank" rel="external">http://202.196.64.132:8080/login0.htm</a><br>然后看看当前页的网址栏，有没有发现什么不同？<br>没错，这个坑爹学校居然玩跨域。。。于是纯浏览器端的 js 瞬间被打死（跨域限制），不过我想出了一个非常 trick 的方法。。。  </p>
+<pre>
+window.location.href="http://202.196.64.132:8080/";
+</pre>  
+
+<p>山不过来，我便过去。<br>解决了这个问题，我们终于来到了认证页面，这时候我们非常随意的用 document.querySelector 来给账号和密码赋值，然后是验证码。<br>我校总算是没有上传说中的文字验证码（笑），这个验证码虽然看起来不难，而且现在网上遍地都是免费的 OCR 接口，但是我是在写 WiFi 的自动认证啊！哪有网络可用啊摔<br>没有网络也代表了一件事：你不能用任何第三方的 js 库，除非你愿意把那一坨塞进一个几 KB 大的脚本里。<br>不过这么简单的东西也不是特别需要第三方的库，作为新手还是多写点原生比较好（<br>首先我们来分析一下这个验证码：<br><img src="https://o5zfda3bu.qnssl.com/blog/zzuwlan4.png" alt="zzuwlan 验证码"><br>长宽不变，字符间距也不变，有随机的噪点，但是字符没有扭曲和变形，且没有长条色带干扰。<br>那么我们的处理思路就是，首先灰度二值，然后我们看到此时的图片基本是黑白两色了。由于字符间距不变，我们可以直接切割图片来分析明暗值。<br>将明暗值转换为01存进字符串，我们就手动实现了一个验证码识别库（雾）<br>然而在调用 OCR 函数的时候遇到了一个问题，这个图片它本身也是跨域的。。。  所以我们不能在一般认证的首页来直接拿到它，于是最后还是用了 js 跳转来处理跨域。<br>处理好验证码后我们的表单就填充完了，本来是想写一个 ajax 来提交的，然后一看源码，又是跨域。<br><img src="https://o5zfda3bu.qnssl.com/blog/zzuwlan5.png" alt="zzuwlan post"><br>其实油猴本身提供了一个 GM_xmlhttpRequest 方法来让你跨域提交，但是这个东西在第一次使用的时候会弹窗要求你允许此次跨域请求。。。考虑到普通用户的体验，没有用这种办法而是用传统的模拟点击了。（其实我很好奇为什么直接点击就能跨域 post？）<br>认证提交后返回了一个页面，里面有个函数 zzjwlan() ,里面的方法就是跳转到一个加了时间戳和 seed 的页面去。这样认证流程就结束了。<br>回头看这第一版的脚本，简单粗暴的 IIFE ,毫无设计模式，各种硬编码，作为一个有点理想的程序员怎么能忍这个。<br>开始重构。  </p>
+<h3 id="重构不是长久之计"><a href="#重构不是长久之计" class="headerlink" title="重构不是长久之计"></a>重构不是长久之计</h3><p>由于第一版的设计里直接硬编码了账号和密码，在这一版本我决定使用 cookies 来存储。<br>第一次访问的时候脚本检测 cookies，如果没有的话就弹窗输入并保存起来，之后就可以多次使用。<br>还有第一版并没有考虑弱网条件下的各种问题，比如验证码可能还没加载好，于是在一番摸索和请教后使用监听器完成了验证码的加载。<br>说到这个验证码的加载，学校的设计挺有意思，页面渲染的时候首先用一张”正在载入”的图片占位，然后他写了一个函数动态替换了那个图片，所以我一开始直接选择元素只能取到”正在载入”那张图片。之后在 <a href="https://github.com/lincanbin" target="_blank" rel="external">饼少</a><br>的帮助和教导下使用监听器完成了这个功能。<br>由于测试的时候多次重现了各种各样的错误，于是这个版本也加入了错误的处理，代码写的很直接，还是选择 dom 元素然后 substring 来分析是什么错误。我觉得这样写大概是不太科学的，但是并没有别的思路，如果你有更好的方法还请不吝赐教。<br>重构的第二版本大概就做了这些事，还有一点就是把一些函数给独立出来，放在 IIFE 里顺序执行了，这个是 java 里的写法，果然没基础硬写总会感觉坑坑的。。。还是要多看看别人的优秀代码啊。  </p>
+<h3 id="反思与总结"><a href="#反思与总结" class="headerlink" title="反思与总结"></a>反思与总结</h3><p>三天时间写了这么个小玩具，其实个人还是不太满意的。因为即使重构过一遍，代码还是很乱，而且自己对 js 和网页的执行顺序等基础知识掌握还十分不牢固，果然纸上得来终觉浅，还是应该多学习。<br>另外有个插曲，在开发的时候因为是面向谷歌编程(雾)，有几次因为某墙干扰太严重用了百度，然后就踩了一个坑。。。<br>在处理验证码的输入的时候，百度出来的结果基本都是让你来用 onchange 啊 oninput 这样的方法，我就照着填了上去。。。然后测试就被坑了一个小时，最后跑去看了 MDN 和 爆栈 的讲解后总结了这么几点:<br>1.onchange事件在内容改变（两次内容有可能还是相等的）且失去焦点时触发.<br>2.onpropertychange事件是实时触发,js 操作的改变也可以触发，但是这个事件是 IE only。。。<br>3.oninput事件在value改变时实时触发，但是不响应 js 改变和浏览器下拉框中保存的选项 。。。<br>于是这个地方我还是用 settimeout 来处理了，非常不优雅，如果你有什么解决方法还请不吝赐教。<br>总结：百度谁用谁傻逼    </p>
+<p>最后用一句乔布斯的话来结束吧。</p>
+<pre><code>Stay hungry, stay foolish.
+</code></pre><p><del><a href="https://github.com/dangger/zzuwlan-auto-auth" target="_blank" rel="external">项目地址</a>求 star</del> 及各种代码 review</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://blog.dangge.moe/2017/03/05/index.html" data-id="cizxm3emz000wdgvaz0hb0pq2" class="article-share-link">分享到</a>
+      
+
+      
+        <a href="https://blog.dangge.moe/2017/03/05/index.html#disqus_thread" class="article-comment-link">评论</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zzuwlan/">zzuwlan</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/油猴/">油猴</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/02/26/index.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">Mac下如何通过isatap隧道使用郑大IPV6</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/XJB写/">XJB写</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/渣技术/">渣技术</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/碎碎念/">碎碎念</a><span class="category-list-count">26</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/脑洞/">脑洞</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IPV6/">IPV6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/">apache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dangge/">dangge</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hostker/">hostker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/isatap/">isatap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssl/">ssl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zzuwlan/">zzuwlan</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/你的名字/">你的名字</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/油猴/">油猴</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/镜像站/">镜像站</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/IPV6/" style="font-size: 10px;">IPV6</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/dangge/" style="font-size: 20px;">dangge</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hostker/" style="font-size: 10px;">hostker</a> <a href="/tags/isatap/" style="font-size: 10px;">isatap</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/ssl/" style="font-size: 10px;">ssl</a> <a href="/tags/zzuwlan/" style="font-size: 10px;">zzuwlan</a> <a href="/tags/你的名字/" style="font-size: 10px;">你的名字</a> <a href="/tags/油猴/" style="font-size: 10px;">油猴</a> <a href="/tags/镜像站/" style="font-size: 10px;">镜像站</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">六月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">二月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">十二月 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/05/index.html">0基础开发 zzuwlan 自动认证脚本的总结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/26/index.html">Mac下如何通过isatap隧道使用郑大IPV6</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/19/index.html">Mac下配置基于http认证的git环境</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/11/index.html">一次镜像站配置问题的解决</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/09/index.html">君の名は。</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 dangge<br>
+      Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+<script>
+  var disqus_shortname = 'dangge';
+  
+  var disqus_url = 'https://blog.dangge.moe/2017/03/05/index.html';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+</div>
+</body>
+</html>
