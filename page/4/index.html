@@ -67,6 +67,68 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-启用了全站SSL。" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/22/index.html" class="article-date">
+  <time datetime="2015-01-21T18:04:11.000Z" itemprop="datePublished">2015-01-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/default/">default</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/22/index.html">启用了全站SSL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>hostker 要启用 SSL 还是很简单的，不过还是有几个坑点。<br>另外 Typecho 要启用全站SSL还需要在config.inc.php中加一行：</p>
+<pre><code>define(&apos;__TYPECHO_SECURE__&apos;,true);
+</code></pre><p>不然登录后台的时候会出现奇怪的错误（</p>
+<p>附赠我的 .htaccess 供后人参考：</p>
+<pre><code>&lt;IfModule mod_rewrite.c&gt;
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php/$1 [L]
+# 针对 Hostker 主机的 SSL 监听方案
+RewriteCond %{HTTP:KERSSL} !on
+# 全局 HTTPS 
+RewriteCond %{SERVER_PORT} 80 
+RewriteRule ^(.*)$ https://blog.dangge.moe/$1 [R,L]
+&lt;/IfModule&gt;
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://blog.dangge.moe/2015/01/22/index.html" data-id="cj012pbv40026fsvalsjgkbzc" class="article-share-link">分享到</a>
+      
+
+      
+        <a href="https://blog.dangge.moe/2015/01/22/index.html#disqus_thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-ACM校赛感想" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/12/06/index.html" class="article-date">
@@ -98,7 +160,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.dangge.moe/2014/12/06/index.html" data-id="cj012m6w40006e4va6to775ky" class="article-share-link">分享到</a>
+        <a data-url="https://blog.dangge.moe/2014/12/06/index.html" data-id="cj012pbsz0006fsva8q50vi9y" class="article-share-link">分享到</a>
       
 
       
@@ -148,7 +210,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.dangge.moe/2014/12/03/index.html" data-id="cj012m6yq003ie4va5gx0c3ws" class="article-share-link">分享到</a>
+        <a data-url="https://blog.dangge.moe/2014/12/03/index.html" data-id="cj012pbw3003nfsvayf711rr4" class="article-share-link">分享到</a>
       
 
       
@@ -194,7 +256,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.dangge.moe/2014/11/30/index.html" data-id="cj012m6x6001ae4vahvadfdoe" class="article-share-link">分享到</a>
+        <a data-url="https://blog.dangge.moe/2014/11/30/index.html" data-id="cj012pbu1001afsva9ncncijy" class="article-share-link">分享到</a>
       
 
       
@@ -240,7 +302,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.dangge.moe/2014/11/25/index.html" data-id="cj012m6w20005e4vaolpmpsde" class="article-share-link">分享到</a>
+        <a data-url="https://blog.dangge.moe/2014/11/25/index.html" data-id="cj012pbsx0005fsva87mf8a47" class="article-share-link">分享到</a>
       
 
       
@@ -291,7 +353,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.dangge.moe/2014/11/23/index.html" data-id="cj012m6ys003le4valnlqfmph" class="article-share-link">分享到</a>
+        <a data-url="https://blog.dangge.moe/2014/11/23/index.html" data-id="cj012pbvy003ffsva2rl8ed7l" class="article-share-link">分享到</a>
       
 
       
@@ -342,7 +404,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.dangge.moe/2014/11/17/index.html" data-id="cj012m6yx003te4vajhl5ijcw" class="article-share-link">分享到</a>
+        <a data-url="https://blog.dangge.moe/2014/11/17/index.html" data-id="cj012pbw9003vfsva46crlgxx" class="article-share-link">分享到</a>
       
 
       
@@ -390,7 +452,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.dangge.moe/2014/11/08/index.html" data-id="cj012m6yt003ne4vadzgdd6bm" class="article-share-link">分享到</a>
+        <a data-url="https://blog.dangge.moe/2014/11/08/index.html" data-id="cj012pbw6003pfsvazj4acpfo" class="article-share-link">分享到</a>
       
 
       
@@ -437,7 +499,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.dangge.moe/2014/10/28/index.html" data-id="cj012m6y6002ne4vapdgybgwf" class="article-share-link">分享到</a>
+        <a data-url="https://blog.dangge.moe/2014/10/28/index.html" data-id="cj012pbvj002tfsvayvrr1v07" class="article-share-link">分享到</a>
       
 
       
@@ -488,58 +550,11 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://blog.dangge.moe/2014/10/18/index.html" data-id="cj012m6xq0021e4vavsq7epjk" class="article-share-link">分享到</a>
+        <a data-url="https://blog.dangge.moe/2014/10/18/index.html" data-id="cj012pbuy001xfsvae6zgax82" class="article-share-link">分享到</a>
       
 
       
         <a href="https://blog.dangge.moe/2014/10/18/index.html#disqus_thread" class="article-comment-link">评论</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2014年10月5日" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/10/05/index.html" class="article-date">
-  <time datetime="2014-10-05T06:39:00.000Z" itemprop="datePublished">2014-10-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/碎碎念/">碎碎念</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/05/index.html">2014年10月5日</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>明天就要回学校了 在家宅了五天 写点日常吧<br>其实感觉也没啥可写的 大学和高中相比区别是有一些 不过终究还是一个学校<br>以为身边会有很多大牛 谁知道要么是大牛根本看不上我这种菜比 要么就是 我打遍全校 居然没几个可以愉快交谈的对手？<br>在学校只有CMCC 穷极无聊 开始各种研究如何使用CMCC 然后还真找到一个可以随便用的设计缺陷<br>然后纠结了很久买电脑的事 最后决定一步到位 神船又如何 我只要配置 i7和GTX850这个基础太诱人<br>SSD和内存什么的。。。以后慢慢攒出来呗<br>既然写到生活了就写大学的第一个月吧<br>首先就是同宿舍的人都还挺友善 毕竟都知道要相处四年 熟悉之后就都暴露本性啦23333<br>然后老师什么的也都比较满意 高数老师真心屌。。。。ORZ<br>学校福利挺不错 老子这么多的学费也算是没白花。。。。找个周末去新区图书馆体验一把=w=顺便把那本眼馋了好久不舍得买的书借来<br>总之大学生活已经渐渐习惯了 和高中比起来轻松了N倍 但是并没有到你可以高枕无忧的地步 甚至 我觉得比起高中还要累一点<br>但是终于有时间去做自己喜欢的事了 所以感觉也不是很累<br>时间多了于是就有空了解一些黑客圈里的八卦 发现我这年龄在里面真心处于最底层 大龄+低能 真是囧RZ<br>要论技术 很多中学生都能爆我一脸 而我也能爆很多比我大的人一脸<br>所以处于中间层真心不爽 这还是个安乐区 很容易就懈怠。。。。。<br>之前有过很多雄心壮志 也有很多短期目标 不过一直由于没电脑而不得已无限暂停<br>明天去学校 运气好的话就可以提货了 希望能和我的第一台生产力工具好好相处。。。。<br>就酱。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://blog.dangge.moe/2014/10/05/index.html" data-id="cj012m6vq0001e4vaga6ekiov" class="article-share-link">分享到</a>
-      
-
-      
-        <a href="https://blog.dangge.moe/2014/10/05/index.html#disqus_thread" class="article-comment-link">评论</a>
       
 
       
@@ -563,7 +578,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/XJB写/">XJB写</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/渣技术/">渣技术</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/碎碎念/">碎碎念</a><span class="category-list-count">26</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/脑洞/">脑洞</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/XJB写/">XJB写</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/渣技术/">渣技术</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/碎碎念/">碎碎念</a><span class="category-list-count">26</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/脑洞/">脑洞</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -572,7 +587,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IPV6/">IPV6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/">apache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dangge/">dangge</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hostker/">hostker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/isatap/">isatap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssl/">ssl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zzuwlan/">zzuwlan</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/你的名字/">你的名字</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/油猴/">油猴</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/镜像站/">镜像站</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IPV6/">IPV6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/">apache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dangge/">dangge</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/galgame/">galgame</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hostker/">hostker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/isatap/">isatap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssl/">ssl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zzuwlan/">zzuwlan</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/你的名字/">你的名字</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/油猴/">油猴</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/碎碎念/">碎碎念</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/秽翼的尤斯蒂娅/">秽翼的尤斯蒂娅</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/镜像站/">镜像站</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -581,7 +596,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/IPV6/" style="font-size: 10px;">IPV6</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/dangge/" style="font-size: 20px;">dangge</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hostker/" style="font-size: 10px;">hostker</a> <a href="/tags/isatap/" style="font-size: 10px;">isatap</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/ssl/" style="font-size: 10px;">ssl</a> <a href="/tags/zzuwlan/" style="font-size: 10px;">zzuwlan</a> <a href="/tags/你的名字/" style="font-size: 10px;">你的名字</a> <a href="/tags/油猴/" style="font-size: 10px;">油猴</a> <a href="/tags/镜像站/" style="font-size: 10px;">镜像站</a>
+      <a href="/tags/IPV6/" style="font-size: 10px;">IPV6</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/apache/" style="font-size: 10px;">apache</a> <a href="/tags/dangge/" style="font-size: 20px;">dangge</a> <a href="/tags/galgame/" style="font-size: 10px;">galgame</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hostker/" style="font-size: 10px;">hostker</a> <a href="/tags/isatap/" style="font-size: 10px;">isatap</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/ssl/" style="font-size: 10px;">ssl</a> <a href="/tags/zzuwlan/" style="font-size: 10px;">zzuwlan</a> <a href="/tags/你的名字/" style="font-size: 10px;">你的名字</a> <a href="/tags/油猴/" style="font-size: 10px;">油猴</a> <a href="/tags/碎碎念/" style="font-size: 10px;">碎碎念</a> <a href="/tags/秽翼的尤斯蒂娅/" style="font-size: 10px;">秽翼的尤斯蒂娅</a> <a href="/tags/镜像站/" style="font-size: 10px;">镜像站</a>
     </div>
   </div>
 
@@ -590,7 +605,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">六月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">二月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">十二月 2012</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">六月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">二月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">十二月 2012</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -600,6 +615,10 @@
     <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/03/27/index.html">什么是成熟？</a>
+          </li>
         
           <li>
             <a href="/2017/03/05/index.html">0基础开发 zzuwlan 自动认证脚本的总结</a>
@@ -615,10 +634,6 @@
         
           <li>
             <a href="/2017/01/11/index.html">一次镜像站配置问题的解决</a>
-          </li>
-        
-          <li>
-            <a href="/2016/12/09/index.html">君の名は。</a>
           </li>
         
       </ul>
